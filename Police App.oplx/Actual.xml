@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scenario xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2" xmlns:opns="http://www.omnigroup.com/namespace/OmniPlan/v2" id="m9inIEcdkJa">
+  <start-date>2017-12-04T16:00:00.000Z</start-date>
+  <prototype-task>
+    <task id="t-2">
+      <title>Task 1</title>
+      <effort>28800</effort>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t-3">
+      <title>Milestone 1</title>
+      <type>milestone</type>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t-4">
+      <title>Group 1</title>
+      <type>group</type>
+    </task>
+  </prototype-task>
+  <prototype-resource>
+    <resource id="r-2">
+      <name>Resource 1</name>
+      <type>Staff</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-3">
+      <name>Equipment 1</name>
+      <type>Equipment</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-4">
+      <name>Material 1</name>
+      <type>Material</type>
+      <units-available>0</units-available>
+      <efficiency>0</efficiency>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-5">
+      <name>Group 1</name>
+      <type>Group</type>
+    </resource>
+  </prototype-resource>
+  <top-resource idref="r-1"/>
+  <resource id="r-1">
+    <name/>
+    <type>Group</type>
+    <child-resource idref="r1"/>
+  </resource>
+  <resource id="r1">
+    <name>Resource 1</name>
+    <type>Staff</type>
+  </resource>
+  <top-task idref="t-1"/>
+  <task id="t-1">
+    <type>group</type>
+    <child-task idref="t3"/>
+    <child-task idref="t4"/>
+    <child-task idref="t19"/>
+    <child-task idref="t28"/>
+    <child-task idref="t30"/>
+    <child-task idref="t44"/>
+  </task>
+  <task id="t3">
+    <title>Prep</title>
+    <type>group</type>
+    <start-constraint-date>2018-01-01T16:00:00.000Z</start-constraint-date>
+    <child-task idref="t5"/>
+    <child-task idref="t7"/>
+    <child-task idref="t6"/>
+    <child-task idref="t8"/>
+    <style>
+      <value key="font-fill">
+        <color r="0" g="0" b="0" archive="YnBsaXN0MDDUAQIDBAUGKyxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKcHCBMZHSQoVSRudWxs1QkKCwwNDg8QERJcTlNDb21wb25lbnRzVU5TUkdCXE5TQ29sb3JTcGFjZV8QEk5TQ3VzdG9tQ29sb3JTcGFjZVYkY2xhc3NHMCAwIDAgMUYwIDAgMAAQAYACgAbTFA0VFhcYVU5TSUNDWU5TU3BhY2VJRIADgAUQDNIaDRscV05TLmRhdGFPEQIkAAACJGFwcGwEAAAAbW50clJHQiBYWVogB+EABwAHAA0AFgAgYWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsyhqVgiV/EE04mRPV0eoVggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAABlY3BydAAAAWQAAAAjd3RwdAAAAYgAAAAUclhZWgAAAZwAAAAUZ1hZWgAAAbAAAAAUYlhZWgAAAcQAAAAUclRSQwAAAdgAAAAgY2hhZAAAAfgAAAAsYlRSQwAAAdgAAAAgZ1RSQwAAAdgAAAAgZGVzYwAAAAAAAAALRGlzcGxheSBQMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSBJbmMuLCAyMDE3AABYWVogAAAAAAAA81EAAQAAAAEWzFhZWiAAAAAAAACD3wAAPb////+7WFlaIAAAAAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgAABELAADIuXBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeTAAD9kP//+6L///2jAAAD3AAAwG6ABNIeHyAhWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMgIiNWTlNEYXRhWE5TT2JqZWN00h4fJSZcTlNDb2xvclNwYWNloicjXE5TQ29sb3JTcGFjZdIeHykqV05TQ29sb3KiKSNfEA9OU0tleWVkQXJjaGl2ZXLRLS5Ucm9vdIABAAgAEQAaACMALQAyADcAPwBFAFAAXQBjAHAAhQCMAJQAmwCdAJ8AoQCoAK4AuAC6ALwAvgDDAMsC8wL1AvoDBQMOAxwDIAMnAzADNQNCA0UDUgNXA18DYgN0A3cDfAAAAAAAAAIBAAAAAAAAAC8AAAAAAAAAAAAAAAAAAAN+"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2018-01-01T16:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t4">
+    <title>Database</title>
+    <type>group</type>
+    <start-constraint-date>2018-01-22T16:00:00.000Z</start-constraint-date>
+    <child-task idref="t10"/>
+    <child-task idref="t11"/>
+    <child-task idref="t12"/>
+    <style>
+      <value key="font-fill">
+        <color r="0" g="0" b="0" archive="YnBsaXN0MDDUAQIDBAUGKyxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKcHCBMZHSQoVSRudWxs1QkKCwwNDg8QERJcTlNDb21wb25lbnRzVU5TUkdCXE5TQ29sb3JTcGFjZV8QEk5TQ3VzdG9tQ29sb3JTcGFjZVYkY2xhc3NHMCAwIDAgMUYwIDAgMAAQAYACgAbTFA0VFhcYVU5TSUNDWU5TU3BhY2VJRIADgAUQDNIaDRscV05TLmRhdGFPEQIkAAACJGFwcGwEAAAAbW50clJHQiBYWVogB+EABwAHAA0AFgAgYWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsyhqVgiV/EE04mRPV0eoVggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAABlY3BydAAAAWQAAAAjd3RwdAAAAYgAAAAUclhZWgAAAZwAAAAUZ1hZWgAAAbAAAAAUYlhZWgAAAcQAAAAUclRSQwAAAdgAAAAgY2hhZAAAAfgAAAAsYlRSQwAAAdgAAAAgZ1RSQwAAAdgAAAAgZGVzYwAAAAAAAAALRGlzcGxheSBQMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSBJbmMuLCAyMDE3AABYWVogAAAAAAAA81EAAQAAAAEWzFhZWiAAAAAAAACD3wAAPb////+7WFlaIAAAAAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgAABELAADIuXBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeTAAD9kP//+6L///2jAAAD3AAAwG6ABNIeHyAhWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMgIiNWTlNEYXRhWE5TT2JqZWN00h4fJSZcTlNDb2xvclNwYWNloicjXE5TQ29sb3JTcGFjZdIeHykqV05TQ29sb3KiKSNfEA9OU0tleWVkQXJjaGl2ZXLRLS5Ucm9vdIABAAgAEQAaACMALQAyADcAPwBFAFAAXQBjAHAAhQCMAJQAmwCdAJ8AoQCoAK4AuAC6ALwAvgDDAMsC8wL1AvoDBQMOAxwDIAMnAzADNQNCA0UDUgNXA18DYgN0A3cDfAAAAAAAAAIBAAAAAAAAAC8AAAAAAAAAAAAAAAAAAAN+"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2018-01-22T16:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t5">
+    <title>Learn Swift</title>
+    <effort>288000</effort>
+    <start-constraint-date>2018-01-01T16:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0" g="0" b="0" archive="YnBsaXN0MDDUAQIDBAUGKyxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKcHCBMZHSQoVSRudWxs1QkKCwwNDg8QERJcTlNDb21wb25lbnRzVU5TUkdCXE5TQ29sb3JTcGFjZV8QEk5TQ3VzdG9tQ29sb3JTcGFjZVYkY2xhc3NHMCAwIDAgMUYwIDAgMAAQAYACgAbTFA0VFhcYVU5TSUNDWU5TU3BhY2VJRIADgAUQDNIaDRscV05TLmRhdGFPEQIkAAACJGFwcGwEAAAAbW50clJHQiBYWVogB+EABwAHAA0AFgAgYWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsyhqVgiV/EE04mRPV0eoVggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAABlY3BydAAAAWQAAAAjd3RwdAAAAYgAAAAUclhZWgAAAZwAAAAUZ1hZWgAAAbAAAAAUYlhZWgAAAcQAAAAUclRSQwAAAdgAAAAgY2hhZAAAAfgAAAAsYlRSQwAAAdgAAAAgZ1RSQwAAAdgAAAAgZGVzYwAAAAAAAAALRGlzcGxheSBQMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSBJbmMuLCAyMDE3AABYWVogAAAAAAAA81EAAQAAAAEWzFhZWiAAAAAAAACD3wAAPb////+7WFlaIAAAAAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgAABELAADIuXBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeTAAD9kP//+6L///2jAAAD3AAAwG6ABNIeHyAhWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMgIiNWTlNEYXRhWE5TT2JqZWN00h4fJSZcTlNDb2xvclNwYWNloicjXE5TQ29sb3JTcGFjZdIeHykqV05TQ29sb3KiKSNfEA9OU0tleWVkQXJjaGl2ZXLRLS5Ucm9vdIABAAgAEQAaACMALQAyADcAPwBFAFAAXQBjAHAAhQCMAJQAmwCdAJ8AoQCoAK4AuAC6ALwAvgDDAMsC8wL1AvoDBQMOAxwDIAMnAzADNQNCA0UDUgNXA18DYgN0A3cDfAAAAAAAAAIBAAAAAAAAAC8AAAAAAAAAAAAAAAAAAAN+"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2018-01-01T16:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t6">
+    <title>Create Schema and ER Diagrams</title>
+    <effort>144000</effort>
+    <start-constraint-date>2018-01-15T16:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0" g="0" b="0" archive="YnBsaXN0MDDUAQIDBAUGKyxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKcHCBMZHSQoVSRudWxs1QkKCwwNDg8QERJcTlNDb21wb25lbnRzVU5TUkdCXE5TQ29sb3JTcGFjZV8QEk5TQ3VzdG9tQ29sb3JTcGFjZVYkY2xhc3NHMCAwIDAgMUYwIDAgMAAQAYACgAbTFA0VFhcYVU5TSUNDWU5TU3BhY2VJRIADgAUQDNIaDRscV05TLmRhdGFPEQIkAAACJGFwcGwEAAAAbW50clJHQiBYWVogB+EABwAHAA0AFgAgYWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsyhqVgiV/EE04mRPV0eoVggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAABlY3BydAAAAWQAAAAjd3RwdAAAAYgAAAAUclhZWgAAAZwAAAAUZ1hZWgAAAbAAAAAUYlhZWgAAAcQAAAAUclRSQwAAAdgAAAAgY2hhZAAAAfgAAAAsYlRSQwAAAdgAAAAgZ1RSQwAAAdgAAAAgZGVzYwAAAAAAAAALRGlzcGxheSBQMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSBJbmMuLCAyMDE3AABYWVogAAAAAAAA81EAAQAAAAEWzFhZWiAAAAAAAACD3wAAPb////+7WFlaIAAAAAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgAABELAADIuXBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeTAAD9kP//+6L///2jAAAD3AAAwG6ABNIeHyAhWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMgIiNWTlNEYXRhWE5TT2JqZWN00h4fJSZcTlNDb2xvclNwYWNloicjXE5TQ29sb3JTcGFjZdIeHykqV05TQ29sb3KiKSNfEA9OU0tleWVkQXJjaGl2ZXLRLS5Ucm9vdIABAAgAEQAaACMALQAyADcAPwBFAFAAXQBjAHAAhQCMAJQAmwCdAJ8AoQCoAK4AuAC6ALwAvgDDAMsC8wL1AvoDBQMOAxwDIAMnAzADNQNCA0UDUgNXA18DYgN0A3cDfAAAAAAAAAIBAAAAAAAAAC8AAAAAAAAAAAAAAAAAAAN+"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2018-01-15T16:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t7">
+    <title>Mock Up UI/UX</title>
+    <effort>144000</effort>
+    <start-constraint-date>2018-01-08T16:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0" g="0" b="0" archive="YnBsaXN0MDDUAQIDBAUGKyxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKcHCBMZHSQoVSRudWxs1QkKCwwNDg8QERJcTlNDb21wb25lbnRzVU5TUkdCXE5TQ29sb3JTcGFjZV8QEk5TQ3VzdG9tQ29sb3JTcGFjZVYkY2xhc3NHMCAwIDAgMUYwIDAgMAAQAYACgAbTFA0VFhcYVU5TSUNDWU5TU3BhY2VJRIADgAUQDNIaDRscV05TLmRhdGFPEQIkAAACJGFwcGwEAAAAbW50clJHQiBYWVogB+EABwAHAA0AFgAgYWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsyhqVgiV/EE04mRPV0eoVggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAABlY3BydAAAAWQAAAAjd3RwdAAAAYgAAAAUclhZWgAAAZwAAAAUZ1hZWgAAAbAAAAAUYlhZWgAAAcQAAAAUclRSQwAAAdgAAAAgY2hhZAAAAfgAAAAsYlRSQwAAAdgAAAAgZ1RSQwAAAdgAAAAgZGVzYwAAAAAAAAALRGlzcGxheSBQMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSBJbmMuLCAyMDE3AABYWVogAAAAAAAA81EAAQAAAAEWzFhZWiAAAAAAAACD3wAAPb////+7WFlaIAAAAAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgAABELAADIuXBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeTAAD9kP//+6L///2jAAAD3AAAwG6ABNIeHyAhWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMgIiNWTlNEYXRhWE5TT2JqZWN00h4fJSZcTlNDb2xvclNwYWNloicjXE5TQ29sb3JTcGFjZdIeHykqV05TQ29sb3KiKSNfEA9OU0tleWVkQXJjaGl2ZXLRLS5Ucm9vdIABAAgAEQAaACMALQAyADcAPwBFAFAAXQBjAHAAhQCMAJQAmwCdAJ8AoQCoAK4AuAC6ALwAvgDDAMsC8wL1AvoDBQMOAxwDIAMnAzADNQNCA0UDUgNXA18DYgN0A3cDfAAAAAAAAAIBAAAAAAAAAC8AAAAAAAAAAAAAAAAAAAN+"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2018-01-08T16:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t8">
+    <title>Write Use Cases</title>
+    <effort>144000</effort>
+    <start-constraint-date>2018-01-15T16:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0" g="0" b="0" archive="YnBsaXN0MDDUAQIDBAUGKyxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKcHCBMZHSQoVSRudWxs1QkKCwwNDg8QERJcTlNDb21wb25lbnRzVU5TUkdCXE5TQ29sb3JTcGFjZV8QEk5TQ3VzdG9tQ29sb3JTcGFjZVYkY2xhc3NHMCAwIDAgMUYwIDAgMAAQAYACgAbTFA0VFhcYVU5TSUNDWU5TU3BhY2VJRIADgAUQDNIaDRscV05TLmRhdGFPEQIkAAACJGFwcGwEAAAAbW50clJHQiBYWVogB+EABwAHAA0AFgAgYWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsyhqVgiV/EE04mRPV0eoVggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAABlY3BydAAAAWQAAAAjd3RwdAAAAYgAAAAUclhZWgAAAZwAAAAUZ1hZWgAAAbAAAAAUYlhZWgAAAcQAAAAUclRSQwAAAdgAAAAgY2hhZAAAAfgAAAAsYlRSQwAAAdgAAAAgZ1RSQwAAAdgAAAAgZGVzYwAAAAAAAAALRGlzcGxheSBQMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSBJbmMuLCAyMDE3AABYWVogAAAAAAAA81EAAQAAAAEWzFhZWiAAAAAAAACD3wAAPb////+7WFlaIAAAAAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgAABELAADIuXBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeTAAD9kP//+6L///2jAAAD3AAAwG6ABNIeHyAhWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMgIiNWTlNEYXRhWE5TT2JqZWN00h4fJSZcTlNDb2xvclNwYWNloicjXE5TQ29sb3JTcGFjZdIeHykqV05TQ29sb3KiKSNfEA9OU0tleWVkQXJjaGl2ZXLRLS5Ucm9vdIABAAgAEQAaACMALQAyADcAPwBFAFAAXQBjAHAAhQCMAJQAmwCdAJ8AoQCoAK4AuAC6ALwAvgDDAMsC8wL1AvoDBQMOAxwDIAMnAzADNQNCA0UDUgNXA18DYgN0A3cDfAAAAAAAAAIBAAAAAAAAAC8AAAAAAAAAAAAAAAAAAAN+"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2018-01-15T16:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t10">
+    <title>Create Database in SQLite</title>
+    <effort>144000</effort>
+    <start-constraint-date>2018-01-22T16:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0" g="0" b="0" archive="YnBsaXN0MDDUAQIDBAUGKyxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKcHCBMZHSQoVSRudWxs1QkKCwwNDg8QERJcTlNDb21wb25lbnRzVU5TUkdCXE5TQ29sb3JTcGFjZV8QEk5TQ3VzdG9tQ29sb3JTcGFjZVYkY2xhc3NHMCAwIDAgMUYwIDAgMAAQAYACgAbTFA0VFhcYVU5TSUNDWU5TU3BhY2VJRIADgAUQDNIaDRscV05TLmRhdGFPEQIkAAACJGFwcGwEAAAAbW50clJHQiBYWVogB+EABwAHAA0AFgAgYWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsyhqVgiV/EE04mRPV0eoVggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAABlY3BydAAAAWQAAAAjd3RwdAAAAYgAAAAUclhZWgAAAZwAAAAUZ1hZWgAAAbAAAAAUYlhZWgAAAcQAAAAUclRSQwAAAdgAAAAgY2hhZAAAAfgAAAAsYlRSQwAAAdgAAAAgZ1RSQwAAAdgAAAAgZGVzYwAAAAAAAAALRGlzcGxheSBQMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSBJbmMuLCAyMDE3AABYWVogAAAAAAAA81EAAQAAAAEWzFhZWiAAAAAAAACD3wAAPb////+7WFlaIAAAAAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgAABELAADIuXBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeTAAD9kP//+6L///2jAAAD3AAAwG6ABNIeHyAhWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMgIiNWTlNEYXRhWE5TT2JqZWN00h4fJSZcTlNDb2xvclNwYWNloicjXE5TQ29sb3JTcGFjZdIeHykqV05TQ29sb3KiKSNfEA9OU0tleWVkQXJjaGl2ZXLRLS5Ucm9vdIABAAgAEQAaACMALQAyADcAPwBFAFAAXQBjAHAAhQCMAJQAmwCdAJ8AoQCoAK4AuAC6ALwAvgDDAMsC8wL1AvoDBQMOAxwDIAMnAzADNQNCA0UDUgNXA18DYgN0A3cDfAAAAAAAAAIBAAAAAAAAAC8AAAAAAAAAAAAAAAAAAAN+"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2018-01-22T16:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t11">
+    <title>Create Dummy Data for Testing</title>
+    <effort>28800</effort>
+    <start-constraint-date>2018-01-29T16:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0" g="0" b="0" archive="YnBsaXN0MDDUAQIDBAUGKyxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKcHCBMZHSQoVSRudWxs1QkKCwwNDg8QERJcTlNDb21wb25lbnRzVU5TUkdCXE5TQ29sb3JTcGFjZV8QEk5TQ3VzdG9tQ29sb3JTcGFjZVYkY2xhc3NHMCAwIDAgMUYwIDAgMAAQAYACgAbTFA0VFhcYVU5TSUNDWU5TU3BhY2VJRIADgAUQDNIaDRscV05TLmRhdGFPEQIkAAACJGFwcGwEAAAAbW50clJHQiBYWVogB+EABwAHAA0AFgAgYWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsyhqVgiV/EE04mRPV0eoVggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAABlY3BydAAAAWQAAAAjd3RwdAAAAYgAAAAUclhZWgAAAZwAAAAUZ1hZWgAAAbAAAAAUYlhZWgAAAcQAAAAUclRSQwAAAdgAAAAgY2hhZAAAAfgAAAAsYlRSQwAAAdgAAAAgZ1RSQwAAAdgAAAAgZGVzYwAAAAAAAAALRGlzcGxheSBQMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSBJbmMuLCAyMDE3AABYWVogAAAAAAAA81EAAQAAAAEWzFhZWiAAAAAAAACD3wAAPb////+7WFlaIAAAAAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgAABELAADIuXBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeTAAD9kP//+6L///2jAAAD3AAAwG6ABNIeHyAhWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMgIiNWTlNEYXRhWE5TT2JqZWN00h4fJSZcTlNDb2xvclNwYWNloicjXE5TQ29sb3JTcGFjZdIeHykqV05TQ29sb3KiKSNfEA9OU0tleWVkQXJjaGl2ZXLRLS5Ucm9vdIABAAgAEQAaACMALQAyADcAPwBFAFAAXQBjAHAAhQCMAJQAmwCdAJ8AoQCoAK4AuAC6ALwAvgDDAMsC8wL1AvoDBQMOAxwDIAMnAzADNQNCA0UDUgNXA18DYgN0A3cDfAAAAAAAAAIBAAAAAAAAAC8AAAAAAAAAAAAAAAAAAAN+"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2018-01-29T16:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t12">
+    <title>Get the Database running live on a machine/server</title>
+    <effort>115200</effort>
+    <start-constraint-date>2018-01-30T16:00:00.000Z</start-constraint-date>
+    <style>
+      <value key="font-fill">
+        <color r="0" g="0" b="0" archive="YnBsaXN0MDDUAQIDBAUGKyxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKcHCBMZHSQoVSRudWxs1QkKCwwNDg8QERJcTlNDb21wb25lbnRzVU5TUkdCXE5TQ29sb3JTcGFjZV8QEk5TQ3VzdG9tQ29sb3JTcGFjZVYkY2xhc3NHMCAwIDAgMUYwIDAgMAAQAYACgAbTFA0VFhcYVU5TSUNDWU5TU3BhY2VJRIADgAUQDNIaDRscV05TLmRhdGFPEQIkAAACJGFwcGwEAAAAbW50clJHQiBYWVogB+EABwAHAA0AFgAgYWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsyhqVgiV/EE04mRPV0eoVggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAABlY3BydAAAAWQAAAAjd3RwdAAAAYgAAAAUclhZWgAAAZwAAAAUZ1hZWgAAAbAAAAAUYlhZWgAAAcQAAAAUclRSQwAAAdgAAAAgY2hhZAAAAfgAAAAsYlRSQwAAAdgAAAAgZ1RSQwAAAdgAAAAgZGVzYwAAAAAAAAALRGlzcGxheSBQMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSBJbmMuLCAyMDE3AABYWVogAAAAAAAA81EAAQAAAAEWzFhZWiAAAAAAAACD3wAAPb////+7WFlaIAAAAAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgAABELAADIuXBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeTAAD9kP//+6L///2jAAAD3AAAwG6ABNIeHyAhWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMgIiNWTlNEYXRhWE5TT2JqZWN00h4fJSZcTlNDb2xvclNwYWNloicjXE5TQ29sb3JTcGFjZdIeHykqV05TQ29sb3KiKSNfEA9OU0tleWVkQXJjaGl2ZXLRLS5Ucm9vdIABAAgAEQAaACMALQAyADcAPwBFAFAAXQBjAHAAhQCMAJQAmwCdAJ8AoQCoAK4AuAC6ALwAvgDDAMsC8wL1AvoDBQMOAxwDIAMnAzADNQNCA0UDUgNXA18DYgN0A3cDfAAAAAAAAAIBAAAAAAAAAC8AAAAAAAAAAAAAAAAAAAN+"/>
+      </value>
+    </style>
+    <start-no-earlier-than>2018-01-30T16:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t19">
+    <title>App Construction</title>
+    <type>group</type>
+    <start-constraint-date>2018-02-05T16:00:00.000Z</start-constraint-date>
+    <child-task idref="t38"/>
+    <child-task idref="t20"/>
+    <child-task idref="t21"/>
+    <child-task idref="t22"/>
+    <child-task idref="t23"/>
+    <child-task idref="t24"/>
+    <start-no-earlier-than>2018-02-05T16:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t20">
+    <title>Home Display</title>
+    <effort>288000</effort>
+    <start-constraint-date>2018-02-05T16:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2018-02-05T16:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t21">
+    <title>Login/Signup</title>
+    <effort>144000</effort>
+    <start-constraint-date>2018-02-19T16:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2018-02-19T16:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t22">
+    <title>Add Person</title>
+    <effort>288000</effort>
+    <start-constraint-date>2018-02-26T16:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2018-02-26T16:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t23">
+    <title>Delete Person</title>
+    <effort>288000</effort>
+    <start-constraint-date>2018-02-26T16:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2018-02-26T16:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t24">
+    <title>Updated Info</title>
+    <effort>144000</effort>
+    <start-constraint-date>2018-03-19T15:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2018-03-19T15:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t28">
+    <title>Spring Break Catchup</title>
+    <effort>144000</effort>
+    <start-constraint-date>2018-03-12T15:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2018-03-12T15:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t30">
+    <title>Beautification</title>
+    <type>group</type>
+    <start-constraint-date>2018-03-26T15:00:00.000Z</start-constraint-date>
+    <child-task idref="t33"/>
+    <child-task idref="t34"/>
+    <child-task idref="t35"/>
+    <start-no-earlier-than>2018-03-26T15:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t33">
+    <title>Colors and Logos</title>
+    <effort>144000</effort>
+    <start-constraint-date>2018-03-26T15:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2018-03-26T15:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t34">
+    <title>UI/UX</title>
+    <effort>288000</effort>
+    <start-constraint-date>2018-04-02T15:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2018-04-02T15:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t35">
+    <title>MulitiPlatforming (iPad &amp; Desktop if Time)</title>
+    <effort>144000</effort>
+    <start-constraint-date>2018-04-16T15:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2018-04-16T15:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t38">
+    <title>Database Integration</title>
+    <effort>1008000</effort>
+    <start-constraint-date>2018-02-05T16:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2018-02-05T16:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t44">
+    <title>Final Prep</title>
+    <type>group</type>
+    <start-constraint-date>2018-04-16T15:00:00.000Z</start-constraint-date>
+    <child-task idref="t47"/>
+    <child-task idref="t46"/>
+    <child-task idref="t48"/>
+    <start-no-earlier-than>2018-04-16T15:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t46">
+    <title>Write Final Paper</title>
+    <effort>230400</effort>
+    <start-constraint-date>2018-04-16T15:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2018-04-16T15:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t47">
+    <title>Make Final Presentation</title>
+    <effort>144000</effort>
+    <start-constraint-date>2018-04-16T15:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2018-04-16T15:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t48">
+    <title>Present</title>
+    <effort>57600</effort>
+    <start-constraint-date>2018-04-26T15:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2018-04-26T15:00:00.000Z</start-no-earlier-than>
+  </task>
+  <critical-path root="-1" enabled="false" resources="false">
+    <color space="srgb" r="1" g="0.5" b="0.5"/>
+  </critical-path>
+</scenario>

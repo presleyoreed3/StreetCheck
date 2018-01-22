@@ -1,10 +1,10 @@
 # StreetCheck
 An app used by law enforcement to supplement their street check log books
 
-##Gantt Chart
+## Gantt Chart
 ![alt text](images/streetCheckGantt.png)
 
-##Use Cases
+## Use Cases
 	1. As a user who wants to maintain a record of appearance would like to be able to store a profile photo.
 	2. As a user who may need to update information would like to be abkle to change and update all of my fields.
 	3. As a user who would like to keep my data secure would like to have a password/passcode that keeps my app secure.

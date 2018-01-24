@@ -15,3 +15,6 @@ An app used by law enforcement to supplement their street check log books
 8. As a user who wants to be compliant with regulations would like to be able to view said regulations in-app.
 9. As a user who would like to monitor individuals connections would like to be able to create an "organization" of multiple individuals.
 10. As a user in order to have the most data possible would like to have an individual notes section for each individual as well as a global generic note area.
+
+## Logo Mock Up
+![alt text](images/shieldUIMockUp.png)

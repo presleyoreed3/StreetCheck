@@ -2,7 +2,7 @@
 An app used by law enforcement to supplement their street check log books
 
 ## Gantt Chart
-![alt text](images/streetCheckGantt.png)
+![alt text](readmeImages/streetCheckGantt.png)
 
 ## Use Cases
 1. As a user who wants to maintain a record of appearance would like to be able to store a profile photo.
@@ -16,5 +16,9 @@ An app used by law enforcement to supplement their street check log books
 9. As a user who would like to monitor individuals connections would like to be able to create an "organization" of multiple individuals.
 10. As a user in order to have the most data possible would like to have an individual notes section for each individual as well as a global generic note area.
 
+## Schema Diagram
+![alt text](readmeImages/StreetCheck_Schema.png)
+
 ## Logo Mock Up
-![alt text](images/shieldUIMockUp.png)
+![alt text](readmeImages/shieldUIMockUp.png)
+

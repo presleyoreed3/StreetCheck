@@ -17,7 +17,10 @@ An app used by law enforcement to supplement their street check log books
 10. As a user in order to have the most data possible would like to have an individual notes section for each individual as well as a global generic note area.
 
 ## Schema Diagram
-![alt text](readmeImages/StreetCheck_Schema.png)
+![Schema Diagram](readmeImages/StreetCheck_Schema.png)
+
+## ER Diagram
+![ER Diagram](readmeImages/StreetCheck_ER.png)
 
 ## UI Mock Up
 ![Main Page](readmeImages/main-mockup.png)

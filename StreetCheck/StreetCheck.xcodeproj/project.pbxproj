@@ -14,6 +14,7 @@
 		2B12CCEF2024DF93005C5ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B12CCED2024DF93005C5ACD /* LaunchScreen.storyboard */; };
 		2B12CCFA2024DF94005C5ACD /* StreetCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CCF92024DF94005C5ACD /* StreetCheckTests.swift */; };
 		2B12CD052024DF94005C5ACD /* StreetCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CD042024DF94005C5ACD /* StreetCheckUITests.swift */; };
+		2B12CD132024E030005C5ACD /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CD122024E030005C5ACD /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2B12CD002024DF94005C5ACD /* StreetCheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreetCheckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B12CD042024DF94005C5ACD /* StreetCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetCheckUITests.swift; sourceTree = "<group>"; };
 		2B12CD062024DF94005C5ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B12CD122024E030005C5ACD /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				2B12CCE42024DF93005C5ACD /* AppDelegate.swift */,
 				2B12CCE62024DF93005C5ACD /* ViewController.swift */,
+				2B12CD122024E030005C5ACD /* Contact.swift */,
 				2B12CCE82024DF93005C5ACD /* Main.storyboard */,
 				2B12CCEB2024DF93005C5ACD /* Assets.xcassets */,
 				2B12CCED2024DF93005C5ACD /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B12CD132024E030005C5ACD /* Contact.swift in Sources */,
 				2B12CCE72024DF93005C5ACD /* ViewController.swift in Sources */,
 				2B12CCE52024DF93005C5ACD /* AppDelegate.swift in Sources */,
 			);

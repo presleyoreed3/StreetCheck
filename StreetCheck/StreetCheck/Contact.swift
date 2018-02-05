@@ -24,11 +24,11 @@ class Contact{
     var eye_color: String?
     var sex: String?
     var address: String?
-    var time_left: Int
+    var time_left: Int?
     var photo: UIImage?
     
     //MARK: Initializer
-    init(first_name: String?, last_name: String?, alias: String?, birthday: String?, MO: String?, height: String?, weight: String?, hair_color: String?, eye_color: String?, sex: String?, address: String?, time_left: Int, photo: UIImage?) {
+    init(first_name: String?, last_name: String?, alias: String?, birthday: String?, MO: String?, height: String?, weight: String?, hair_color: String?, eye_color: String?, sex: String?, address: String?, time_left: Int?, photo: UIImage?) {
         self.first_name = first_name
         self.last_name = last_name
         self.alias = alias

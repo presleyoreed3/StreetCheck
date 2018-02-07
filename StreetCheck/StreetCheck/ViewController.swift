@@ -8,18 +8,45 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
+   
+    
+    
+    @IBOutlet weak var eyeSelectionButton: UIButton!
+    @IBOutlet weak var viewPicker: UIPickerView!
+    let eyeColors = ["Brown", "Blue", "Green", "Hazel", "Grey", "Other"]
+    
     override func viewDidLoad() {
+        
+        viewPicker.delegate = self
+        viewPicker.dataSource = self
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        viewPicker.isHidden = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func eyeSelectionPressed(_ sender: UIButton) {
+        if (viewPicker.isHidden){
+            viewPicker.isHidden = false
+            eyeSelectionButton.isHidden = true
+        }
     }
-
-
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return eyeColors.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return eyeColors[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        eyeSelectionButton.setTitle(eyeColors[row], for: .normal)
+        viewPicker.isHidden = true
+        eyeSelectionButton.isHidden = false
+    }
 }
 

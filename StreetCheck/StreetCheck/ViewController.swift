@@ -13,26 +13,30 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     //MARK: Declarations
     @IBOutlet weak var birthdayField: UITextField!
+    @IBOutlet weak var sexField: UITextField!
+    
     
     @IBOutlet weak var eyeSelectionButton: UIButton!
-    @IBOutlet weak var viewPicker: UIPickerView!
+    //@IBOutlet weak var viewPicker: UIPickerView!
     
     let eyeColors = ["Brown", "Blue", "Green", "Hazel", "Grey", "Other"]
-    let birthdayPicker = UIDatePicker()
     
     //MARK: Load
     override func viewDidLoad() {
-        
-        viewPicker.delegate = self
-        viewPicker.dataSource = self
-        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        viewPicker.isHidden = true
         createDatePicker()
+        
+        sexPicker.delegate = self
+        sexPicker.dataSource = self
+        
+        sexField.inputView = sexPicker
     }
     
     //MARK: Birthday
+    
+    // Birthday Picker
+    let birthdayPicker = UIDatePicker()
     
     func createDatePicker() {
         //toolbar
@@ -40,7 +44,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         toolbar.sizeToFit()
         
         //Done button for Toolbar
-        let done = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
+        let done = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
         toolbar.setItems([done], animated: false)
         
         birthdayField.inputAccessoryView = toolbar
@@ -49,31 +53,40 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         birthdayPicker.datePickerMode = .date
     }
     
-    //MARK: Eyes
-    @IBAction func eyeWasSelected(_ sender: UIButton) {
-        if (viewPicker.isHidden){
-            viewPicker.isHidden = false
-            eyeSelectionButton.isHidden = true
-        }
+    @objc func donePressed(){
+        //Format Date
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        let dateString = formatter.string(from: birthdayPicker.date)
+        
+        birthdayField.text = "\(dateString)"
+        self.view.endEditing(true)
     }
     
+    //MARK: Sex
+    
+    // Sex Array
+    let sexes = ["Male", "Female", "Other"]
+    let sexPicker = UIPickerView()
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return eyeColors.count
+        return sexes.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return eyeColors[row]
+        return sexes[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        eyeSelectionButton.setTitle(eyeColors[row], for: .normal)
-        viewPicker.isHidden = true
-        eyeSelectionButton.isHidden = false
+        sexField.text = sexes[row]
+        sexField.resignFirstResponder()
     }
+    
+    
 }
 

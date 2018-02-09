@@ -8,12 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
     
     //MARK: Declarations
     @IBOutlet weak var birthdayField: UITextField!
     @IBOutlet weak var sexField: UITextField!
+    @IBOutlet weak var photoWindow: UIImageView!
+    @IBOutlet weak var addPhotoButton: UIButton!
     
     
     @IBOutlet weak var eyeSelectionButton: UIButton!
@@ -87,6 +89,31 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         sexField.resignFirstResponder()
     }
     
+    //MARK: Image
+    @IBAction func addPhotoButton(_ sender: UIButton) {
+        //Resigns keyboard
+        sexField.resignFirstResponder()
+        birthdayField.resignFirstResponder()
+        
+        //Creates new image controller
+        let imagePickerController = UIImagePickerController()
+        
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        
+        present(imagePickerController, animated: true, completion: nil)
+        
+    }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
+        dismiss(animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        photoWindow.image = selectedImage
+        dismiss(animated: true, completion: nil)
+    }
 }
 

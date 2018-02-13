@@ -139,12 +139,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addPhotoButton" destination="QeN-dq-srO" id="bzJ-ux-Llq"/>
+                        <outlet property="aliasField" destination="VsR-e8-Vjq" id="Q93-BX-5n7"/>
                         <outlet property="birthdayField" destination="hKK-qJ-WaS" id="6nM-5n-bkf"/>
                         <outlet property="eyeColorField" destination="7xQ-6S-0Ub" id="UZq-kJ-q4Z"/>
                         <outlet property="fNameField" destination="lwa-sd-2Y8" id="iKk-gJ-Lqh"/>
                         <outlet property="hairColorField" destination="Twy-ia-M9a" id="4Zz-S2-Lzg"/>
+                        <outlet property="heightField" destination="6cz-8k-1Hu" id="6kO-6c-jlw"/>
+                        <outlet property="lNameField" destination="ilj-fF-SC9" id="ZgU-Vf-duX"/>
                         <outlet property="photoWindow" destination="YNh-5u-w7b" id="MBL-at-f9t"/>
+                        <outlet property="saveButton" destination="d0g-fi-Eks" id="NIZ-L1-Vwl"/>
                         <outlet property="sexField" destination="aiu-L1-FTx" id="3wF-s0-zIm"/>
+                        <outlet property="weightField" destination="hIS-aH-YdU" id="yD2-mo-5zz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

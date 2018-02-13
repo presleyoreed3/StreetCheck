@@ -13,13 +13,13 @@ class Contact{
     //MARK: Global CID Counter
     
     //MARK: Properties
-    var first_name: String?
-    var last_name: String?
+    var first_name: String
+    var last_name: String
     var alias: String?
-    var birthday: String?
+    var birthday: String
     var MO: String?
-    var height: String?
-    var weight: String?
+    var height: String
+    var weight: String
     var hair_color: String?
     var eye_color: String?
     var sex: String?
@@ -28,7 +28,7 @@ class Contact{
     var photo: UIImage?
     
     //MARK: Initializer
-    init(first_name: String?, last_name: String?, alias: String?, birthday: String?, MO: String?, height: String?, weight: String?, hair_color: String?, eye_color: String?, sex: String?, address: String?, time_left: Int?, photo: UIImage?) {
+    init(first_name: String, last_name: String, alias: String?, birthday: String, MO: String?, height: String, weight: String, hair_color: String?, eye_color: String?, sex: String?, address: String?, time_left: Int?, photo: UIImage?) {
         self.first_name = first_name
         self.last_name = last_name
         self.alias = alias

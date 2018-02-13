@@ -7,31 +7,32 @@
 //
 
 import UIKit
+import os.log
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
+UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
     
     //MARK: Declarations
     @IBOutlet weak var birthdayField: UITextField!
-    @IBOutlet weak var sexField: UITextField!
     @IBOutlet weak var photoWindow: UIImageView!
     @IBOutlet weak var addPhotoButton: UIButton!
+    @IBOutlet weak var eyeColorField: UITextField!
+    @IBOutlet weak var hairColorField: UITextField!
+    @IBOutlet weak var sexField: UITextField!
     
-    
-    @IBOutlet weak var eyeSelectionButton: UIButton!
-    //@IBOutlet weak var viewPicker: UIPickerView!
-    
-    let eyeColors = ["Brown", "Blue", "Green", "Hazel", "Grey", "Other"]
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     //MARK: Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //Draws the birthday field
         createDatePicker()
         
+        // Draws the sex field
         sexPicker.delegate = self
         sexPicker.dataSource = self
-        
         sexField.inputView = sexPicker
     }
     
@@ -70,16 +71,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     // Sex Array
     let sexes = ["Male", "Female", "Other"]
-    let sexPicker = UIPickerView()
+    var sexPicker = UIPickerView()
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in sexPiceker: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return sexes.count
     }
-    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return sexes[row]
     }
@@ -89,10 +89,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         sexField.resignFirstResponder()
     }
     
+    //MARK: Eye Color
+    let eyeColors = ["Brown", "Blue", "Green", "Hazel", "Grey", "Other"]
+    
+    
+    
     //MARK: Image
     @IBAction func addPhotoButton(_ sender: UIButton) {
         //Resigns keyboard
-        sexField.resignFirstResponder()
         birthdayField.resignFirstResponder()
         
         //Creates new image controller

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import os.log
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
 UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -15,36 +14,13 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: Declarations
     @IBOutlet weak var fNameField: UITextField!
-    @IBOutlet weak var lNameField: UITextField!
-    @IBOutlet weak var aliasField: UITextField!
     @IBOutlet weak var birthdayField: UITextField!
     @IBOutlet weak var photoWindow: UIImageView!
     @IBOutlet weak var addPhotoButton: UIButton!
     @IBOutlet weak var eyeColorField: UITextField!
     @IBOutlet weak var hairColorField: UITextField!
     @IBOutlet weak var sexField: UITextField!
-    @IBOutlet weak var heightField: UITextField!
-    @IBOutlet weak var weightField: UITextField!
     
-    //MARK: Navigation
-    @IBOutlet weak var saveButton: UIBarButtonItem!
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        guard let button = sender as? UIBarButtonItem, button === saveButton else{
-            os_log("The save button was not pressed, cancelling.", log: OSLog.default, type: .debug)
-            return
-        }
-        
-        let f_name = fNameField.text
-        let l_name = lNameField.text
-        let alias = aliasField.text
-        let birthday = birthday.date
-        let sex = sexField.text
-        let eye = eyeColorField.text
-        let hair = hairColorField.text
-        let height = heightField.text
-        
-        super.prepare(for: segue, sender: sender)
-    }
     
     //MARK: Load
     override func viewDidLoad() {
@@ -58,6 +34,25 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         sexPicker.dataSource = self
         sexField.inputView = sexPicker
     }
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+     guard let button = sender as? UIBarButtonItem, button === saveButton else{
+     os_log("The save button was not pressed, cancelling.", log: OSLog.default, type: .debug)
+     return
+     }
+     
+     //        let f_name = fNameField.text
+     //        let l_name = lNameField.text
+     //        let alias = aliasField.text
+     //        let birthday = birthdayField.text
+     //        let sex = sexField.text
+     //        let eye = eyeColorField.text
+     //        let hair = hairColorField.text
+     //        let height = heightField.text
+     
+     super.prepare(for: segue, sender: sender)
+     }
     
     //MARK: Birthday
     

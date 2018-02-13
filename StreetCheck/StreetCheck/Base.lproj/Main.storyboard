@@ -98,19 +98,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="black" text="MO" translatesAutoresizingMaskIntoConstraints="NO" id="MDn-N7-e6p">
-                                <rect key="frame" x="8" y="404" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92614556349999999" green="0.92614556349999999" blue="0.92614556349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <inset key="scrollIndicatorInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6cz-8k-1Hu">
                                 <rect key="frame" x="16" y="336" width="161" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -127,6 +114,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="black" text="MO" translatesAutoresizingMaskIntoConstraints="NO" id="MDn-N7-e6p">
+                                <rect key="frame" x="16" y="374" width="343" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92614556349999999" green="0.92614556349999999" blue="0.92614556349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -139,16 +139,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addPhotoButton" destination="QeN-dq-srO" id="bzJ-ux-Llq"/>
-                        <outlet property="aliasField" destination="VsR-e8-Vjq" id="QGy-w1-YUS"/>
+                        <outlet property="birthdayField" destination="hKK-qJ-WaS" id="6nM-5n-bkf"/>
                         <outlet property="eyeColorField" destination="7xQ-6S-0Ub" id="UZq-kJ-q4Z"/>
-                        <outlet property="fNameField" destination="lwa-sd-2Y8" id="PAj-Ef-1y4"/>
+                        <outlet property="fNameField" destination="lwa-sd-2Y8" id="iKk-gJ-Lqh"/>
                         <outlet property="hairColorField" destination="Twy-ia-M9a" id="4Zz-S2-Lzg"/>
-                        <outlet property="heightField" destination="6cz-8k-1Hu" id="cpp-tf-9jv"/>
-                        <outlet property="lNameField" destination="ilj-fF-SC9" id="Ocr-XV-YvD"/>
                         <outlet property="photoWindow" destination="YNh-5u-w7b" id="MBL-at-f9t"/>
-                        <outlet property="saveButton" destination="d0g-fi-Eks" id="xhf-AL-gY2"/>
                         <outlet property="sexField" destination="aiu-L1-FTx" id="3wF-s0-zIm"/>
-                        <outlet property="weightField" destination="hIS-aH-YdU" id="dWa-zg-CGk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

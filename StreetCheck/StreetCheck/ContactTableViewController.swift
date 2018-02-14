@@ -51,6 +51,8 @@ class ContactTableViewController: UITableViewController {
         cell.ageLabel.text = contact.birthday
         cell.heightLabel.text = contact.height
         cell.weightLabel.text = contact.weight
+        cell.photoCell.image = contact.photo
+        
         
         return cell
     }
@@ -105,7 +107,7 @@ class ContactTableViewController: UITableViewController {
     //MARK: Privte Methods
     private func loadContacts(){
         let contact1 = Contact(first_name: "Presley", middle_name: "Orelle", last_name: "Reed III", alias: "Presso", birthday: "December 18, 1995", MO: "None", height: "6.2", weight: "230", hair_color: "Brown", eye_color: "Brown", sex: "Male", address: nil, time_left: nil, photo: nil)
-        let contact2 = Contact(first_name: "Meredith", middle_name: "Demming", last_name: "Reed", alias: "Mer", birthday: "March 8, 1991", MO: "None", height: "5.6", weight: "100", hair_color: "Brown", eye_color: "Hazel", sex: "Female", address: nil, time_left: nil, photo: nil)
+        let contact2 = Contact(first_name: "Meredith", middle_name: "Demming", last_name: "Reed", alias: "Mer", birthday: "March 8, 1991", MO: "None", height: "5.6", weight: "100", hair_color: "Brown", eye_color: "Hazel", sex: "Female", address: nil, time_left: nil, photo: UIImage(named: "Default Contact Image"))
         contacts += [contact1, contact2]
     }
     

@@ -17,6 +17,7 @@ class ContactTableViewCell: UITableViewCell {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var photoCell: UIImageView!
     
     
 

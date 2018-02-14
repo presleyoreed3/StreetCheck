@@ -142,7 +142,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Contact" id="iDt-Pr-uWc">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="Iqq-s2-Hwd"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yeS-W8-ICd"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yeS-W8-ICd">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="mG8-Kf-P44"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="d0g-fi-Eks">
                             <connections>
                                 <segue destination="Svd-nb-Oec" kind="unwind" unwindAction="unwindToMealListWithSender:" id="6vQ-hF-U37"/>
@@ -253,6 +257,7 @@
                                     <outlet property="firstNameLabel" destination="brX-1R-bfQ" id="yEx-3u-Nme"/>
                                     <outlet property="heightLabel" destination="oBG-Z1-CT5" id="MiN-HF-bLk"/>
                                     <outlet property="lastNameLabel" destination="c2e-Ga-XSy" id="0Vn-7f-EwK"/>
+                                    <outlet property="photoCell" destination="Mlp-5W-fsX" id="3jg-Lh-cgP"/>
                                     <outlet property="weightLabel" destination="Xc8-lP-QQA" id="zk1-hM-xcE"/>
                                 </connections>
                             </tableViewCell>
@@ -266,6 +271,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Kh9-cc-bHw"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xhe-2j-2pv">
                             <connections>
+                                <action selector="unwindToMealListWithSender:" destination="Bcn-UC-aJR" id="ef3-T4-ptD"/>
                                 <segue destination="gTY-Qc-jae" kind="presentation" identifier="AddItem" id="pef-bQ-FtC"/>
                             </connections>
                         </barButtonItem>

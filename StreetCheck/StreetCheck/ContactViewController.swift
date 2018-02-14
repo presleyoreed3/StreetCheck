@@ -40,8 +40,15 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         sexField.inputView = sexPicker
     }
     
+    //MARK: Navigation
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // Contact to add to file
     var contact: Contact?
     
+    // Save button that returns to home screen
     @IBOutlet weak var saveButton: UIBarButtonItem!
      override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
@@ -64,17 +71,11 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         let weight = weightField?.text
         let photo = photoWindow?.image
         
-        print(f_name)
-        print(l_name)
-        print(birthday)
-        print(alias)
-        print(height)
-        print(weight)
 
-        
         contact = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: nil, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, address: nil, time_left: nil, photo: photo!)
         
-     }
+    }
+    
     
     //MARK: Birthday
     
@@ -159,5 +160,8 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         photoWindow.image = selectedImage
         dismiss(animated: true, completion: nil)
     }
+    
+    //Mark: Private Methods
+    
 }
 

@@ -15,6 +15,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK: Declarations
     @IBOutlet weak var fNameField: UITextField!
+    @IBOutlet weak var mNameField: UITextField!
     @IBOutlet weak var lNameField: UITextField!
     @IBOutlet weak var aliasField: UITextField!
     @IBOutlet weak var birthdayField: UITextField!
@@ -52,6 +53,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         }
         
         let f_name = fNameField.text
+        let m_name = mNameField.text
         let l_name = lNameField.text
         let alias = aliasField?.text
         let birthday = birthdayField.text
@@ -70,7 +72,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         print(weight)
 
         
-        contact = Contact(first_name: f_name!, last_name: l_name!, alias: alias, birthday: birthday!, MO: nil, height: height!, weight: weight!, hair_color: nil, eye_color: nil, sex: nil, address: nil, time_left: nil, photo: nil)
+        contact = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: nil, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, address: nil, time_left: nil, photo: photo!)
         
      }
     

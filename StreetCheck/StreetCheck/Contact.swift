@@ -14,6 +14,7 @@ class Contact{
     
     //MARK: Properties
     var first_name: String
+    var middle_name: String?
     var last_name: String
     var alias: String?
     var birthday: String
@@ -28,8 +29,9 @@ class Contact{
     var photo: UIImage?
     
     //MARK: Initializer
-    init(first_name: String, last_name: String, alias: String?, birthday: String, MO: String?, height: String?, weight: String?, hair_color: String?, eye_color: String?, sex: String?, address: String?, time_left: Int?, photo: UIImage?) {
+    init(first_name: String, middle_name: String?, last_name: String, alias: String?, birthday: String, MO: String?, height: String?, weight: String?, hair_color: String?, eye_color: String?, sex: String?, address: String?, time_left: Int?, photo: UIImage?) {
         self.first_name = first_name
+        self.middle_name = middle_name
         self.last_name = last_name
         self.alias = alias
         self.birthday = birthday
@@ -42,7 +44,6 @@ class Contact{
         self.address = address
         self.time_left = time_left
         self.photo = photo
-        
     }
     
 }

@@ -108,4 +108,16 @@ class ContactTableViewController: UITableViewController {
         let contact2 = Contact(first_name: "Meredith", last_name: "Reed", alias: "Mer", birthday: "March 8, 1991", MO: "None", height: "5.6", weight: "100", hair_color: "Brown", eye_color: "Hazel", sex: "Female", address: nil, time_left: nil, photo: nil)
         contacts += [contact1, contact2]
     }
+    
+    //MARK: Actions
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? ViewController, let contact = sourceViewController.contact {
+            //Adds a new contact
+            let newIndexPath = IndexPath(row: contacts.count, section: 0)
+            
+            contacts.append(contact)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+    
 }

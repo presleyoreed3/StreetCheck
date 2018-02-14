@@ -135,24 +135,29 @@
                     <navigationItem key="navigationItem" title="Add Contact" id="iDt-Pr-uWc">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="Iqq-s2-Hwd"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yeS-W8-ICd"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="d0g-fi-Eks"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="d0g-fi-Eks">
+                            <connections>
+                                <segue destination="Svd-nb-Oec" kind="unwind" unwindAction="unwindToMealListWithSender:" id="6vQ-hF-U37"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addPhotoButton" destination="QeN-dq-srO" id="bzJ-ux-Llq"/>
-                        <outlet property="aliasField" destination="VsR-e8-Vjq" id="Q93-BX-5n7"/>
+                        <outlet property="aliasField" destination="VsR-e8-Vjq" id="jIv-h0-6Up"/>
                         <outlet property="birthdayField" destination="hKK-qJ-WaS" id="6nM-5n-bkf"/>
                         <outlet property="eyeColorField" destination="7xQ-6S-0Ub" id="UZq-kJ-q4Z"/>
                         <outlet property="fNameField" destination="lwa-sd-2Y8" id="iKk-gJ-Lqh"/>
                         <outlet property="hairColorField" destination="Twy-ia-M9a" id="4Zz-S2-Lzg"/>
-                        <outlet property="heightField" destination="6cz-8k-1Hu" id="6kO-6c-jlw"/>
+                        <outlet property="heightField" destination="6cz-8k-1Hu" id="ZAY-4S-QUZ"/>
                         <outlet property="lNameField" destination="ilj-fF-SC9" id="ZgU-Vf-duX"/>
                         <outlet property="photoWindow" destination="YNh-5u-w7b" id="MBL-at-f9t"/>
-                        <outlet property="saveButton" destination="d0g-fi-Eks" id="NIZ-L1-Vwl"/>
+                        <outlet property="saveButton" destination="d0g-fi-Eks" id="L3h-yn-aLC"/>
                         <outlet property="sexField" destination="aiu-L1-FTx" id="3wF-s0-zIm"/>
-                        <outlet property="weightField" destination="hIS-aH-YdU" id="yD2-mo-5zz"/>
+                        <outlet property="weightField" destination="hIS-aH-YdU" id="Wcx-2h-SWX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="Svd-nb-Oec" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1450" y="132"/>
         </scene>

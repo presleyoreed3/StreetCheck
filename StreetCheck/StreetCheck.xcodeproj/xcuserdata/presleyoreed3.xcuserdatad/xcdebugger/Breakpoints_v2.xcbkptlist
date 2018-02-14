@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StreetCheck/ContactViewController.swift"
+            timestampString = "540259791.497334"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StreetCheck.ViewController.lNameField.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITextField&gt;"
+                  moduleName = "StreetCheck"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/presleyoreed3/Desktop/StreetCheck/StreetCheck/StreetCheck/ContactViewController.swift"
+                  timestampString = "540259738.098768"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "79">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StreetCheck.ViewController.lNameField.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITextField&gt;"
+                  moduleName = "StreetCheck"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/presleyoreed3/Desktop/StreetCheck/StreetCheck/StreetCheck/ContactViewController.swift"
+                  timestampString = "540259738.101934"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StreetCheck.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; StreetCheck.ViewController"
+                  moduleName = "StreetCheck"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/presleyoreed3/Desktop/StreetCheck/StreetCheck/StreetCheck/ContactViewController.swift"
+                  timestampString = "540259738.1050121"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "238">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StreetCheck.ViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;StreetCheck.ViewController&gt;"
+                  moduleName = "StreetCheck"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/presleyoreed3/Desktop/StreetCheck/StreetCheck/StreetCheck/ContactViewController.swift"
+                  timestampString = "540259738.107916"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "168">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

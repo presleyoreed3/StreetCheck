@@ -53,17 +53,24 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
         let f_name = fNameField.text
         let l_name = lNameField.text
-        let alias = aliasField.text
+        let alias = aliasField?.text
         let birthday = birthdayField.text
         let sex = sexField.text
-        let eye = eyeColorField.text
-        let hair = hairColorField.text
-        let height = heightField.text
-        let weight = weightField.text
+        let eye = eyeColorField?.text
+        let hair = hairColorField?.text
+        let height = heightField?.text
+        let weight = weightField?.text
+        let photo = photoWindow?.image
+        
+        print(f_name)
+        print(l_name)
+        print(birthday)
+        print(alias)
+        print(height)
+        print(weight)
 
         
-                contact = Contact(first_name: f_name!, last_name: l_name!, alias: alias!, birthday: birthday!, MO: nil, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, address: nil, time_left: nil, photo: nil)
-        
+        contact = Contact(first_name: f_name!, last_name: l_name!, alias: alias, birthday: birthday!, MO: nil, height: height!, weight: weight!, hair_color: nil, eye_color: nil, sex: nil, address: nil, time_left: nil, photo: nil)
         
      }
     

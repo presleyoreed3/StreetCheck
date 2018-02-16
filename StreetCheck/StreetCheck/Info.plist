@@ -43,5 +43,7 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allows you to add photos to a contact page.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Allows you to display your current location relative to the address associated with an individual</string>
 </dict>
 </plist>

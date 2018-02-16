@@ -17,16 +17,19 @@ class Contact{
     var middle_name: String?
     var last_name: String
     var alias: String?
+    var photo: UIImage?
+    var sex: String?
     var birthday: String
-    var MO: String?
-    var height: String?
-    var weight: String?
     var hair_color: String?
     var eye_color: String?
-    var sex: String?
+    var height: String?
+    var weight: String?
+    var ethnicity: String?
+    var dis_marks: String?
+    var MO: String?
     var address: String?
     var time_left: Int?
-    var photo: UIImage?
+    
     
     //MARK: Initializer
     init(first_name: String, middle_name: String?, last_name: String, alias: String?, birthday: String, MO: String?, height: String?, weight: String?, hair_color: String?, eye_color: String?, sex: String?, address: String?, time_left: Int?, photo: UIImage?) {

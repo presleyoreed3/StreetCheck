@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B12CCE52024DF93005C5ACD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CCE42024DF93005C5ACD /* AppDelegate.swift */; };
-		2B12CCE72024DF93005C5ACD /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CCE62024DF93005C5ACD /* ContactViewController.swift */; };
+		2B12CCE72024DF93005C5ACD /* ContactAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CCE62024DF93005C5ACD /* ContactAddController.swift */; };
 		2B12CCEA2024DF93005C5ACD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B12CCE82024DF93005C5ACD /* Main.storyboard */; };
 		2B12CCEC2024DF93005C5ACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B12CCEB2024DF93005C5ACD /* Assets.xcassets */; };
 		2B12CCEF2024DF93005C5ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B12CCED2024DF93005C5ACD /* LaunchScreen.storyboard */; };
@@ -17,6 +17,7 @@
 		2B12CD132024E030005C5ACD /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CD122024E030005C5ACD /* Contact.swift */; };
 		2B490AAE203101910045DE05 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B490AAD203101910045DE05 /* ContactTableViewCell.swift */; };
 		2B490AB0203103D40045DE05 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B490AAF203103D40045DE05 /* ContactTableViewController.swift */; };
+		2B9F887C203759D700FFA03A /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9F887B203759D700FFA03A /* ContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 /* Begin PBXFileReference section */
 		2B12CCE12024DF93005C5ACD /* StreetCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B12CCE42024DF93005C5ACD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2B12CCE62024DF93005C5ACD /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		2B12CCE62024DF93005C5ACD /* ContactAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddController.swift; sourceTree = "<group>"; };
 		2B12CCE92024DF93005C5ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B12CCEB2024DF93005C5ACD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B12CCEE2024DF93005C5ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		2B12CD122024E030005C5ACD /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		2B490AAD203101910045DE05 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		2B490AAF203103D40045DE05 /* ContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
+		2B9F887B203759D700FFA03A /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				2B12CCE42024DF93005C5ACD /* AppDelegate.swift */,
-				2B12CCE62024DF93005C5ACD /* ContactViewController.swift */,
+				2B12CCE62024DF93005C5ACD /* ContactAddController.swift */,
+				2B9F887B203759D700FFA03A /* ContactViewController.swift */,
 				2B490AAD203101910045DE05 /* ContactTableViewCell.swift */,
 				2B490AAF203103D40045DE05 /* ContactTableViewController.swift */,
 				2B12CD122024E030005C5ACD /* Contact.swift */,
@@ -271,8 +274,9 @@
 				2B490AAE203101910045DE05 /* ContactTableViewCell.swift in Sources */,
 				2B12CD132024E030005C5ACD /* Contact.swift in Sources */,
 				2B490AB0203103D40045DE05 /* ContactTableViewController.swift in Sources */,
-				2B12CCE72024DF93005C5ACD /* ContactViewController.swift in Sources */,
+				2B12CCE72024DF93005C5ACD /* ContactAddController.swift in Sources */,
 				2B12CCE52024DF93005C5ACD /* AppDelegate.swift in Sources */,
+				2B9F887C203759D700FFA03A /* ContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

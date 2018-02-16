@@ -381,10 +381,10 @@
             </objects>
             <point key="canvasLocation" x="596.79999999999995" y="131.52709359605913"/>
         </scene>
-        <!--View Controller-->
+        <!--View-->
         <scene sceneID="EgQ-BH-dIV">
             <objects>
-                <viewController id="VP2-4W-mWq" sceneMemberID="viewController">
+                <viewController title="View" id="VP2-4W-mWq" customClass="ContactViewController" customModule="StreetCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZMp-ij-OSS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -394,9 +394,15 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <navigationItem key="navigationItem" id="l2s-4b-xuG">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="Lsz-kf-SD0"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="tfb-0b-4R5">
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="sbl-Vx-7lm">
+                            <connections>
+                                <action selector="doneViewing:" destination="VP2-4W-mWq" id="wrI-Hy-etk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akw-ky-vLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

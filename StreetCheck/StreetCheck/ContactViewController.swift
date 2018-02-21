@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class ContactViewController: UIViewController {
     
@@ -21,7 +22,7 @@ class ContactViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(contactOnDisplay)
+        //print(contactOnDisplay)
         // Do any additional setup after loading the view.
         f_nameLabel.text = contactOnDisplay?.first_name
         m_nameLabel.text = contactOnDisplay?.middle_name
@@ -30,11 +31,6 @@ class ContactViewController: UIViewController {
     }
     
     // MARK: Navigation
-    @IBAction func closeDetailView(_ sender: UIBarButtonItem) {
-        print("I was pressed")
-        dismiss(animated: true, completion: nil)
-    }
-    
     
     
 }

@@ -425,11 +425,6 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="tfb-0b-4R5">
-                        <barButtonItem key="leftBarButtonItem" title="Done" id="sbl-Vx-7lm">
-                            <connections>
-                                <action selector="closeDetailView:" destination="VP2-4W-mWq" id="8Bs-dc-fbJ"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="Edr-yL-shq">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="show" identifier="editDetails" id="C4f-0h-jgv"/>

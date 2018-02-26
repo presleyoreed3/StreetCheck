@@ -8,8 +8,10 @@
 
 import UIKit
 import os.log
+import MapKit
+import CoreLocation
 
-class ContactViewController: UIViewController {
+class ContactViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: Declarations
     @IBOutlet weak var scrollView: UIScrollView!
@@ -27,14 +29,16 @@ class ContactViewController: UIViewController {
     @IBOutlet weak var ethnicity_label: UILabel!
     @IBOutlet weak var dis_marksLabel: UITextView!
     @IBOutlet weak var mo_label: UITextView!
+    @IBOutlet weak var mapView: MKMapView!
     
 
     var contactOnDisplay: Contact?
     
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize.height = 1024
+        scrollView.contentSize.height = 1500
 
         //print(contactOnDisplay)
         // Do any additional setup after loading the view.
@@ -55,6 +59,24 @@ class ContactViewController: UIViewController {
         mo_label.text = contactOnDisplay?.MO
         mo_label.isUserInteractionEnabled = false
     
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locations[0]
+        
+        let center = location.coordinate
+        
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region = MKCoordinateRegion(center: center , span: span)
+        
+        mapView.setRegion(region, animated: true)
+        mapView.showsUserLocation = true
     }
     
     // MARK: Navigation

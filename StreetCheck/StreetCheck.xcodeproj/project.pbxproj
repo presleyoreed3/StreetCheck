@@ -17,6 +17,7 @@
 		2B12CD132024E030005C5ACD /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CD122024E030005C5ACD /* Contact.swift */; };
 		2B490AAE203101910045DE05 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B490AAD203101910045DE05 /* ContactTableViewCell.swift */; };
 		2B490AB0203103D40045DE05 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B490AAF203103D40045DE05 /* ContactTableViewController.swift */; };
+		2B6109E820449F36003953B2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6109E720449F36003953B2 /* MapKit.framework */; };
 		2B9F887C203759D700FFA03A /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9F887B203759D700FFA03A /* ContactViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		2B12CD122024E030005C5ACD /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		2B490AAD203101910045DE05 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		2B490AAF203103D40045DE05 /* ContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
+		2B6109E720449F36003953B2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2B9F887B203759D700FFA03A /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B6109E820449F36003953B2 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +92,7 @@
 				2B12CCF82024DF94005C5ACD /* StreetCheckTests */,
 				2B12CD032024DF94005C5ACD /* StreetCheckUITests */,
 				2B12CCE22024DF93005C5ACD /* Products */,
+				2B6109E620449F36003953B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +139,14 @@
 				2B12CD062024DF94005C5ACD /* Info.plist */,
 			);
 			path = StreetCheckUITests;
+			sourceTree = "<group>";
+		};
+		2B6109E620449F36003953B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B6109E720449F36003953B2 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +218,11 @@
 					2B12CCE02024DF93005C5ACD = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					2B12CCF42024DF94005C5ACD = {
 						CreatedOnToolsVersion = 9.2;

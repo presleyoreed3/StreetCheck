@@ -32,7 +32,7 @@ class Contact{
     
     
     //MARK: Initializer
-    init(first_name: String, middle_name: String?, last_name: String, alias: String?, birthday: String, MO: String?, height: String?, weight: String?, hair_color: String?, eye_color: String?, sex: String?, address: String?, time_left: Int?, photo: UIImage?) {
+    init(first_name: String, middle_name: String?, last_name: String, alias: String?, birthday: String, MO: String?, height: String?, weight: String?, hair_color: String?, eye_color: String?, sex: String?, ethnicity: String?, dis_marks: String?, address: String?, time_left: Int?, photo: UIImage?) {
         self.first_name = first_name
         self.middle_name = middle_name
         self.last_name = last_name
@@ -44,6 +44,8 @@ class Contact{
         self.hair_color = hair_color
         self.eye_color = eye_color
         self.sex = sex
+        self.ethnicity = ethnicity
+        self.dis_marks = dis_marks
         self.address = address
         self.time_left = time_left
         self.photo = photo

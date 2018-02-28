@@ -67,8 +67,8 @@ class ContactTableViewController: UITableViewController {
     
     //MARK: Privte Methods
     private func loadContacts(){
-        let contact1 = Contact(first_name: "Presley", middle_name: "Orelle", last_name: "Reed III", alias: "Presso", birthday: "December 18, 1995", MO: "None", height: "6.2", weight: "230", hair_color: "Brown", eye_color: "Brown", sex: "Male", ethnicity: "White", dis_marks: "Scar on both eyebrows and bottom of the chin", address: nil, time_left: nil, photo: nil)
-        let contact2 = Contact(first_name: "Meredith", middle_name: "Demming", last_name: "Reed", alias: "Mer", birthday: "March 8, 1991", MO: "None", height: "5.6", weight: "100", hair_color: "Brown", eye_color: "Hazel", sex: "Female", ethnicity: "White", dis_marks: "None", address: nil, time_left: nil, photo: UIImage(named: "Default Contact Image"))
+        let contact1 = Contact(first_name: "Presley", middle_name: "Orelle", last_name: "Reed III", alias: "Presso", birthday: "December 18, 1995", MO: "None", height: "6.2", weight: "230", hair_color: "Brown", eye_color: "Brown", sex: "Male", ethnicity: "White", dis_marks: "Scar on both eyebrows and bottom of the chin", address: "3755 La Cienega Blvd, Los Angeles CA, 90048", time_left: nil, photo: nil)
+        let contact2 = Contact(first_name: "Meredith", middle_name: "Demming", last_name: "Reed", alias: "Mer", birthday: "March 8, 1991", MO: "None", height: "5.6", weight: "100", hair_color: "Brown", eye_color: "Hazel", sex: "Female", ethnicity: "White", dis_marks: "None", address: "219 N. Tacoma Ave Tacoma, WA 98403", time_left: nil, photo: UIImage(named: "Default Contact Image"))
         contacts += [contact1, contact2]
     }
     

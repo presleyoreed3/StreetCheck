@@ -81,5 +81,8 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: Navigation
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? ContactEditController
+        destination?.contactToEdit = contactOnDisplay
+    }
 }

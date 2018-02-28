@@ -27,8 +27,8 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var heightField: UITextField!
     @IBOutlet weak var weightField: UITextField!
     @IBOutlet weak var ethnicityField: UITextField!
-    @IBOutlet weak var dist_marksField: UITextField!
-    
+    @IBOutlet weak var dist_marksField: UITextView!
+    @IBOutlet weak var addressField: UITextField!
     //MARK: Load
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +50,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // Contact to add to file
     var contact: Contact?
+    
     
     // Save button that returns to home screen
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -75,9 +76,11 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         let photo = photoWindow?.image
         let ethnicity = ethnicityField?.text
         let dist_marks = dist_marksField?.text
+        let address = addressField?.text
+        
         
 
-        contact = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: nil, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: nil, time_left: nil, photo: photo!)
+        contact = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: nil, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address, time_left: nil, photo: photo!)
         
     }
     

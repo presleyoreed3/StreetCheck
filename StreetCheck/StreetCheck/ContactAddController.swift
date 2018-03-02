@@ -29,6 +29,8 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var ethnicityField: UITextField!
     @IBOutlet weak var dist_marksField: UITextView!
     @IBOutlet weak var addressField: UITextField!
+    @IBOutlet weak var moField: UITextView!
+    
     //MARK: Load
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,10 +79,11 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         let ethnicity = ethnicityField?.text
         let dist_marks = dist_marksField?.text
         let address = addressField?.text
+        let mo = moField?.text
         
         
 
-        contact = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: nil, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address, time_left: nil, photo: photo!)
+        contact = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address, time_left: nil, photo: photo!)
         
     }
     

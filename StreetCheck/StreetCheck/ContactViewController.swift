@@ -42,6 +42,11 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
 
         //print(contactOnDisplay)
         // Do any additional setup after loading the view.
+       updateData()
+        
+    }
+    
+    func updateData(){
         f_nameLabel.text = contactOnDisplay?.first_name
         m_nameLabel.text = contactOnDisplay?.middle_name
         l_nameLabel.text = contactOnDisplay?.last_name
@@ -58,12 +63,10 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
         dis_marksLabel.isUserInteractionEnabled = false
         mo_label.text = contactOnDisplay?.MO
         mo_label.isUserInteractionEnabled = false
-    
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -81,8 +84,21 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: Navigation
     
+//    @IBAction func didSelectEdit(_ sender: UIBarButtonItem) {
+//        performSegue(withIdentifier: "editContact", sender: self)
+//    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as? ContactEditController
         destination?.contactToEdit = contactOnDisplay
+    }
+    
+    @IBAction func unwindToContactView(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? ContactEditController, let contact = sourceViewController.contactToEdit {
+            print(contact.first_name)
+            contactOnDisplay = contact
+            updateData()
+            
+        }
     }
 }

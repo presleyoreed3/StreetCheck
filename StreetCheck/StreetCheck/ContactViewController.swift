@@ -71,15 +71,35 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        let location = locations[0]
+//        let location = locations[0]
+//
+//        let center = location.coordinate
+//
+//        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+//        let region = MKCoordinateRegion(center: center , span: span)
+//
+//        mapView.setRegion(region, animated: true)
+//        mapView.showsUserLocation = true
         
-        let center = location.coordinate
+        let address = "219 N. Tacoma Ave. Tacoma, WA 98403"
         
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let region = MKCoordinateRegion(center: center , span: span)
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) -> Void in
+            if((error) != nil){
+                print("Error", error ?? "")
+            }
+            if let placemark = placemarks?.first {
+                let coordinates:CLLocationCoordinate2D = placemark.location!.coordinate
+                print("Lat: \(coordinates.latitude) -- Long: \(coordinates.longitude)")
+                let lat = coordinates.latitude
+                let long = coordinates.longitude
+                self.mapView.setRegion(MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(lat, long), 1500, 1500), animated: true)
+                
+                self.mapView.addAnnotation(<#MKAnnotation#>)
+            }
+        })
         
-        mapView.setRegion(region, animated: true)
-        mapView.showsUserLocation = true
+        
     }
     
     // MARK: Navigation

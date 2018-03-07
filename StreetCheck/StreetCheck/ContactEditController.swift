@@ -32,6 +32,7 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var dist_marksField: UITextView!
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var moField: UITextView!
+    @IBOutlet weak var crimeField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,9 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
         ethnicityField.text = contactToEdit?.ethnicity
         dist_marksField.text = contactToEdit?.ethnicity
         addressField.text = contactToEdit?.address
+        crimeField.text = contactToEdit?.crime
+        
+        photoWindow.contentMode = .scaleAspectFit
         
         
     }
@@ -87,9 +91,10 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let dist_marks = dist_marksField?.text
         let address = addressField?.text
         let mo = moField?.text
+        let crime = crimeField?.text
         
         
-        contactToEdit = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address!, time_left: nil, photo: photo)
+        contactToEdit = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address!, time_left: nil, photo: photo, crime: crime)
         
         
     }

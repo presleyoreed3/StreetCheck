@@ -30,6 +30,8 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var dis_marksLabel: UITextView!
     @IBOutlet weak var mo_label: UITextView!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var crimeLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     
 
     var contactOnDisplay: Contact?
@@ -38,11 +40,13 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize.height = 1500
+        scrollView.contentSize.height = 2300
+        
 
         //print(contactOnDisplay)
         // Do any additional setup after loading the view.
-       updateData()
+        updateData()
+        photoView.contentMode = .scaleAspectFit
         
     }
     
@@ -51,6 +55,7 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
         m_nameLabel.text = contactOnDisplay?.middle_name
         l_nameLabel.text = contactOnDisplay?.last_name
         photoView.image = contactOnDisplay?.photo
+        photoView.isUserInteractionEnabled = true
         alias_label.text = contactOnDisplay?.alias
         bday_label.text = contactOnDisplay?.birthday
         sex_label.text = contactOnDisplay?.sex
@@ -63,6 +68,8 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
         dis_marksLabel.isUserInteractionEnabled = false
         mo_label.text = contactOnDisplay?.MO
         mo_label.isUserInteractionEnabled = false
+        crimeLabel.text = contactOnDisplay?.crime
+        addressLabel.text = contactOnDisplay?.address
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -71,20 +78,11 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-//        let location = locations[0]
-//
-//        let center = location.coordinate
-//
-//        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-//        let region = MKCoordinateRegion(center: center , span: span)
-//
-//        mapView.setRegion(region, animated: true)
-//        mapView.showsUserLocation = true
+        let address = addressLabel.text
         
-        let address = "219 N. Tacoma Ave. Tacoma, WA 98403"
         
         let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) -> Void in
+        geocoder.geocodeAddressString(address!, completionHandler: {(placemarks, error) -> Void in
             if((error) != nil){
                 print("Error", error ?? "")
             }
@@ -93,13 +91,39 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
                 print("Lat: \(coordinates.latitude) -- Long: \(coordinates.longitude)")
                 let lat = coordinates.latitude
                 let long = coordinates.longitude
-                self.mapView.setRegion(MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(lat, long), 1500, 1500), animated: true)
+                let location = CLLocationCoordinate2DMake(lat, long)
+                self.mapView.setRegion(MKCoordinateRegionMakeWithDistance(location, 1500, 1500), animated: true)
                 
-                self.mapView.addAnnotation(<#MKAnnotation#>)
+                
+                let pin = CrimeLocationPin(crime: self.crimeLabel.text!, location: address!, coordinate: location)
+                
+                self.mapView.addAnnotation(pin)
             }
         })
         
         
+    }
+    
+    //MARK: Action
+   
+    @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
+        let imageView = sender.view as! UIImageView
+        let newImageView = UIImageView(image: imageView.image)
+        newImageView.frame = UIScreen.main.bounds
+        newImageView.backgroundColor = .black
+        newImageView.contentMode = .scaleAspectFit
+        newImageView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
+        newImageView.addGestureRecognizer(tap)
+        self.view.addSubview(newImageView)
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
+        self.navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+        sender.view?.removeFromSuperview()
     }
     
     // MARK: Navigation

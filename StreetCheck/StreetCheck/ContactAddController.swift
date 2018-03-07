@@ -30,6 +30,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var dist_marksField: UITextView!
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var moField: UITextView!
+    @IBOutlet weak var crimeField: UITextField!
     
     //MARK: Load
     override func viewDidLoad() {
@@ -42,6 +43,8 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         sexPicker.delegate = self
         sexPicker.dataSource = self
         sexField.inputView = sexPicker
+        
+        photoWindow.contentMode = .scaleAspectFit
     }
     
     //MARK: Navigation
@@ -80,10 +83,11 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         let dist_marks = dist_marksField?.text
         let address = addressField?.text
         let mo = moField?.text
+        let crime = crimeField?.text
         
         
 
-        contact = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address, time_left: nil, photo: photo!)
+        contact = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address, time_left: nil, photo: photo!, crime: crime)
         
     }
     
@@ -149,7 +153,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //MARK: Image
     @IBAction func addPhotoButton(_ sender: UIButton) {
         //Resigns keyboard
-        birthdayField.resignFirstResponder()
+        view.resignFirstResponder()
         
         //Creates new image controller
         let imagePickerController = UIImagePickerController()

@@ -29,10 +29,11 @@ class Contact{
     var MO: String?
     var address: String?
     var time_left: Int?
+    var crime: String?
     
     
     //MARK: Initializer
-    init(first_name: String, middle_name: String?, last_name: String, alias: String?, birthday: String, MO: String?, height: String?, weight: String?, hair_color: String?, eye_color: String?, sex: String?, ethnicity: String?, dis_marks: String?, address: String?, time_left: Int?, photo: UIImage?) {
+    init(first_name: String, middle_name: String?, last_name: String, alias: String?, birthday: String, MO: String?, height: String?, weight: String?, hair_color: String?, eye_color: String?, sex: String?, ethnicity: String?, dis_marks: String?, address: String?, time_left: Int?, photo: UIImage?, crime: String?) {
         self.first_name = first_name
         self.middle_name = middle_name
         self.last_name = last_name
@@ -49,6 +50,7 @@ class Contact{
         self.address = address
         self.time_left = time_left
         self.photo = photo
+        self.crime = crime
     }
     
 }

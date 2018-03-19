@@ -214,7 +214,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="Svd-nb-Oec" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1759.2" y="131.52709359605913"/>
+            <point key="canvasLocation" x="2100" y="132"/>
         </scene>
         <!--Table View-->
         <scene sceneID="GFm-1W-NII">
@@ -224,9 +224,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="OrG-fV-Gbj">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="Bcn-UC-aJR" id="KQe-ay-vao"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactTableViewCell" rowHeight="90" id="BXk-lb-iln" customClass="ContactTableViewCell" customModule="StreetCheck" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BXk-lb-iln" id="izW-yJ-UP6">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.666666666666671"/>
@@ -319,12 +327,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="OrG-fV-Gbj" id="aeR-rq-eQv"/>
                         <segue destination="VP2-4W-mWq" kind="show" identifier="showDetails" id="eeJ-Wa-NKg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6c-nz-vTB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="112.8" y="132.26600985221674"/>
+            <point key="canvasLocation" x="452" y="132"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2u0-Wd-4hp">
@@ -347,7 +356,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Enter"/>
                                 <connections>
-                                    <segue destination="pJy-dr-lAF" kind="show" id="46F-Wl-SV0"/>
+                                    <segue destination="YFC-zf-Dhl" kind="show" id="oam-mW-hnt"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="DdA-pJ-3fH">
@@ -368,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gx-FC-ITM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1618" y="132"/>
+            <point key="canvasLocation" x="-1898" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pYA-rR-WZI">
@@ -386,12 +395,28 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYc-c7-sFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="938.39999999999998" y="131.52709359605913"/>
+            <point key="canvasLocation" x="1281" y="132"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="ACc-RH-x1p">
+            <objects>
+                <viewController title="Settings" id="1Gm-ow-sNU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zd6-XJ-kYI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="nbQ-4J-Tdm"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="RMY-fr-a2v"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jQq-Uw-peq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1898" y="885"/>
         </scene>
         <!--Contact View-->
         <scene sceneID="EgQ-BH-dIV">
             <objects>
-                <viewController title="Contact View" id="VP2-4W-mWq" customClass="ContactViewController" customModule="StreetCheck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Contact View" hidesBottomBarWhenPushed="YES" id="VP2-4W-mWq" customClass="ContactViewController" customModule="StreetCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZMp-ij-OSS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -671,12 +696,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="113" y="1214"/>
+            <point key="canvasLocation" x="455" y="1213"/>
         </scene>
         <!--Edit-->
         <scene sceneID="DPZ-Kc-XON">
             <objects>
-                <viewController storyboardIdentifier="Edit" title="Edit" id="Lpk-u8-fi6" customClass="ContactEditController" customModule="StreetCheck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Edit" title="Edit" hidesBottomBarWhenPushed="YES" id="Lpk-u8-fi6" customClass="ContactEditController" customModule="StreetCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UPQ-ht-tdz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -878,12 +903,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fW3-0G-YkI" sceneMemberID="firstResponder"/>
                 <exit id="tJx-nS-hYZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="938" y="887"/>
+            <point key="canvasLocation" x="1281" y="886"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zGs-Jz-QLi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pJy-dr-lAF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="ZbN-v7-CEK"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Ng8-dO-6HL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3KH-Gw-nGj">
@@ -897,7 +923,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9SI-nO-rVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-750" y="132"/>
+            <point key="canvasLocation" x="-361" y="132"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="WAW-k5-vvw">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="YFC-zf-Dhl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q9v-mJ-wWj">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="pJy-dr-lAF" kind="relationship" relationship="viewControllers" id="P5f-1i-j1l"/>
+                        <segue destination="1Gm-ow-sNU" kind="relationship" relationship="viewControllers" id="JmD-NC-PxA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8yu-rj-4Wn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1154" y="132"/>
         </scene>
     </scenes>
     <resources>

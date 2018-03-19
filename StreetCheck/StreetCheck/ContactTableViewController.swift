@@ -8,11 +8,15 @@
 
 import UIKit
 
-class ContactTableViewController: UITableViewController {
+class ContactTableViewController: UITableViewController, UISearchBarDelegate {
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     
     //MARK: Properties
     var contacts = [Contact]()
     var currentContact: Contact?
+    var currentContactArray = [Contact]()
     
 
     override func viewDidLoad() {
@@ -22,6 +26,27 @@ class ContactTableViewController: UITableViewController {
         
     }
     
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+        guard !searchText.isEmpty else {
+            currentContactArray = contacts;
+            tableView.reloadData()
+            return
+            
+        }
+        currentContactArray = contacts.filter({contacts -> Bool in
+            guard let toSearch = searchBar.text else { return false }
+            return contacts.first_name.contains(toSearch)
+            
+        })
+        tableView.reloadData()
+    }
+    
+    public func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int){
+        
+    }
+    
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,7 +55,7 @@ class ContactTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return contacts.count
+        return currentContactArray.count
     }
 
     
@@ -72,12 +97,20 @@ class ContactTableViewController: UITableViewController {
         let contact1 = Contact(first_name: "Presley", middle_name: "Orelle", last_name: "Reed III", alias: "Presso", birthday: "December 18, 1995", MO: "None", height: "6.2", weight: "230", hair_color: "Brown", eye_color: "Brown", sex: "Male", ethnicity: "White", dis_marks: "Scar on both eyebrows and bottom of the chin", address: "219 N. Tacoma Ave Tacoma, WA 98403", time_left: nil, photo: UIImage(named: "Default Contact Image"), crime: "Being too awesome")
         let contact2 = Contact(first_name: "Meredith", middle_name: "Demming", last_name: "Reed", alias: "Mer", birthday: "March 8, 1991", MO: "None", height: "5.6", weight: "100", hair_color: "Brown", eye_color: "Hazel", sex: "Female", ethnicity: "White", dis_marks: "None", address: "375 La Cienega Blvd, Los Angeles CA, 90048", time_left: nil, photo: UIImage(named: "Default Contact Image"), crime:"Being a great sister")
         contacts += [contact1, contact2]
+        
+        currentContactArray = contacts
     }
     
     private func refresh(){
         self.tableView.reloadData()
     }
 
+    private func setUpSearchBar(){
+        searchBar.delegate = self
+    }
+    
+    
+    
     //MARK: Actions
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? ViewController, let contact = sourceViewController.contact {

@@ -46,7 +46,10 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
         //print(contactOnDisplay)
         // Do any additional setup after loading the view.
         updateData()
-        photoView.contentMode = .scaleAspectFit
+        photoView.contentMode = .scaleAspectFill
+        photoView.clipsToBounds = true
+        
+        
         
     }
     

@@ -8,6 +8,15 @@
 
 import UIKit
 
+enum searchSelectedScope:Int{
+    case name = 0
+    case ethnicity = 1
+    case sex = 2
+    case crime = 3
+    case location = 4
+    
+}
+
 class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -15,36 +24,16 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     
     //MARK: Properties
     var contacts = [Contact]()
+    var constantContacts = [Contact]()
     var currentContact: Contact?
     var currentContactArray = [Contact]()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         loadContacts()
-        
+        self.setUpSearchBar()
     }
-    
-    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
-        guard !searchText.isEmpty else {
-            currentContactArray = contacts;
-            tableView.reloadData()
-            return
-            
-        }
-        currentContactArray = contacts.filter({contacts -> Bool in
-            guard let toSearch = searchBar.text else { return false }
-            return contacts.first_name.contains(toSearch)
-            
-        })
-        tableView.reloadData()
-    }
-    
-    public func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int){
-        
-    }
-    
     
     
     // MARK: - Table view data source
@@ -54,8 +43,7 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return currentContactArray.count
+        return contacts.count
     }
 
     
@@ -96,9 +84,12 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     private func loadContacts(){
         let contact1 = Contact(first_name: "Presley", middle_name: "Orelle", last_name: "Reed III", alias: "Presso", birthday: "December 18, 1995", MO: "None", height: "6.2", weight: "230", hair_color: "Brown", eye_color: "Brown", sex: "Male", ethnicity: "White", dis_marks: "Scar on both eyebrows and bottom of the chin", address: "219 N. Tacoma Ave Tacoma, WA 98403", time_left: nil, photo: UIImage(named: "Default Contact Image"), crime: "Being too awesome")
         let contact2 = Contact(first_name: "Meredith", middle_name: "Demming", last_name: "Reed", alias: "Mer", birthday: "March 8, 1991", MO: "None", height: "5.6", weight: "100", hair_color: "Brown", eye_color: "Hazel", sex: "Female", ethnicity: "White", dis_marks: "None", address: "375 La Cienega Blvd, Los Angeles CA, 90048", time_left: nil, photo: UIImage(named: "Default Contact Image"), crime:"Being a great sister")
-        contacts += [contact1, contact2]
+        let contact3 = Contact(first_name: "Presley", middle_name: "Orelle", last_name: "Reed III", alias: "Presso", birthday: "December 18, 1995", MO: "None", height: "6.2", weight: "230", hair_color: "Brown", eye_color: "Brown", sex: "Male", ethnicity: "White", dis_marks: "Scar on both eyebrows and bottom of the chin", address: "219 N. Tacoma Ave Tacoma, WA 98403", time_left: nil, photo: UIImage(named: "Default Contact Image"), crime: "Being too awesome")
+        let contact4 = Contact(first_name: "Meredith", middle_name: "Demming", last_name: "Reed", alias: "Mer", birthday: "March 8, 1991", MO: "None", height: "5.6", weight: "100", hair_color: "Brown", eye_color: "Hazel", sex: "Female", ethnicity: "White", dis_marks: "None", address: "375 La Cienega Blvd, Los Angeles CA, 90048", time_left: nil, photo: UIImage(named: "Default Contact Image"), crime:"Being a great sister")
+        contacts += [contact1, contact2, contact3, contact4]
         
         currentContactArray = contacts
+        constantContacts = contacts
     }
     
     private func refresh(){
@@ -106,19 +97,63 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     private func setUpSearchBar(){
+        let searchBar = UISearchBar(frame: CGRect(x:0, y:0,width:(UIScreen.main.bounds.width),height: 70))
+        searchBar.showsScopeBar = true
+        searchBar.scopeButtonTitles = ["Name", "Ethnicity", "Sex", "Crime", "Location"]
+        searchBar.selectedScopeButtonIndex = 0
+        self.tableView.tableHeaderView = searchBar
         searchBar.delegate = self
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText.isEmpty {
+            contacts = constantContacts
+            self.tableView.reloadData()
+        }
+        else {
+            filterTableView(ind: searchBar.selectedScopeButtonIndex, text: searchText)
+        }
+    }
+    
+    private func filterTableView(ind:Int, text: String){
+        switch ind {
+        case searchSelectedScope.name.rawValue:
+            contacts = contacts.filter({ contact -> Bool in return contact.first_name.contains(text)})
+            self.tableView.reloadData()
+        case searchSelectedScope.ethnicity.rawValue:
+            print("Search Scope: \(searchSelectedScope.ethnicity.rawValue) ")
+            contacts = contacts.filter({ contact -> Bool in return (contact.ethnicity?.contains(text))!})
+            self.tableView.reloadData()
+        case searchSelectedScope.sex.rawValue:
+            print("Search Scope: \(searchSelectedScope.sex.rawValue) ")
+            contacts = contacts.filter({ contact -> Bool in return (contact.sex?.contains(text))!})
+            self.tableView.reloadData()
+        case searchSelectedScope.crime.rawValue:
+            print("Search Scope: \(searchSelectedScope.crime.rawValue) ")
+            contacts = contacts.filter({ contact -> Bool in return (contact.crime?.contains(text))!})
+            self.tableView.reloadData()
+        case searchSelectedScope.location.rawValue:
+            print("Search Scope: \(searchSelectedScope.location.rawValue) ")
+            contacts = contacts.filter({ contact -> Bool in return (contact.address?.contains(text))!})
+            self.tableView.reloadData()
+        default:
+            print("No Type")
+        }
+    }
     
     
     //MARK: Actions
     @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? ViewController, let contact = sourceViewController.contact {
             //Adds a new contact
-            let newIndexPath = IndexPath(row: contacts.count, section: 0)
+            let newIndexPath = IndexPath(row: currentContactArray.count, section: 0)
             
             contacts.append(contact)
+            constantContacts.append(contact)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
+            currentContactArray = contacts
+            tableView.reloadData()
         }
     }
     
@@ -127,6 +162,9 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
             
             contacts[(tableView.indexPathForSelectedRow?.row)!] = contact
             refresh()
+            currentContactArray = contacts
+            constantContacts = contacts
+            tableView.reloadData()
         }
     }
     

@@ -60,7 +60,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // Save button that returns to home screen
     @IBOutlet weak var saveButton: UIBarButtonItem!
      override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        
+        resignFirstResponder()
         super.prepare(for: segue, sender: sender)
         
         guard let button = sender as? UIBarButtonItem, button === saveButton else {
@@ -68,12 +68,12 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
             return
         }
         
-        let f_name = fNameField.text
-        let m_name = mNameField.text
-        let l_name = lNameField.text
+        let f_name = fNameField?.text
+        let m_name = mNameField?.text
+        let l_name = lNameField?.text
         let alias = aliasField?.text
-        let birthday = birthdayField.text
-        let sex = sexField.text
+        let birthday = birthdayField?.text
+        let sex = sexField?.text
         let eye = eyeColorField?.text
         let hair = hairColorField?.text
         let height = heightField?.text

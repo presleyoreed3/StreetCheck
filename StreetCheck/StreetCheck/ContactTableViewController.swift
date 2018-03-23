@@ -27,12 +27,18 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     var constantContacts = [Contact]()
     var currentContact: Contact?
     var currentContactArray = [Contact]()
+    var cellIdentifier = "NarrowContactTableViewCell"
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadContacts()
         self.setUpSearchBar()
+        if (cellIdentifier == "NarrowContactTableViewCell"){
+            
+        }else{
+            self.tableView.rowHeight = 340.0
+        }
     }
     
     
@@ -45,10 +51,35 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contacts.count
     }
-
+    
+    
+    
+    //MARK: Cell Layout
+    @IBAction func swapLayouts(_ sender: UIBarButtonItem) {
+        if (cellIdentifier == "NarrowContactTableViewCell"){
+            cellIdentifier = "WideContactTableViewCell"
+            print("I was switched to \(cellIdentifier)")
+        }else{
+            cellIdentifier = "NarrowContactTableViewCell"
+            print("I was switched to \(cellIdentifier)")
+        }
+        tableView.reloadData()
+    }
+    
+    func loadCellView() -> String{
+        if (cellIdentifier == "NarrowContactTableViewCell"){
+            print("I was switched to \(cellIdentifier)")
+            self.tableView.rowHeight = 90.0
+            return "NarrowContactTableViewCell"
+        }else{
+            print("I was switched to \(cellIdentifier)")
+            self.tableView.rowHeight = 340.0
+            return "WideContactTableViewCell"
+        }
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "ContactTableViewCell"
+        cellIdentifier = loadCellView()
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ContactTableViewCell else{
             fatalError("The dequeued cell is not an instance of ContactTableViewCell.")
@@ -58,10 +89,12 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
         //let full_name = contact.first_name 
         cell.firstNameLabel.text = contact.first_name
         cell.lastNameLabel.text = contact.last_name
-        cell.ageLabel.text = contact.birthday
-        cell.heightLabel.text = contact.height
-        cell.weightLabel.text = contact.weight
         cell.photoCell.image = contact.photo
+        if (cellIdentifier == "NarrowContactTableViewCell"){
+            cell.ageLabel.text = contact.birthday
+            cell.heightLabel.text = contact.height
+            cell.weightLabel.text = contact.weight
+        }
         
         cell.photoCell.contentMode = .scaleAspectFill
         cell.photoCell.clipsToBounds = true
@@ -95,6 +128,8 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     private func refresh(){
         self.tableView.reloadData()
     }
+    
+    //MARK: Search Bar
 
     private func setUpSearchBar(){
         let searchBar = UISearchBar(frame: CGRect(x:0, y:0,width:(UIScreen.main.bounds.width),height: 70))

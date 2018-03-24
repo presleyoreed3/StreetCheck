@@ -58,6 +58,8 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
         crimeField.text = contactToEdit?.crime
         
         photoWindow.contentMode = .scaleAspectFit
+        dist_marksField.placeholder = "Distinguishing Marks:"
+        moField.placeholder = "MO:"
         
         
     }

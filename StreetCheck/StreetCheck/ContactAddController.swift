@@ -14,6 +14,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
     
     //MARK: Declarations
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var fNameField: UITextField!
     @IBOutlet weak var mNameField: UITextField!
     @IBOutlet weak var lNameField: UITextField!
@@ -35,6 +36,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //MARK: Load
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.contentSize.height = 2400
         
         //Draws the birthday field
         createDatePicker()
@@ -45,6 +47,8 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         sexField.inputView = sexPicker
         
         photoWindow.contentMode = .scaleAspectFit
+        dist_marksField.placeholder = "Distinguishing Marks:"
+        moField.placeholder = "MO:"
     }
     
     //MARK: Navigation

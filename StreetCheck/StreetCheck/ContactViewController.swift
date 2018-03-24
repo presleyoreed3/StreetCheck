@@ -30,8 +30,8 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var dis_marksLabel: UITextView!
     @IBOutlet weak var mo_label: UITextView!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var crimeLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var crimeLabel: UITextView!
+    @IBOutlet weak var addressLabel: UITextView!
     
 
     var contactOnDisplay: Contact?
@@ -40,7 +40,7 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize.height = 2300
+        scrollView.contentSize.height = 2400
         
 
         //print(contactOnDisplay)

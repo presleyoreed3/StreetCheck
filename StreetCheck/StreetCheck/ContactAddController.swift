@@ -36,7 +36,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //MARK: Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize.height = 2400
+        scrollView.contentSize.height = 1200
         
         //Draws the birthday field
         createDatePicker()

@@ -16,7 +16,7 @@
             <objects>
                 <viewController title="Add" id="BYZ-38-t0r" customClass="ViewController" customModule="StreetCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
                             <userLayoutGuide location="135" affinity="minX"/>
@@ -24,11 +24,11 @@
                         </userGuides>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TRP-vw-4di">
-                                <rect key="frame" x="0.0" y="88" width="375" height="1612"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="1000"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xSe-b9-rc7">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1612"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Default Photo" highlightedImage="imageView:YNh-5u-w7b:highlightedImage" translatesAutoresizingMaskIntoConstraints="NO" id="YNh-5u-w7b">
@@ -204,7 +204,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="375" height="1700"/>
+                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="addPhotoButton" destination="QeN-dq-srO" id="bzJ-ux-Llq"/>
                         <outlet property="addressField" destination="dy1-Nw-2Yj" id="WQc-7e-j6C"/>

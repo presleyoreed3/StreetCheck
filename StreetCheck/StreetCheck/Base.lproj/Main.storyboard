@@ -460,7 +460,7 @@
             </objects>
             <point key="canvasLocation" x="-1898" y="885"/>
         </scene>
-        <!--View Controller-->
+        <!--Groups-->
         <scene sceneID="yRP-Fo-tyM">
             <objects>
                 <viewController id="TgW-g9-Pob" sceneMemberID="viewController">
@@ -470,7 +470,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8kg-rI-inm"/>
                     </view>
-                    <tabBarItem key="tabBarItem" id="LBc-9x-q6u"/>
+                    <tabBarItem key="tabBarItem" title="Groups" image="singleContact" id="LBc-9x-q6u"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R09-Xm-pBX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -981,11 +981,11 @@
             </objects>
             <point key="canvasLocation" x="1280.8" y="954.67980295566508"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Contacts-->
         <scene sceneID="zGs-Jz-QLi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pJy-dr-lAF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="ZbN-v7-CEK"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="singleContact" id="ZbN-v7-CEK"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Ng8-dO-6HL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3KH-Gw-nGj">
@@ -1013,8 +1013,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="pJy-dr-lAF" kind="relationship" relationship="viewControllers" id="P5f-1i-j1l"/>
-                        <segue destination="1Gm-ow-sNU" kind="relationship" relationship="viewControllers" id="JmD-NC-PxA"/>
                         <segue destination="TgW-g9-Pob" kind="relationship" relationship="viewControllers" id="C4O-lJ-LeH"/>
+                        <segue destination="1Gm-ow-sNU" kind="relationship" relationship="viewControllers" id="JmD-NC-PxA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yu-rj-4Wn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -40124,5 +40124,6 @@ YwAR4s8AEeLRABHi1gAR4uQAEeLoABHi7wAR4vQAEeMBABHjBAAR4xEAEeMWABHjHgAR4yEAEeMmABHj
 LgAR4zEAEeNDABHjRgAR40sAAAAAAAAEAQAAAAAAAABZAAAAAAAAAAAAAAAAABHjTQ
 </mutableData>
         </image>
+        <image name="singleContact" width="30" height="30"/>
     </resources>
 </document>

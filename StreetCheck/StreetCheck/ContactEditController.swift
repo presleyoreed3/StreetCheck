@@ -33,9 +33,12 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var moField: UITextView!
     @IBOutlet weak var crimeField: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.contentSize.height = 1200
         
         sexPicker.delegate = self
         sexPicker.dataSource = self

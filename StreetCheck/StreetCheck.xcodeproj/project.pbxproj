@@ -10,6 +10,8 @@
 		0F8CAFC62066E5B1006AEAB9 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CAFC52066E5B1006AEAB9 /* Placeholder.swift */; };
 		0F8CAFC820682166006AEAB9 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CAFC720682166006AEAB9 /* Group.swift */; };
 		0F8CAFCC20682DC0006AEAB9 /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CAFCB20682DC0006AEAB9 /* GroupsTableViewCell.swift */; };
+		0F8CAFCE20684E0C006AEAB9 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CAFCD20684E0C006AEAB9 /* GroupsTableViewController.swift */; };
+		0F8CAFD020684ED8006AEAB9 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CAFCF20684ED8006AEAB9 /* AddGroupViewController.swift */; };
 		2B02766E20472DFC0062292C /* ContactEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B02766D20472DFC0062292C /* ContactEditController.swift */; };
 		2B12CCE52024DF93005C5ACD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CCE42024DF93005C5ACD /* AppDelegate.swift */; };
 		2B12CCE72024DF93005C5ACD /* ContactAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CCE62024DF93005C5ACD /* ContactAddController.swift */; };
@@ -47,6 +49,8 @@
 		0F8CAFC52066E5B1006AEAB9 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		0F8CAFC720682166006AEAB9 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		0F8CAFCB20682DC0006AEAB9 /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
+		0F8CAFCD20684E0C006AEAB9 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
+		0F8CAFCF20684ED8006AEAB9 /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 		2B02766D20472DFC0062292C /* ContactEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditController.swift; sourceTree = "<group>"; };
 		2B12CCE12024DF93005C5ACD /* StreetCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B12CCE42024DF93005C5ACD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F8CAFD120684EE2006AEAB9 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				2B12CD122024E030005C5ACD /* Contact.swift */,
+				2B12CCE62024DF93005C5ACD /* ContactAddController.swift */,
+				2B02766D20472DFC0062292C /* ContactEditController.swift */,
+				2B9F887B203759D700FFA03A /* ContactViewController.swift */,
+				2B490AAD203101910045DE05 /* ContactTableViewCell.swift */,
+				2B490AAF203103D40045DE05 /* ContactTableViewController.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		0F8CAFD220684EFF006AEAB9 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				0F8CAFCF20684ED8006AEAB9 /* AddGroupViewController.swift */,
+				0F8CAFCD20684E0C006AEAB9 /* GroupsTableViewController.swift */,
+				0F8CAFCB20682DC0006AEAB9 /* GroupsTableViewCell.swift */,
+				0F8CAFC720682166006AEAB9 /* Group.swift */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
 		2B12CCD82024DF93005C5ACD = {
 			isa = PBXGroup;
 			children = (
@@ -119,15 +147,9 @@
 		2B12CCE32024DF93005C5ACD /* StreetCheck */ = {
 			isa = PBXGroup;
 			children = (
+				0F8CAFD220684EFF006AEAB9 /* Group */,
+				0F8CAFD120684EE2006AEAB9 /* Contact */,
 				2B12CCE42024DF93005C5ACD /* AppDelegate.swift */,
-				2B12CCE62024DF93005C5ACD /* ContactAddController.swift */,
-				2B02766D20472DFC0062292C /* ContactEditController.swift */,
-				2B9F887B203759D700FFA03A /* ContactViewController.swift */,
-				2B490AAD203101910045DE05 /* ContactTableViewCell.swift */,
-				2B490AAF203103D40045DE05 /* ContactTableViewController.swift */,
-				0F8CAFCB20682DC0006AEAB9 /* GroupsTableViewCell.swift */,
-				2B12CD122024E030005C5ACD /* Contact.swift */,
-				0F8CAFC720682166006AEAB9 /* Group.swift */,
 				2B510681204F2157006BE0EB /* CrimeLocationPin.swift */,
 				0F8CAFC52066E5B1006AEAB9 /* Placeholder.swift */,
 				2B12CCE82024DF93005C5ACD /* Main.storyboard */,
@@ -308,6 +330,8 @@
 				2B12CD132024E030005C5ACD /* Contact.swift in Sources */,
 				0F8CAFC820682166006AEAB9 /* Group.swift in Sources */,
 				2B490AB0203103D40045DE05 /* ContactTableViewController.swift in Sources */,
+				0F8CAFCE20684E0C006AEAB9 /* GroupsTableViewController.swift in Sources */,
+				0F8CAFD020684ED8006AEAB9 /* AddGroupViewController.swift in Sources */,
 				2B12CCE72024DF93005C5ACD /* ContactAddController.swift in Sources */,
 				2B12CCE52024DF93005C5ACD /* AppDelegate.swift in Sources */,
 				0F8CAFCC20682DC0006AEAB9 /* GroupsTableViewCell.swift in Sources */,

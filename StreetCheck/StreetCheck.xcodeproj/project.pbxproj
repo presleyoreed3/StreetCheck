@@ -21,6 +21,7 @@
 		2B12CCFA2024DF94005C5ACD /* StreetCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CCF92024DF94005C5ACD /* StreetCheckTests.swift */; };
 		2B12CD052024DF94005C5ACD /* StreetCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CD042024DF94005C5ACD /* StreetCheckUITests.swift */; };
 		2B12CD132024E030005C5ACD /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CD122024E030005C5ACD /* Contact.swift */; };
+		2B2CED78206C3BE000DB1265 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CED77206C3BE000DB1265 /* GroupViewController.swift */; };
 		2B490AAE203101910045DE05 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B490AAD203101910045DE05 /* ContactTableViewCell.swift */; };
 		2B490AB0203103D40045DE05 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B490AAF203103D40045DE05 /* ContactTableViewController.swift */; };
 		2B510682204F2157006BE0EB /* CrimeLocationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B510681204F2157006BE0EB /* CrimeLocationPin.swift */; };
@@ -66,6 +67,7 @@
 		2B12CD042024DF94005C5ACD /* StreetCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetCheckUITests.swift; sourceTree = "<group>"; };
 		2B12CD062024DF94005C5ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B12CD122024E030005C5ACD /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		2B2CED77206C3BE000DB1265 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		2B490AAD203101910045DE05 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		2B490AAF203103D40045DE05 /* ContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
 		2B510681204F2157006BE0EB /* CrimeLocationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrimeLocationPin.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				0F8CAFC720682166006AEAB9 /* Group.swift */,
 				0F8CAFCF20684ED8006AEAB9 /* AddGroupViewController.swift */,
+				2B2CED77206C3BE000DB1265 /* GroupViewController.swift */,
 				0F8CAFCB20682DC0006AEAB9 /* GroupTableViewCell.swift */,
 				0F8CAFCD20684E0C006AEAB9 /* GroupsTableViewController.swift */,
 			);
@@ -331,6 +334,7 @@
 				0F8CAFC820682166006AEAB9 /* Group.swift in Sources */,
 				2B490AB0203103D40045DE05 /* ContactTableViewController.swift in Sources */,
 				0F8CAFCE20684E0C006AEAB9 /* GroupsTableViewController.swift in Sources */,
+				2B2CED78206C3BE000DB1265 /* GroupViewController.swift in Sources */,
 				0F8CAFD020684ED8006AEAB9 /* AddGroupViewController.swift in Sources */,
 				2B12CCE72024DF93005C5ACD /* ContactAddController.swift in Sources */,
 				2B12CCE52024DF93005C5ACD /* AppDelegate.swift in Sources */,

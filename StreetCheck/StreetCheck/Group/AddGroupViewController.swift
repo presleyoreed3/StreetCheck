@@ -25,11 +25,12 @@ class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize.height = 1200
+        scrollView.contentSize.height = 1550
         // Do any additional setup after loading the view.
         
         groupMembers.placeholder = "Members of the Group:"
         groupOffenses.placeholder = "Offenses commited by Group:"
+        groupMO.placeholder = "Group MO:"
     }
 
     var group: Group?

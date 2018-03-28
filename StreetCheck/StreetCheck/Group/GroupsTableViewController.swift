@@ -50,6 +50,12 @@ class GroupsTableViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? GroupViewController
+        destination?.groupOnDisplay = groups[(tableView.indexPathForSelectedRow?.row)!]
+        
+    }
+    
     //MARK: Unwinding
     @IBAction func unwindToGroupAdd(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? AddGroupViewController, let group = sourceViewController.group {

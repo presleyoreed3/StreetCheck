@@ -12,6 +12,11 @@ import UIKit
 class GroupsTableViewCell: UITableViewCell {
     
     //MARK: Properties
+    @IBOutlet weak var groupNameLabel: UILabel!
+    @IBOutlet weak var groupLeaderLabel: UILabel!
+    @IBOutlet weak var groupLocationLabel: UILabel!
+    @IBOutlet weak var groupImageLabel: UIImageView!
+    
     
     
     override func awakeFromNib() {

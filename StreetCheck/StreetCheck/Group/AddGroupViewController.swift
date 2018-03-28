@@ -10,27 +10,33 @@ import UIKit
 import os.log
 
 
-class AddGroupViewController: UIViewController {
+class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var addPhoto: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var groupName: UITextField!
+    @IBOutlet weak var groupLeader: UITextField!
+    @IBOutlet weak var groupLocation: UITextField!
+    @IBOutlet weak var groupMembers: UITextView!
+    @IBOutlet weak var groupOffenses: UITextView!
+    @IBOutlet weak var groupMO: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        scrollView.contentSize.height = 1200
         // Do any additional setup after loading the view.
+        
+        groupMembers.placeholder = "Members of the Group:"
+        groupOffenses.placeholder = "Offenses commited by Group:"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    var group: Group?
     
-    @IBAction func addPhotoButton(_ sender: UIButton) {
-        
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
-    
     @IBOutlet weak var saveButton: UIBarButtonItem!
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         resignFirstResponder()
@@ -41,9 +47,41 @@ class AddGroupViewController: UIViewController {
             return
         }
         
+        let name = groupName?.text
+        let leader = groupLeader?.text
+        let members = groupMembers?.text
+        let location = groupLocation?.text
+        let crimes = groupOffenses?.text
+        let mo = groupMO?.text
+        let groupImage = photo?.image
         
+        group = Group(name: name, members: members, MO: mo, crimes: crimes, leader: leader, location: location, image: groupImage)
         
+    }
+    
+    //MARK: Add Photo
+    @IBAction func addPhotoButton(_ sender: UIButton) {
+        view.resignFirstResponder()
         
+        //Creates new image controller
+        let imagePickerController = UIImagePickerController()
+        
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
+        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        photo.image = selectedImage
+        dismiss(animated: true, completion: nil)
     }
     
 }

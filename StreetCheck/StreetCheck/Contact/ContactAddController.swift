@@ -61,6 +61,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var contact: Contact?
     
     
+    // MARK: Save
     // Save button that returns to home screen
     @IBOutlet weak var saveButton: UIBarButtonItem!
      override func prepare(for segue: UIStoryboardSegue, sender: Any?){

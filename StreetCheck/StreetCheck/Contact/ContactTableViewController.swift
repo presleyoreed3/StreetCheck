@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 enum searchSelectedScope:Int{
     case name = 0
@@ -37,6 +38,9 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
             
         }else{
             self.tableView.rowHeight = 340.0
+        }
+        if let savedContacts = loadContacts() {
+            contacts += savedContacts
         }
     }
     
@@ -183,6 +187,7 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
             constantContacts.append(contact)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
             currentContactArray = contacts
+            saveContact()
             tableView.reloadData()
         }
     }
@@ -194,8 +199,24 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
             refresh()
             currentContactArray = contacts
             constantContacts = contacts
+            saveContact()
             tableView.reloadData()
         }
+    }
+    
+    //MARK: Private Methods
+    private func saveContact(){
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(contacts, toFile: Contact.ArchiveURL.path)
+        
+        if isSuccessfulSave {
+            os_log("Contacts successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save contacts...", log: OSLog.default, type: .error)
+        }
+    }
+
+    private func loadContacts() -> [Contact]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Contact.ArchiveURL.path) as? [Contact]
     }
     
 }

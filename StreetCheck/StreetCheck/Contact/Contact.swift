@@ -110,7 +110,11 @@ class Contact: NSObject, NSCoding{
         static let MO = "MO"
         static let address = "address"
         static let crime = "crime"
-        
     }
+    
+    //MARK: Archiving Paths
+    
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("contacts")
     
 }

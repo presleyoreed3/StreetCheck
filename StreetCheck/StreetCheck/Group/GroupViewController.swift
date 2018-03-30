@@ -66,7 +66,7 @@ class GroupViewController: UIViewController, CLLocationManagerDelegate {
             }
             if let placemark = placemarks?.first {
                 let coordinates:CLLocationCoordinate2D = placemark.location!.coordinate
-                print("Lat: \(coordinates.latitude) -- Long: \(coordinates.longitude)")
+//                print("Lat: \(coordinates.latitude) -- Long: \(coordinates.longitude)")
                 let lat = coordinates.latitude
                 let long = coordinates.longitude
                 let location = CLLocationCoordinate2DMake(lat, long)
@@ -99,4 +99,20 @@ class GroupViewController: UIViewController, CLLocationManagerDelegate {
         self.tabBarController?.tabBar.isHidden = false
         sender.view?.removeFromSuperview()
     }
+    
+    //MARK: Segues
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? EditGroupViewController
+        destination?.groupToEdit = groupOnDisplay
+    }
+    
+    @IBAction func unwindToGroupView(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? EditGroupViewController, let group = sourceViewController.groupToEdit {
+            groupOnDisplay = group
+            updateData()
+            
+        }
+    }
+    
+    
 }

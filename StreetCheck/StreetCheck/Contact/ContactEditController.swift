@@ -99,7 +99,7 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let crime = crimeField?.text
         
         
-        contactToEdit = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address!, time_left: nil, photo: photo, crime: crime)
+        contactToEdit = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address!, photo: photo, crime: crime)
         
         
     }

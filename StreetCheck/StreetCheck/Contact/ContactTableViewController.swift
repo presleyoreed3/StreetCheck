@@ -32,7 +32,6 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadContacts()
         self.setUpSearchBar()
         if (cellIdentifier == "NarrowContactTableViewCell"){
             
@@ -58,21 +57,17 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     @IBAction func swapLayouts(_ sender: UIBarButtonItem) {
         if (cellIdentifier == "NarrowContactTableViewCell"){
             cellIdentifier = "WideContactTableViewCell"
-            print("I was switched to \(cellIdentifier)")
         }else{
             cellIdentifier = "NarrowContactTableViewCell"
-            print("I was switched to \(cellIdentifier)")
         }
         tableView.reloadData()
     }
     
     func loadCellView() -> String{
         if (cellIdentifier == "NarrowContactTableViewCell"){
-            print("I was switched to \(cellIdentifier)")
             self.tableView.rowHeight = 90.0
             return "NarrowContactTableViewCell"
         }else{
-            print("I was switched to \(cellIdentifier)")
             self.tableView.rowHeight = 340.0
             return "WideContactTableViewCell"
         }
@@ -114,16 +109,16 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     //MARK: Privte Methods
-    private func loadContacts(){
-        let contact1 = Contact(first_name: "Presley", middle_name: "Orelle", last_name: "Reed III", alias: "Presso", birthday: "December 18, 1995", MO: "None", height: "6.2", weight: "230", hair_color: "Brown", eye_color: "Brown", sex: "Male", ethnicity: "White", dis_marks: "Scar on both eyebrows and bottom of the chin", address: "219 N. Tacoma Ave Tacoma, WA 98403", time_left: nil, photo: UIImage(named: "Default Contact Image"), crime: "Being too awesome")
-        let contact2 = Contact(first_name: "Meredith", middle_name: "Demming", last_name: "Reed", alias: "Mer", birthday: "March 8, 1991", MO: "None", height: "5.6", weight: "100", hair_color: "Brown", eye_color: "Hazel", sex: "Female", ethnicity: "White", dis_marks: "None", address: "375 La Cienega Blvd, Los Angeles CA, 90048", time_left: nil, photo: UIImage(named: "Default Contact Image"), crime:"Being a great sister")
-        let contact3 = Contact(first_name: "Presley", middle_name: "Orelle", last_name: "Reed III", alias: "Presso", birthday: "December 18, 1995", MO: "None", height: "6.2", weight: "230", hair_color: "Brown", eye_color: "Brown", sex: "Male", ethnicity: "White", dis_marks: "Scar on both eyebrows and bottom of the chin", address: "219 N. Tacoma Ave Tacoma, WA 98403", time_left: nil, photo: UIImage(named: "Default Contact Image"), crime: "Being too awesome")
-        let contact4 = Contact(first_name: "Meredith", middle_name: "Demming", last_name: "Reed", alias: "Mer", birthday: "March 8, 1991", MO: "None", height: "5.6", weight: "100", hair_color: "Brown", eye_color: "Hazel", sex: "Female", ethnicity: "White", dis_marks: "None", address: "375 La Cienega Blvd, Los Angeles CA, 90048", time_left: nil, photo: UIImage(named: "Default Contact Image"), crime:"Being a great sister")
-        contacts += [contact1, contact2, contact3, contact4]
-        
-        currentContactArray = contacts
-        constantContacts = contacts
-    }
+//    private func loadContacts(){
+//        let contact1 = Contact(first_name: "Presley", middle_name: "Orelle", last_name: "Reed III", alias: "Presso", birthday: "December 18, 1995", MO: "None", height: "6.2", weight: "230", hair_color: "Brown", eye_color: "Brown", sex: "Male", ethnicity: "White", dis_marks: "Scar on both eyebrows and bottom of the chin", address: "219 N. Tacoma Ave Tacoma, WA 98403", photo: UIImage(named: "Default Contact Image"), crime: "Being too awesome")
+//        let contact2 = Contact(first_name: "Meredith", middle_name: "Demming", last_name: "Reed", alias: "Mer", birthday: "March 8, 1991", MO: "None", height: "5.6", weight: "100", hair_color: "Brown", eye_color: "Hazel", sex: "Female", ethnicity: "White", dis_marks: "None", address: "375 La Cienega Blvd, Los Angeles CA, 90048", photo: UIImage(named: "Default Contact Image"), crime:"Being a great sister")
+//        let contact3 = Contact(first_name: "Presley", middle_name: "Orelle", last_name: "Reed III", alias: "Presso", birthday: "December 18, 1995", MO: "None", height: "6.2", weight: "230", hair_color: "Brown", eye_color: "Brown", sex: "Male", ethnicity: "White", dis_marks: "Scar on both eyebrows and bottom of the chin", address: "219 N. Tacoma Ave Tacoma, WA 98403", photo: UIImage(named: "Default Contact Image"), crime: "Being too awesome")
+//        let contact4 = Contact(first_name: "Meredith", middle_name: "Demming", last_name: "Reed", alias: "Mer", birthday: "March 8, 1991", MO: "None", height: "5.6", weight: "100", hair_color: "Brown", eye_color: "Hazel", sex: "Female", ethnicity: "White", dis_marks: "None", address: "375 La Cienega Blvd, Los Angeles CA, 90048", photo: UIImage(named: "Default Contact Image"), crime:"Being a great sister")
+//        contacts += [contact1, contact2, contact3, contact4]
+//
+//        currentContactArray = contacts
+//        constantContacts = contacts
+//    }
     
     private func refresh(){
         self.tableView.reloadData()

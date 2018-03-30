@@ -69,6 +69,15 @@ class GroupsTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
+    
+    @IBAction func unwindToGroupTableView(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? GroupViewController, let group = sourceViewController.groupOnDisplay {
+            
+            groups[(tableView.indexPathForSelectedRow?.row)!] = group
+            constantGroups = groups
+            tableView.reloadData()
+        }
+    }
 
 
 }

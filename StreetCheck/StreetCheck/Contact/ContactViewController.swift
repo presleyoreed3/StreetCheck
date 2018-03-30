@@ -91,7 +91,6 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
             }
             if let placemark = placemarks?.first {
                 let coordinates:CLLocationCoordinate2D = placemark.location!.coordinate
-                print("Lat: \(coordinates.latitude) -- Long: \(coordinates.longitude)")
                 let lat = coordinates.latitude
                 let long = coordinates.longitude
                 let location = CLLocationCoordinate2DMake(lat, long)

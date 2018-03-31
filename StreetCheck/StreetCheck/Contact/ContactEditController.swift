@@ -14,8 +14,6 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     var contactToEdit: Contact?
     
-    
-    
     @IBOutlet weak var fNameField: UITextField!
     @IBOutlet weak var mNameField: UITextField!
     @IBOutlet weak var lNameField: UITextField!

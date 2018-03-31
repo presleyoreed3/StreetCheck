@@ -38,6 +38,8 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
         groupMemberLabel.placeholder = "Members of the Group:"
         groupCrimesLabel.placeholder = "Offenses commited by Group:"
         groupMOLabel.placeholder = "Group MO:"
+        
+        photoView.contentMode = .scaleAspectFit
 
         
         // Do any additional setup after loading the view.

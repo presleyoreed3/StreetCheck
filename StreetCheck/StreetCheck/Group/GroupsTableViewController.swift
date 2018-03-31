@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class GroupsTableViewController: UITableViewController {
     
@@ -19,7 +20,9 @@ class GroupsTableViewController: UITableViewController {
         super.viewDidLoad()
 
         self.tableView.rowHeight = 120
-        
+        if let savedGroups = loadGroups() {
+            groups += savedGroups
+        }
     }
     
     //MARK: Table View Data
@@ -66,6 +69,7 @@ class GroupsTableViewController: UITableViewController {
             constantGroups.append(group)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
             currentGroup = group
+            saveGroup()
             tableView.reloadData()
         }
     }
@@ -75,8 +79,23 @@ class GroupsTableViewController: UITableViewController {
             
             groups[(tableView.indexPathForSelectedRow?.row)!] = group
             constantGroups = groups
+            saveGroup()
             tableView.reloadData()
         }
+    }
+    
+    private func saveGroup(){
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(groups, toFile: Group.ArchiveURL.path)
+        
+        if isSuccessfulSave {
+            os_log("Groups successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save groups...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func loadGroups() -> [Group]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Group.ArchiveURL.path) as? [Group]
     }
 
 

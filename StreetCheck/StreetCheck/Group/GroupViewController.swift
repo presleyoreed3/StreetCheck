@@ -32,6 +32,7 @@ class GroupViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         updateData()
         scrollView.contentSize.height = 1815
+        photoLabel.contentMode = .scaleAspectFit
         // Do any additional setup after loading the view.
     }
 
@@ -51,6 +52,7 @@ class GroupViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
     }
     
 

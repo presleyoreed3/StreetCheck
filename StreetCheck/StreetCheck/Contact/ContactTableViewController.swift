@@ -39,6 +39,7 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
         }else{
             self.tableView.rowHeight = 340.0
         }
+        navigationItem.leftBarButtonItem = editButtonItem
         if let savedContacts = loadContacts() {
             contacts += savedContacts
         }
@@ -55,6 +56,22 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
         return contacts.count
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            contacts.remove(at: indexPath.row)
+            saveContact()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
     
     
     //MARK: Cell Layout
@@ -111,18 +128,6 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
         destination?.contactOnDisplay = contacts[(tableView.indexPathForSelectedRow?.row)!]
         
     }
-    
-    //MARK: Privte Methods
-//    private func loadContacts(){
-//        let contact1 = Contact(first_name: "Presley", middle_name: "Orelle", last_name: "Reed III", alias: "Presso", birthday: "December 18, 1995", MO: "None", height: "6.2", weight: "230", hair_color: "Brown", eye_color: "Brown", sex: "Male", ethnicity: "White", dis_marks: "Scar on both eyebrows and bottom of the chin", address: "219 N. Tacoma Ave Tacoma, WA 98403", photo: UIImage(named: "Default Contact Image"), crime: "Being too awesome")
-//        let contact2 = Contact(first_name: "Meredith", middle_name: "Demming", last_name: "Reed", alias: "Mer", birthday: "March 8, 1991", MO: "None", height: "5.6", weight: "100", hair_color: "Brown", eye_color: "Hazel", sex: "Female", ethnicity: "White", dis_marks: "None", address: "375 La Cienega Blvd, Los Angeles CA, 90048", photo: UIImage(named: "Default Contact Image"), crime:"Being a great sister")
-//        let contact3 = Contact(first_name: "Presley", middle_name: "Orelle", last_name: "Reed III", alias: "Presso", birthday: "December 18, 1995", MO: "None", height: "6.2", weight: "230", hair_color: "Brown", eye_color: "Brown", sex: "Male", ethnicity: "White", dis_marks: "Scar on both eyebrows and bottom of the chin", address: "219 N. Tacoma Ave Tacoma, WA 98403", photo: UIImage(named: "Default Contact Image"), crime: "Being too awesome")
-//        let contact4 = Contact(first_name: "Meredith", middle_name: "Demming", last_name: "Reed", alias: "Mer", birthday: "March 8, 1991", MO: "None", height: "5.6", weight: "100", hair_color: "Brown", eye_color: "Hazel", sex: "Female", ethnicity: "White", dis_marks: "None", address: "375 La Cienega Blvd, Los Angeles CA, 90048", photo: UIImage(named: "Default Contact Image"), crime:"Being a great sister")
-//        contacts += [contact1, contact2, contact3, contact4]
-//
-//        currentContactArray = contacts
-//        constantContacts = contacts
-//    }
     
     private func refresh(){
         self.tableView.reloadData()

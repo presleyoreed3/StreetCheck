@@ -9,7 +9,17 @@
 import UIKit
 import os.log
 
+enum groupSearchSelectedScope:Int{
+    case name = 0
+    case members = 1
+    case leader = 2
+    case crime = 3
+    case location = 4
+}
+
 class GroupsTableViewController: UITableViewController, UISearchBarDelegate  {
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     //MARK: Properties
     var groups = [Group]()
@@ -18,7 +28,7 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.setUpSearchBar()
         self.tableView.rowHeight = 120
         navigationItem.leftBarButtonItem = editButtonItem
         if let savedGroups = loadGroups() {
@@ -80,7 +90,7 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate  {
     private func setUpSearchBar(){
         let searchBar = UISearchBar(frame: CGRect(x:0, y:0,width:(UIScreen.main.bounds.width),height: 70))
         searchBar.showsScopeBar = true
-        searchBar.scopeButtonTitles = ["Name", "Ethnicity", "Sex", "Crime", "Location"]
+        searchBar.scopeButtonTitles = ["Name", "Members", "Leader", "Crime", "Location"]
         searchBar.selectedScopeButtonIndex = 0
         self.tableView.tableHeaderView = searchBar
         searchBar.delegate = self
@@ -99,24 +109,24 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate  {
     
     private func filterTableView(ind:Int, text: String){
         switch ind {
-        case searchSelectedScope.name.rawValue:
-            contacts = contacts.filter({ contact -> Bool in return contact.first_name.contains(text)})
+        case groupSearchSelectedScope.name.rawValue:
+            groups = groups.filter({ group -> Bool in return (group.name?.contains(text))!})
             self.tableView.reloadData()
-        case searchSelectedScope.ethnicity.rawValue:
-            print("Search Scope: \(searchSelectedScope.ethnicity.rawValue) ")
-            contacts = contacts.filter({ contact -> Bool in return (contact.ethnicity?.contains(text))!})
+        case groupSearchSelectedScope.members.rawValue:
+            print("Search Scope: \(groupSearchSelectedScope.members.rawValue) ")
+            groups = groups.filter({ group -> Bool in return (group.members?.contains(text))!})
             self.tableView.reloadData()
         case searchSelectedScope.sex.rawValue:
             print("Search Scope: \(searchSelectedScope.sex.rawValue) ")
-            contacts = contacts.filter({ contact -> Bool in return (contact.sex?.contains(text))!})
+            groups = groups.filter({ group -> Bool in return (group.leader?.contains(text))!})
             self.tableView.reloadData()
         case searchSelectedScope.crime.rawValue:
             print("Search Scope: \(searchSelectedScope.crime.rawValue) ")
-            contacts = contacts.filter({ contact -> Bool in return (contact.crime?.contains(text))!})
+            groups = groups.filter({ group -> Bool in return (group.crimes?.contains(text))!})
             self.tableView.reloadData()
         case searchSelectedScope.location.rawValue:
             print("Search Scope: \(searchSelectedScope.location.rawValue) ")
-            contacts = contacts.filter({ contact -> Bool in return (contact.address?.contains(text))!})
+            groups = groups.filter({ group -> Bool in return (group.location?.contains(text))!})
             self.tableView.reloadData()
         default:
             print("No Type")

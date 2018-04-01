@@ -22,7 +22,8 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var groupMOLabel: UITextView!
     @IBOutlet weak var groupCrimesLabel: UITextView!
     
-
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +42,7 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
         
         photoView.contentMode = .scaleAspectFit
 
-        
+        scrollView.contentSize.height = 1200
         // Do any additional setup after loading the view.
     }
 

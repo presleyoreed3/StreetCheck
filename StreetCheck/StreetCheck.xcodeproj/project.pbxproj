@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F86FA32207178F7005564B6 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F86FA31207178F7005564B6 /* LegalViewController.swift */; };
+		0F86FA3420717B68005564B6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F86FA3320717B68005564B6 /* SettingsViewController.swift */; };
 		0F8CAFC62066E5B1006AEAB9 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CAFC52066E5B1006AEAB9 /* Placeholder.swift */; };
 		0F8CAFC820682166006AEAB9 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CAFC720682166006AEAB9 /* Group.swift */; };
 		0F8CAFCC20682DC0006AEAB9 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CAFCB20682DC0006AEAB9 /* GroupTableViewCell.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F86FA31207178F7005564B6 /* LegalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
+		0F86FA3320717B68005564B6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0F8CAFC52066E5B1006AEAB9 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		0F8CAFC720682166006AEAB9 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		0F8CAFCB20682DC0006AEAB9 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
@@ -103,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F86FA3520717E64005564B6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0F86FA3320717B68005564B6 /* SettingsViewController.swift */,
+				0F86FA31207178F7005564B6 /* LegalViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		0F8CAFD120684EE2006AEAB9 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,8 +166,9 @@
 		2B12CCE32024DF93005C5ACD /* StreetCheck */ = {
 			isa = PBXGroup;
 			children = (
-				0F8CAFD220684EFF006AEAB9 /* Group */,
+				0F86FA3520717E64005564B6 /* Settings */,
 				0F8CAFD120684EE2006AEAB9 /* Contact */,
+				0F8CAFD220684EFF006AEAB9 /* Group */,
 				2B12CCE42024DF93005C5ACD /* AppDelegate.swift */,
 				2B510681204F2157006BE0EB /* CrimeLocationPin.swift */,
 				0F8CAFC52066E5B1006AEAB9 /* Placeholder.swift */,
@@ -255,7 +269,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Presley Reed III";
 				TargetAttributes = {
 					2B12CCE02024DF93005C5ACD = {
@@ -339,9 +353,11 @@
 				0F8CAFCE20684E0C006AEAB9 /* GroupsTableViewController.swift in Sources */,
 				2B2CED78206C3BE000DB1265 /* GroupViewController.swift in Sources */,
 				2B167E9F206D652E000F004B /* EditGroupViewController.swift in Sources */,
+				0F86FA32207178F7005564B6 /* LegalViewController.swift in Sources */,
 				0F8CAFD020684ED8006AEAB9 /* AddGroupViewController.swift in Sources */,
 				2B12CCE72024DF93005C5ACD /* ContactAddController.swift in Sources */,
 				2B12CCE52024DF93005C5ACD /* AppDelegate.swift in Sources */,
+				0F86FA3420717B68005564B6 /* SettingsViewController.swift in Sources */,
 				0F8CAFCC20682DC0006AEAB9 /* GroupTableViewCell.swift in Sources */,
 				2B02766E20472DFC0062292C /* ContactEditController.swift in Sources */,
 				2B9F887C203759D700FFA03A /* ContactViewController.swift in Sources */,
@@ -414,6 +430,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -421,6 +438,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -471,6 +489,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -478,6 +497,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

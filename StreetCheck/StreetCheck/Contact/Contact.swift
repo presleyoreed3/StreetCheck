@@ -62,7 +62,7 @@ class Contact: NSObject, NSCoding{
         aCoder.encode(hair_color, forKey: PropertyKey.hair_color)
         aCoder.encode(eye_color, forKey: PropertyKey.eye_color)
         aCoder.encode(height, forKey: PropertyKey.height)
-        aCoder.encode(weight, forKey: PropertyKey.height)
+        aCoder.encode(weight, forKey: PropertyKey.weight)
         aCoder.encode(ethnicity, forKey: PropertyKey.ethnicity)
         aCoder.encode(dis_marks, forKey: PropertyKey.dis_marks)
         aCoder.encode(MO, forKey: PropertyKey.MO)
@@ -88,7 +88,7 @@ class Contact: NSObject, NSCoding{
         let address = aDecoder.decodeObject(forKey: PropertyKey.address) as? String
         let crime = aDecoder.decodeObject(forKey: PropertyKey.crime) as? String
         
-        self.init(first_name: first_name!, middle_name: middle_name, last_name: last_name!, alias: alias, birthday: birthday!, MO: MO, height: height, weight: weight, hair_color: hair_color, eye_color: eye_color,  sex: sex, ethnicity: ethnicity, dis_marks: dis_marks, address: address, photo: photo,crime: crime)
+        self.init(first_name: first_name!, middle_name: middle_name, last_name: last_name!, alias: alias, birthday: birthday!, MO: MO, height: height, weight: weight, hair_color: hair_color, eye_color: eye_color,  sex: sex, ethnicity: ethnicity, dis_marks: dis_marks, address: address, photo: photo, crime: crime)
         
     }
     

@@ -54,9 +54,10 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
         heightField.text = contactToEdit?.height
         weightField.text = contactToEdit?.weight
         ethnicityField.text = contactToEdit?.ethnicity
-        dist_marksField.text = contactToEdit?.ethnicity
+        dist_marksField.text = contactToEdit?.dis_marks
         addressField.text = contactToEdit?.address
         crimeField.text = contactToEdit?.crime
+        moField.text = contactToEdit?.MO
         
         photoWindow.contentMode = .scaleAspectFit
         dist_marksField.placeholder = "Distinguishing Marks:"
@@ -98,7 +99,6 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         
         contactToEdit = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address!, photo: photo, crime: crime)
-        
         
     }
    

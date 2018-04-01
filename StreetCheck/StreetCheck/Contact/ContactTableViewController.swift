@@ -32,6 +32,9 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     
 
     override func viewDidLoad() {
+        
+        
+        
         super.viewDidLoad()
         self.setUpSearchBar()
         if (cellIdentifier == "NarrowContactTableViewCell"){

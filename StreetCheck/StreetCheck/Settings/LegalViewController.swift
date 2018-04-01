@@ -12,6 +12,7 @@ class LegalViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var titleInformation: UITextView!
+    @IBOutlet weak var websiteButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,13 @@ class LegalViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func websiteButtonWasPressed(_ sender: AnyObject) {
+        
+        UIApplication.shared.open(URL(string:"https://www.law.cornell.edu/cfr/text/28/part-23")! as URL, options: [:], completionHandler: nil)
+        
+    }
+    
     
 
 }

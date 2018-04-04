@@ -40,7 +40,6 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize.height = 2350
         
 
         //print(contactOnDisplay)

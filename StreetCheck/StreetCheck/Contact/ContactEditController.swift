@@ -36,7 +36,6 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize.height = 1200
         
         sexPicker.delegate = self
         sexPicker.dataSource = self

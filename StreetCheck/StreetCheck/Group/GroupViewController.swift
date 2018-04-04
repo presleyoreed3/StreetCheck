@@ -31,7 +31,7 @@ class GroupViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateData()
-        scrollView.contentSize.height = 1815
+
         photoLabel.contentMode = .scaleAspectFit
         // Do any additional setup after loading the view.
     }

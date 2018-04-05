@@ -33,6 +33,7 @@
 		2B6109E820449F36003953B2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6109E720449F36003953B2 /* MapKit.framework */; };
 		2B8912952075807500CDC39F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8912942075807500CDC39F /* OnboardingViewController.swift */; };
 		2B9F887C203759D700FFA03A /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9F887B203759D700FFA03A /* ContactViewController.swift */; };
+		2BFC9E4120769C6B003217FF /* CheckPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC9E4020769C6B003217FF /* CheckPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,17 +64,14 @@
 		0F8F204F2071C48E005D7F07 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		0FDBA5FF2075D13B001DCBA2 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
 		2B02766D20472DFC0062292C /* ContactEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditController.swift; sourceTree = "<group>"; };
-		2B12CCE12024DF93005C5ACD /* StreetCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = StreetCheck.app; path = "/Users/Preed/Desktop/StreetCheck/StreetCheck/build/Debug-iphoneos/StreetCheck.app"; sourceTree = "<absolute>"; };
 		2B12CCE42024DF93005C5ACD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B12CCE62024DF93005C5ACD /* ContactAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddController.swift; sourceTree = "<group>"; };
 		2B12CCE92024DF93005C5ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B12CCEB2024DF93005C5ACD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B12CCEE2024DF93005C5ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B12CCF02024DF93005C5ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B12CCF52024DF94005C5ACD /* StreetCheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = StreetCheckTests.xctest; path = "/Users/Preed/Desktop/StreetCheck/StreetCheck/build/Debug-iphoneos/StreetCheckTests.xctest"; sourceTree = "<absolute>"; };
 		2B12CCF92024DF94005C5ACD /* StreetCheckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetCheckTests.swift; sourceTree = "<group>"; };
 		2B12CCFB2024DF94005C5ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B12CD002024DF94005C5ACD /* StreetCheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = StreetCheckUITests.xctest; path = "/Users/Preed/Desktop/StreetCheck/StreetCheck/build/Debug-iphoneos/StreetCheckUITests.xctest"; sourceTree = "<absolute>"; };
 		2B12CD042024DF94005C5ACD /* StreetCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetCheckUITests.swift; sourceTree = "<group>"; };
 		2B12CD062024DF94005C5ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B12CD122024E030005C5ACD /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
@@ -85,6 +83,10 @@
 		2B6109E720449F36003953B2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2B8912942075807500CDC39F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2B9F887B203759D700FFA03A /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		2BFC9E3D2076981A003217FF /* StreetCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BFC9E3E2076981A003217FF /* StreetCheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreetCheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BFC9E3F2076981A003217FF /* StreetCheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreetCheckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BFC9E4020769C6B003217FF /* CheckPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,9 @@
 				2B12CCF82024DF94005C5ACD /* StreetCheckTests */,
 				2B12CD032024DF94005C5ACD /* StreetCheckUITests */,
 				2B6109E620449F36003953B2 /* Frameworks */,
+				2BFC9E3D2076981A003217FF /* StreetCheck.app */,
+				2BFC9E3E2076981A003217FF /* StreetCheckTests.xctest */,
+				2BFC9E3F2076981A003217FF /* StreetCheckUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +171,7 @@
 				0F8CAFD120684EE2006AEAB9 /* Contact */,
 				0F8CAFD220684EFF006AEAB9 /* Group */,
 				2B12CCE42024DF93005C5ACD /* AppDelegate.swift */,
+				2BFC9E4020769C6B003217FF /* CheckPasswordViewController.swift */,
 				2B8912942075807500CDC39F /* OnboardingViewController.swift */,
 				0FDBA5FF2075D13B001DCBA2 /* SetPasswordViewController.swift */,
 				2B510681204F2157006BE0EB /* CrimeLocationPin.swift */,
@@ -221,7 +227,7 @@
 			);
 			name = StreetCheck;
 			productName = StreetCheck;
-			productReference = 2B12CCE12024DF93005C5ACD /* StreetCheck.app */;
+			productReference = 2BFC9E3D2076981A003217FF /* StreetCheck.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2B12CCF42024DF94005C5ACD /* StreetCheckTests */ = {
@@ -239,7 +245,7 @@
 			);
 			name = StreetCheckTests;
 			productName = StreetCheckTests;
-			productReference = 2B12CCF52024DF94005C5ACD /* StreetCheckTests.xctest */;
+			productReference = 2BFC9E3E2076981A003217FF /* StreetCheckTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		2B12CCFF2024DF94005C5ACD /* StreetCheckUITests */ = {
@@ -257,7 +263,7 @@
 			);
 			name = StreetCheckUITests;
 			productName = StreetCheckUITests;
-			productReference = 2B12CD002024DF94005C5ACD /* StreetCheckUITests.xctest */;
+			productReference = 2BFC9E3F2076981A003217FF /* StreetCheckUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -360,6 +366,7 @@
 				2B12CCE52024DF93005C5ACD /* AppDelegate.swift in Sources */,
 				0F86FA3420717B68005564B6 /* SettingsViewController.swift in Sources */,
 				0F8CAFCC20682DC0006AEAB9 /* GroupTableViewCell.swift in Sources */,
+				2BFC9E4120769C6B003217FF /* CheckPasswordViewController.swift in Sources */,
 				2B02766E20472DFC0062292C /* ContactEditController.swift in Sources */,
 				2B9F887C203759D700FFA03A /* ContactViewController.swift in Sources */,
 				0F8CAFC62066E5B1006AEAB9 /* Placeholder.swift in Sources */,

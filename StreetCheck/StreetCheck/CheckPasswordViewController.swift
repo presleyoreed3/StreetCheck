@@ -18,6 +18,7 @@ class CheckPasswordViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         nameLabel.text = UserDefaults.standard.value(forKey: "name") as? String
         mismatchLabel.text = ""
+        passwordField.isSecureTextEntry = true
         // Do any additional setup after loading the view.
     }
 

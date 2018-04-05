@@ -14,15 +14,20 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var phoneField: UITextField!
     
+    @IBOutlet weak var tellUsMoreLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func startWasPressed(_ sender: UIButton) {
-        UserDefaults.standard.set(nameField.text, forKey: "name")
-        print("I made it here")
-        performSegue(withIdentifier: "toPassword", sender: self)
-        
+        if (nameField.text != "" || emailField.text != "" || phoneField.text != ""){
+            UserDefaults.standard.set(nameField.text, forKey: "name")
+            UserDefaults.standard.set(emailField.text, forKey: "email")
+            UserDefaults.standard.set(phoneField.text, forKey: "phone")
+            performSegue(withIdentifier: "toPassword", sender: self)
+        }else{
+            tellUsMoreLabel.text = "Please fill out all of the fields"
+        }
     }
     
     @IBAction func skipWasPressed(_ sender: UIButton) {

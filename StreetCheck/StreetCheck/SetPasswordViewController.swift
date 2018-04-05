@@ -26,8 +26,10 @@ class SetPasswordViewController: UIViewController {
 
     @IBAction func finishedWasPressed(_ sender: UIButton) {
         checkPasswords()
-        UserDefaults.standard.set(passwordOne, forKey: "password")
-        performSegue(withIdentifier: "toHomePage", sender: self)
+        UserDefaults.standard.set(passwordOne.text, forKey: "password")
+        if (mismatchLabel.text == ""){
+            performSegue(withIdentifier: "toHomePage", sender: self)
+        }
     }
     
     func checkPasswords(){

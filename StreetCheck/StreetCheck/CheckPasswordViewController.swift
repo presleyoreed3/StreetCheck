@@ -17,13 +17,16 @@ class CheckPasswordViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         nameLabel.text = UserDefaults.standard.value(forKey: "name") as? String
+        mismatchLabel.text = ""
         // Do any additional setup after loading the view.
     }
 
     @IBAction func unlockWasPressed(_ sender: UIButton) {
-        let password = UserDefaults.standard.value(forKey: "password")
-        if ((String(describing: password)) != passwordField.text) {
+        let password = UserDefaults.standard.value(forKey: "password") as? String
+        if (password != passwordField.text) {
             mismatchLabel.text = "Incorrect Password \n Please try again."
+            print("The password doesn't match. Should be \((String(describing: password)))")
+            print("You entereed: \(String(describing: passwordField.text)) ")
         }else {
             performSegue(withIdentifier: "passwordConfirmed", sender: self)
         }

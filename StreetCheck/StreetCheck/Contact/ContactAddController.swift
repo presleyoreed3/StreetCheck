@@ -10,7 +10,7 @@ import UIKit
 import os.log
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
-UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
    
     
     //MARK: Declarations
@@ -36,8 +36,23 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //MARK: Load
     override func viewDidLoad() {
         super.viewDidLoad()
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+
         
         //Draws the birthday field
+        fNameField.delegate = self
+        mNameField.delegate = self
+        lNameField.delegate = self
+        aliasField.delegate = self
+        eyeColorField.delegate = self
+        hairColorField.delegate = self
+        heightField.delegate = self
+        weightField.delegate = self
+        addressField.delegate = self
+        crimeField.delegate = self
+        
         createDatePicker()
         
         // Draws the sex field
@@ -49,6 +64,17 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         dist_marksField.placeholder = "Distinguishing Marks:"
         moField.placeholder = "MO:"
     }
+    
+//    deinit {
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+//    }
+
+//    @objc func keyboardWillChange(notification: Notification){
+//        print("Keyboard will show: \(notification.name.rawValue)")
+//        view.frame.origin.y = -250
+//    }
     
     //MARK: Navigation
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -93,6 +119,22 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
         contact = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address, photo: photo!, crime: crime)
         
+    }
+    
+    //MARK: Keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        fNameField.resignFirstResponder()
+        mNameField.resignFirstResponder()
+        lNameField.resignFirstResponder()
+        aliasField.resignFirstResponder()
+        eyeColorField.resignFirstResponder()
+        hairColorField.resignFirstResponder()
+        heightField.resignFirstResponder()
+        weightField.resignFirstResponder()
+        ethnicityField.resignFirstResponder()
+        addressField.resignFirstResponder()
+        crimeField.resignFirstResponder()
+        return true
     }
     
     
@@ -199,7 +241,6 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-    //Mark: Private Methods
     
 }
 

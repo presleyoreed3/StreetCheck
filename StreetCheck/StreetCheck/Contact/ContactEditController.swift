@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     
     var contactToEdit: Contact?
@@ -36,6 +36,17 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fNameField.delegate = self
+        mNameField.delegate = self
+        lNameField.delegate = self
+        aliasField.delegate = self
+        eyeColorField.delegate = self
+        hairColorField.delegate = self
+        heightField.delegate = self
+        weightField.delegate = self
+        addressField.delegate = self
+        crimeField.delegate = self
         
         sexPicker.delegate = self
         sexPicker.dataSource = self
@@ -99,6 +110,21 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         contactToEdit = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address!, photo: photo, crime: crime)
         
+    }
+    
+    //MARK: Keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        fNameField.resignFirstResponder()
+        mNameField.resignFirstResponder()
+        lNameField.resignFirstResponder()
+        aliasField.resignFirstResponder()
+        eyeColorField.resignFirstResponder()
+        hairColorField.resignFirstResponder()
+        heightField.resignFirstResponder()
+        weightField.resignFirstResponder()
+        ethnicityField.resignFirstResponder()
+        addressField.resignFirstResponder()
+        return true
     }
    
     

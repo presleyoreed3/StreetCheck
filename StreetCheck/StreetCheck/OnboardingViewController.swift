@@ -8,16 +8,25 @@
 
 import UIKit
 
-class OnboardingViewController: UIViewController {
+class OnboardingViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var phoneField: UITextField!
-    
     @IBOutlet weak var tellUsMoreLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
+    
+//    deinit {
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+//    }
 
     @IBAction func startWasPressed(_ sender: UIButton) {
         if (nameField.text != "" || emailField.text != "" || phoneField.text != ""){
@@ -31,6 +40,12 @@ class OnboardingViewController: UIViewController {
     }
     
     @IBAction func skipWasPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "skipToPassword", sender: self)
+        performSegue(withIdentifier: "toPassword", sender: self)
     }
+    
+//    @objc func keyboardWillChange(notification: Notification){
+//        print("Keyboard will show: \(notification.name.rawValue)")
+//        
+//        view.frame.origin.y = -300
+//    }
 }

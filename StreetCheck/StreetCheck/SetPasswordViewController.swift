@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SetPasswordViewController: UIViewController {
+class SetPasswordViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var passwordOne: UITextField!
@@ -18,24 +18,34 @@ class SetPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mismatchLabel.text = ""
-        if let name = UserDefaults.standard.value(forKey: "name"){
-            nameLabel.text = "\(name)"
+        passwordOne.isSecureTextEntry = true
+        passwordTwo.isSecureTextEntry = true
+        
+        mismatchLabel.text = " "
+        let name = UserDefaults.standard.value(forKey: "name")
+        if ("\(String(describing: name))" == ""){
+            nameLabel.text = ""
+        }else {
+            nameLabel.text = ""
         }
+        
     }
 
     @IBAction func finishedWasPressed(_ sender: UIButton) {
         checkPasswords()
         UserDefaults.standard.set(passwordOne.text, forKey: "password")
-        if (mismatchLabel.text == ""){
+        if (mismatchLabel.text == "" && passwordOne.text != ""){
             performSegue(withIdentifier: "toHomePage", sender: self)
         }
     }
     
     func checkPasswords(){
-        if (passwordOne.text != passwordTwo.text){
+        if (passwordOne.text != passwordTwo.text ){
             mismatchLabel.text = "Your passwords do not match. \n Plase try again."
-        }else{
+        }else if(passwordOne.text == "" || passwordTwo.text == ""){
+            mismatchLabel.text = "Please enter a password"
+        }
+        else{
             mismatchLabel.text = ""
         }
     }

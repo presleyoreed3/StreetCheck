@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var vc: UIViewController
         
         if (UserDefaults.standard.value(forKey: "password") as? String) == nil {
-            vc = storyboard.instantiateViewController(withIdentifier: "SetPasswordViewController")
+            vc = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
         }
         else {
             vc = storyboard.instantiateViewController(withIdentifier: "CheckPasswordViewController")
@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var vc: UIViewController
         
         if (UserDefaults.standard.value(forKey: "password") as? String) == nil {
-            vc = storyboard.instantiateViewController(withIdentifier: "SetPasswordViewController")
+            vc = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
         }
         else {
             vc = storyboard.instantiateViewController(withIdentifier: "CheckPasswordViewController")

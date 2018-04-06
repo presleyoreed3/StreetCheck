@@ -15,6 +15,8 @@
 		0F8CAFCE20684E0C006AEAB9 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CAFCD20684E0C006AEAB9 /* GroupsTableViewController.swift */; };
 		0F8CAFD020684ED8006AEAB9 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CAFCF20684ED8006AEAB9 /* AddGroupViewController.swift */; };
 		0F8F20502071C48E005D7F07 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F204F2071C48E005D7F07 /* RoundButton.swift */; };
+		0FA3CF0E2076F02C008B912F /* EditYourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3CF0D2076F02C008B912F /* EditYourInfoViewController.swift */; };
+		0FA3CF102076F328008B912F /* UpdatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3CF0F2076F328008B912F /* UpdatePasswordViewController.swift */; };
 		0FDBA6002075D13C001DCBA2 /* SetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDBA5FF2075D13B001DCBA2 /* SetPasswordViewController.swift */; };
 		2B02766E20472DFC0062292C /* ContactEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B02766D20472DFC0062292C /* ContactEditController.swift */; };
 		2B12CCE52024DF93005C5ACD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CCE42024DF93005C5ACD /* AppDelegate.swift */; };
@@ -62,6 +64,8 @@
 		0F8CAFCD20684E0C006AEAB9 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		0F8CAFCF20684ED8006AEAB9 /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 		0F8F204F2071C48E005D7F07 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		0FA3CF0D2076F02C008B912F /* EditYourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditYourInfoViewController.swift; sourceTree = "<group>"; };
+		0FA3CF0F2076F328008B912F /* UpdatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordViewController.swift; sourceTree = "<group>"; };
 		0FDBA5FF2075D13B001DCBA2 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
 		2B02766D20472DFC0062292C /* ContactEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditController.swift; sourceTree = "<group>"; };
 		2B12CCE42024DF93005C5ACD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 				2BFC9E4020769C6B003217FF /* CheckPasswordViewController.swift */,
 				2B8912942075807500CDC39F /* OnboardingViewController.swift */,
 				0FDBA5FF2075D13B001DCBA2 /* SetPasswordViewController.swift */,
+				0FA3CF0D2076F02C008B912F /* EditYourInfoViewController.swift */,
+				0FA3CF0F2076F328008B912F /* UpdatePasswordViewController.swift */,
 				2B510681204F2157006BE0EB /* CrimeLocationPin.swift */,
 				0F8CAFC52066E5B1006AEAB9 /* Placeholder.swift */,
 				2B12CCE82024DF93005C5ACD /* Main.storyboard */,
@@ -349,6 +355,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA3CF102076F328008B912F /* UpdatePasswordViewController.swift in Sources */,
+				0FA3CF0E2076F02C008B912F /* EditYourInfoViewController.swift in Sources */,
 				0F8F20502071C48E005D7F07 /* RoundButton.swift in Sources */,
 				2B490AAE203101910045DE05 /* ContactTableViewCell.swift in Sources */,
 				2B510682204F2157006BE0EB /* CrimeLocationPin.swift in Sources */,

@@ -17,6 +17,9 @@ class OnboardingViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameField.delegate = self
+        emailField.delegate = self
+        phoneField.delegate = self
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
@@ -40,9 +43,8 @@ class OnboardingViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        nameField.resignFirstResponder()
         emailField.resignFirstResponder()
-        phoneField.resignFirstResponder()
+        performSegue(withIdentifier: "toPassword", sender: self)
         return true
     }
     
@@ -50,9 +52,4 @@ class OnboardingViewController: UIViewController, UITextFieldDelegate {
         performSegue(withIdentifier: "toPassword", sender: self)
     }
     
-//    @objc func keyboardWillChange(notification: Notification){
-//        print("Keyboard will show: \(notification.name.rawValue)")
-//
-//        view.frame.origin.y = -300
-//    }
 }

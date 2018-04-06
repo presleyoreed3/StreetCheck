@@ -20,7 +20,8 @@ class SetPasswordViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         passwordOne.isSecureTextEntry = true
         passwordTwo.isSecureTextEntry = true
-        
+        passwordOne.delegate = self
+        passwordTwo.delegate = self
         mismatchLabel.text = " "
         let name = UserDefaults.standard.value(forKey: "name")
         if ("\(String(describing: name))" == ""){
@@ -32,22 +33,38 @@ class SetPasswordViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func finishedWasPressed(_ sender: UIButton) {
-        checkPasswords()
-        UserDefaults.standard.set(passwordOne.text, forKey: "password")
-        if (mismatchLabel.text == "" && passwordOne.text != ""){
-            performSegue(withIdentifier: "toHomePage", sender: self)
+        if (checkPasswords()){
+            UserDefaults.standard.set(passwordOne.text, forKey: "password")
+            if (mismatchLabel.text == "" && passwordOne.text != ""){
+                performSegue(withIdentifier: "toHomePage", sender: self)
+            }
         }
     }
     
-    func checkPasswords(){
+    private func checkPasswords() -> Bool{
         if (passwordOne.text != passwordTwo.text ){
             mismatchLabel.text = "Your passwords do not match. \n Plase try again."
+            return false
         }else if(passwordOne.text == "" || passwordTwo.text == ""){
             mismatchLabel.text = "Please enter a password"
+            return false
         }
         else{
             mismatchLabel.text = ""
+            return true
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (checkPasswords()){
+            passwordOne.resignFirstResponder()
+            passwordTwo.resignFirstResponder()
+            if (mismatchLabel.text == "" && passwordOne.text != ""){
+                performSegue(withIdentifier: "toHomePage", sender: self)
+                return true
+            }
+        }
+        return false
     }
     
 }

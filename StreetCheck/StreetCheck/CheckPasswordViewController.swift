@@ -20,17 +20,33 @@ class CheckPasswordViewController: UIViewController, UITextFieldDelegate {
         mismatchLabel.text = ""
         passwordField.isSecureTextEntry = true
         // Do any additional setup after loading the view.
+        passwordField.delegate = self
     }
 
     @IBAction func unlockWasPressed(_ sender: UIButton) {
+        if (checkPassword()){
+            performSegue(withIdentifier: "passwordConfirmed", sender: self)
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (checkPassword()){
+            passwordField.resignFirstResponder()
+            performSegue(withIdentifier: "passwordConfirmed", sender: self)
+            return true
+        }
+        return false
+    }
+    
+    private func checkPassword() -> Bool{
         let password = UserDefaults.standard.value(forKey: "password") as? String
         if (password != passwordField.text) {
             mismatchLabel.text = "Incorrect Password \n Please try again."
             print("The password doesn't match. Should be \((String(describing: password)))")
             print("You entereed: \(String(describing: passwordField.text)) ")
+            return false
         }else {
-            performSegue(withIdentifier: "passwordConfirmed", sender: self)
+            return true
         }
     }
-    
 }

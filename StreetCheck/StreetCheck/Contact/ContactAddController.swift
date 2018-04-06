@@ -36,10 +36,15 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     //MARK: Load
     override func viewDidLoad() {
         super.viewDidLoad()
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-
+        createDatePicker()
+        // Draws the sex field
+        sexPicker.delegate = self
+        sexPicker.dataSource = self
+        sexField.inputView = sexPicker
+        
+        photoWindow.contentMode = .scaleAspectFit
+        dist_marksField.placeholder = "Distinguishing Marks:"
+        moField.placeholder = "MO:"
         
         //Draws the birthday field
         fNameField.delegate = self
@@ -53,16 +58,9 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         addressField.delegate = self
         crimeField.delegate = self
         
-        createDatePicker()
-        
-        // Draws the sex field
-        sexPicker.delegate = self
-        sexPicker.dataSource = self
-        sexField.inputView = sexPicker
-        
-        photoWindow.contentMode = .scaleAspectFit
-        dist_marksField.placeholder = "Distinguishing Marks:"
-        moField.placeholder = "MO:"
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     
 //    deinit {

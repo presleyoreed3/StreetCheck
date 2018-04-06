@@ -13,12 +13,15 @@ class EditYourInfoViewController: UIViewController {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var phoneField: UITextField!
+    @IBOutlet weak var mismatchLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nameField.text = UserDefaults.standard.value(forKey: "name") as? String
         emailField.text = UserDefaults.standard.value(forKey: "email") as? String
         phoneField.text = UserDefaults.standard.value(forKey: "phone") as? String
+        
+        mismatchLabel.text = ""
         // Do any additional setup after loading the view.
     }
     
@@ -27,6 +30,7 @@ class EditYourInfoViewController: UIViewController {
         UserDefaults.standard.set(nameField.text, forKey: "name")
         UserDefaults.standard.set(emailField.text, forKey: "email")
         UserDefaults.standard.set(phoneField.text, forKey: "phone")
+        mismatchLabel.text = "Your information has been updated"
     }
     
     

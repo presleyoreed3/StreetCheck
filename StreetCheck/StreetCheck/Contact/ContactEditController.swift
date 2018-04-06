@@ -36,7 +36,7 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        createDatePicker()
         fNameField.delegate = self
         mNameField.delegate = self
         lNameField.delegate = self

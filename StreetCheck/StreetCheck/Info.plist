@@ -42,8 +42,6 @@
 	<string>Allows you to display your current location relative to the address associated with an individual</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Let us see your current location to compare with the location of the crime</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Allows you to add photos to a contact page.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -67,5 +65,7 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Allows you to take a photo using your camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allows you to pick photos from your Photo Library to add to a contact or group</string>
 </dict>
 </plist>

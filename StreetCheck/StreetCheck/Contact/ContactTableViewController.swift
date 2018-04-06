@@ -161,7 +161,7 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     private func filterTableView(ind:Int, text: String){
         switch ind {
         case searchSelectedScope.name.rawValue:
-            contacts = contacts.filter({ contact -> Bool in return contact.first_name.contains(text)})
+            contacts = contacts.filter({ contact -> Bool in return contact.first_name.contains(text) || contact.last_name.contains(text) || (contact.middle_name?.contains(text))! || (contact.alias?.contains(text))!})
             self.tableView.reloadData()
         case searchSelectedScope.ethnicity.rawValue:
             print("Search Scope: \(searchSelectedScope.ethnicity.rawValue) ")

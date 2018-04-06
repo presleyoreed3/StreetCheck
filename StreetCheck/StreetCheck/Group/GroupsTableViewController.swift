@@ -14,7 +14,7 @@ enum groupSearchSelectedScope:Int{
     case members = 1
     case leader = 2
     case crime = 3
-    case location = 4
+    case address = 4
 }
 
 class GroupsTableViewController: UITableViewController, UISearchBarDelegate  {
@@ -90,7 +90,7 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate  {
     private func setUpSearchBar(){
         let searchBar = UISearchBar(frame: CGRect(x:0, y:0,width:(UIScreen.main.bounds.width),height: 70))
         searchBar.showsScopeBar = true
-        searchBar.scopeButtonTitles = ["Name", "Members", "Leader", "Crime", "Location"]
+        searchBar.scopeButtonTitles = ["Name", "Members", "Leader", "Crime", "Address"]
         searchBar.selectedScopeButtonIndex = 0
         self.tableView.tableHeaderView = searchBar
         searchBar.delegate = self
@@ -124,8 +124,8 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate  {
             print("Search Scope: \(searchSelectedScope.crime.rawValue) ")
             groups = groups.filter({ group -> Bool in return (group.crimes?.contains(text))!})
             self.tableView.reloadData()
-        case searchSelectedScope.location.rawValue:
-            print("Search Scope: \(searchSelectedScope.location.rawValue) ")
+        case searchSelectedScope.address.rawValue:
+            print("Search Scope: \(searchSelectedScope.address.rawValue) ")
             groups = groups.filter({ group -> Bool in return (group.location?.contains(text))!})
             self.tableView.reloadData()
         default:

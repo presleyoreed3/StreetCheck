@@ -14,7 +14,7 @@ enum searchSelectedScope:Int{
     case ethnicity = 1
     case sex = 2
     case crime = 3
-    case location = 4
+    case address = 4
     
 }
 
@@ -141,7 +141,7 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     private func setUpSearchBar(){
         let searchBar = UISearchBar(frame: CGRect(x:0, y:0,width:(UIScreen.main.bounds.width),height: 70))
         searchBar.showsScopeBar = true
-        searchBar.scopeButtonTitles = ["Name", "Ethnicity", "Sex", "Crime", "Location"]
+        searchBar.scopeButtonTitles = ["Name", "Ethnicity", "Sex", "Crime", "Address"]
         searchBar.selectedScopeButtonIndex = 0
         self.tableView.tableHeaderView = searchBar
         searchBar.delegate = self
@@ -175,8 +175,8 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
             print("Search Scope: \(searchSelectedScope.crime.rawValue) ")
             contacts = contacts.filter({ contact -> Bool in return (contact.crime?.contains(text))!})
             self.tableView.reloadData()
-        case searchSelectedScope.location.rawValue:
-            print("Search Scope: \(searchSelectedScope.location.rawValue) ")
+        case searchSelectedScope.address.rawValue:
+            print("Search Scope: \(searchSelectedScope.address.rawValue) ")
             contacts = contacts.filter({ contact -> Bool in return (contact.address?.contains(text))!})
             self.tableView.reloadData()
         default:

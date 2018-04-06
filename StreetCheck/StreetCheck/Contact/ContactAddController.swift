@@ -205,7 +205,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         imagePickerController.delegate = self
         
         
-        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a sources", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action:UIAlertAction) in if UIImagePickerController.isSourceTypeAvailable(.camera){
                 imagePickerController.allowsEditing = false

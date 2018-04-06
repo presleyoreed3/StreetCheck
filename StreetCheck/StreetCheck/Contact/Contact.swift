@@ -67,6 +67,7 @@ class Contact: NSObject, NSCoding{
         aCoder.encode(dis_marks, forKey: PropertyKey.dis_marks)
         aCoder.encode(MO, forKey: PropertyKey.MO)
         aCoder.encode(address, forKey: PropertyKey.address)
+        aCoder.encode(crime, forKey: PropertyKey.crime)
         
     }
     

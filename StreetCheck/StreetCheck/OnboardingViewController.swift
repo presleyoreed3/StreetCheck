@@ -39,6 +39,13 @@ class OnboardingViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameField.resignFirstResponder()
+        emailField.resignFirstResponder()
+        phoneField.resignFirstResponder()
+        return true
+    }
+    
     @IBAction func skipWasPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "toPassword", sender: self)
     }

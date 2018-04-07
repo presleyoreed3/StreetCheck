@@ -130,6 +130,7 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
         terrorismField.text = contactToEdit?.terrorism
         complexionField.text = contactToEdit?.complexion
         buildField.text = contactToEdit?.build
+        notesField.text = contactToEdit?.notes
         
         photoWindow.contentMode = .scaleAspectFit
         dist_marksField.placeholder = "Distinguishing Marks"

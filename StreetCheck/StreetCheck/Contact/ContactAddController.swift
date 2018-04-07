@@ -10,7 +10,7 @@ import UIKit
 import os.log
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
-UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
    
     
     //MARK: Declarations
@@ -114,6 +114,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         lNameField.delegate = self
         aliasField.delegate = self
         addressField.delegate = self
+//        notesField.delegate = self
         
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)

@@ -31,7 +31,6 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mo_label: UITextView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var addressLabel: UITextView!
-    @IBOutlet weak var raceLabel: UILabel!
     @IBOutlet weak var styleLabel: UILabel!
     @IBOutlet weak var complexionLabel: UILabel!
     @IBOutlet weak var buildLabel: UILabel!
@@ -83,6 +82,7 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
         hairStyleLabel.text = contactOnDisplay?.hairStyle
         terrorismLabel.text = contactOnDisplay?.terrorism
         buildLabel.text = contactOnDisplay?.build
+        ethnicity_label.text = contactOnDisplay?.ethnicity
         
         
         locationManager.delegate = self

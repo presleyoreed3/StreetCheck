@@ -107,6 +107,7 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
         racePicker.delegate = self
         racePicker.dataSource = self
         ethnicityField.inputView = racePicker
+        
         //Preloads the data into the appropriate fields
         fNameField.text = contactToEdit?.first_name
         mNameField.text = contactToEdit?.middle_name

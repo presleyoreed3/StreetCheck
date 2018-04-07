@@ -168,10 +168,12 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         let mo = moField?.text
         let crime = crimeField?.text
         let hairStyle = hairStyleField?.text
-        
+        let terrorism = terrorismField?.text
+        let build = buildField?.text
+        let complexion = complexionField?.text
         
 
-        contact = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address, photo: photo!, crime: crime, hairStyle: hairStyle)
+        contact = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address, photo: photo!, crime: crime, hairStyle: hairStyle, build: build, terrorism: terrorism, complexion: complexion)
         
     }
     
@@ -221,7 +223,6 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     }
     
     //MARK: Picker Controls
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -251,8 +252,12 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         else if (pickerView == racePicker){
             return races.count
         }
+        else if (pickerView == crimesPicker){
+            return crimes.count
+        }
         return 0
     }
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if (pickerView == sexPicker){
             return sexes[row]
@@ -277,6 +282,9 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         }
         else if (pickerView == racePicker){
             return races[row]
+        }
+        else if (pickerView == crimesPicker){
+            return crimes[row]
         }
         return ""
     }
@@ -313,6 +321,10 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         else if (pickerView == racePicker){
             ethnicityField.text = races[row]
             ethnicityField.resignFirstResponder()
+        }
+        else if (pickerView == crimesPicker){
+            crimeField.text = crimes[row]
+            crimeField.resignFirstResponder()
         }
     }
     

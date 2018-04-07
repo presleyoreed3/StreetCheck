@@ -38,9 +38,16 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         super.viewDidLoad()
         createDatePicker()
         // Draws the sex field
+        eyePicker.delegate = self
+        eyePicker.dataSource = self
+        eyeColorField.inputView = eyePicker
         sexPicker.delegate = self
         sexPicker.dataSource = self
         sexField.inputView = sexPicker
+        hairColorPicker.delegate = self
+        hairColorPicker.dataSource = self
+        hairColorField.inputView = hairColorPicker
+        
         
         photoWindow.contentMode = .scaleAspectFit
         dist_marksField.placeholder = "Distinguishing Marks:"
@@ -51,7 +58,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         mNameField.delegate = self
         lNameField.delegate = self
         aliasField.delegate = self
-        eyeColorField.delegate = self
+//        eyeColorField.delegate = self
         hairColorField.delegate = self
         heightField.delegate = self
         weightField.delegate = self
@@ -125,7 +132,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         mNameField.resignFirstResponder()
         lNameField.resignFirstResponder()
         aliasField.resignFirstResponder()
-        eyeColorField.resignFirstResponder()
+//        eyeColorField.resignFirstResponder()
         hairColorField.resignFirstResponder()
         heightField.resignFirstResponder()
         weightField.resignFirstResponder()
@@ -171,27 +178,55 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     
     // Sex Array
     let sexes = ["Male", "Female", "Other"]
+    let eyeColors = ["Black", "Blue", "Brown", "Gray", "Green", "Hazel", "Maroon", "Multicolored", "Pink", "Unkown"]
+    let hairColors = ["Black", "Blonde", "Blue", "Brown", "Gray", "Green", "Orange", "Pink", "Purple", "Red", "Sandy", "Unkown", "Bald", "White"]
     var sexPicker = UIPickerView()
+    var eyePicker = UIPickerView()
+    var hairColorPicker = UIPickerView()
     
-    func numberOfComponents(in sexPiceker: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return sexes.count
+        if (pickerView == sexPicker){
+             return sexes.count
+        }
+        else if (pickerView == eyePicker){
+            return eyeColors.count
+        }
+        else if (pickerView == hairColorPicker){
+            return hairColors.count
+        }
+        return 0
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return sexes[row]
+        if (pickerView == sexPicker){
+            return sexes[row]
+        }
+        else if (pickerView == eyePicker){
+            return eyeColors[row]
+        }
+        else if (pickerView == hairColorPicker){
+            return hairColors[row]
+        }
+        return ""
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        sexField.text = sexes[row]
-        sexField.resignFirstResponder()
+        if (pickerView == sexPicker){
+            sexField.text = sexes[row]
+            sexField.resignFirstResponder()
+        }
+        else if (pickerView == eyePicker){
+            eyeColorField.text = eyeColors[row]
+            eyeColorField.resignFirstResponder()
+        }
+        else if (pickerView == hairColorPicker){
+            hairColorField.text = hairColors[row]
+            hairColorField.resignFirstResponder()
+        }
     }
-    
-    //MARK: Eye Color
-    let eyeColors = ["Brown", "Blue", "Green", "Hazel", "Grey", "Other"]
-    
     
     
     //MARK: Image

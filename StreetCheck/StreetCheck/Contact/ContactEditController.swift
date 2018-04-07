@@ -55,7 +55,7 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
     let hairStyle = ["Afro", "Balding", "Bangs", "Bob", "Bowl", "Braided", "Bun", "Buzz Cut", "Corn Rows", "Curly/Perm", "Dreadlocks", "Dyed", "Fade", "Feathered", "Flat Top", "Jerry Curl", "Long", "Messy", "Mohawk", "Mullet", "Pony Tail", "Punk", "Shaved Bald", "Shaved in Design", "Short", "Shoulder Length", "Short", "Spiked", "Straight"]
     let complexions = ["Albino", "Black", "Dark", "Dark Down", "Fair", "Light", "Light Brown", "Medium", "Medium Brown", "Normal", "Olive", "Red", "Ruddy", "Sallow", "Yellow"]
     let crimes = ["Homicide", "Rape", "Robbery", "Assault", "Burglary", "Theft", "Arson", "Kidnapping", "Forgary/Fraud", "Vandalism", "Weapons", "Prostitution", "Gambling", "DUI", "Harassment"]
-    let terrorisms = ["Domestic Terrorism", "International Terrorism", "Hate Crimes", "Race Supremacy", "Environmental Extremists", "Animal Rights Extremists", "Anarchist Extremists", "Anti-abortion Extremists", "Lone Wolf Extremist", "Religious Extremists", "Sovereign Citizen Extremists", "Militia Extremists"]
+    let terrorisms = ["Domestic Terrorism", "International Terrorism", "Hate Crimes", "Race Supremacy", "Environmental Extremists", "Animal Rights Extremists", "Anarchist Extremists", "Anti-abortion Extremists", "Lone Wolf Extremist", "Religious Extremists", "Sovereign Citizen Extremists", "Militia Extremists", "N/A"]
     let builds = ["Fit", "Heavy", "Medium", "Muscular", "Obese", "Pregnant", "Slight", "Slim", "Stocky", "Short", "Tall"]
     let races = ["Black", "Indian", "Asian", "White", "Unkown"]
     

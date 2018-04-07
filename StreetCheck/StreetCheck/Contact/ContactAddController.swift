@@ -24,14 +24,19 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     @IBOutlet weak var addPhotoButton: UIButton!
     @IBOutlet weak var eyeColorField: UITextField!
     @IBOutlet weak var hairColorField: UITextField!
+    @IBOutlet weak var hairStyleField: UITextField!
+    @IBOutlet weak var buildField: UITextField!
     @IBOutlet weak var sexField: UITextField!
     @IBOutlet weak var heightField: UITextField!
     @IBOutlet weak var weightField: UITextField!
     @IBOutlet weak var ethnicityField: UITextField!
+    @IBOutlet weak var complexionField: UITextField!
     @IBOutlet weak var dist_marksField: UITextView!
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var moField: UITextView!
     @IBOutlet weak var crimeField: UITextField!
+    @IBOutlet weak var terrorismField: UITextField!
+    
     
     //MARK: Load
     override func viewDidLoad() {
@@ -47,6 +52,9 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         hairColorPicker.delegate = self
         hairColorPicker.dataSource = self
         hairColorField.inputView = hairColorPicker
+        hairStylePicker.delegate = self
+        hairStylePicker.dataSource = self
+        hairStyleField.inputView = hairStylePicker
         
         
         photoWindow.contentMode = .scaleAspectFit
@@ -180,9 +188,11 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     let sexes = ["Male", "Female", "Other"]
     let eyeColors = ["Black", "Blue", "Brown", "Gray", "Green", "Hazel", "Maroon", "Multicolored", "Pink", "Unkown"]
     let hairColors = ["Black", "Blonde", "Blue", "Brown", "Gray", "Green", "Orange", "Pink", "Purple", "Red", "Sandy", "Unkown", "Bald", "White"]
+    let hairStyle = ["Afro", "Balding", "Bangs", "Bob", "Bowl", "Braided", "Bun", "Buzz Cut", "Corn Rows", "Curly/Perm", "Dreadlocks", "Dyed", "Fade", "Feathered", "Flat Top", "Jerry Curl", "Long", "Messy", "Mohawk", "Mullet", "Pony Tail", "Punk", "Shaved Bald", "Shaved in Design", "Short", "Shoulder Length", "Short", "Spiked", "Straight"]
     var sexPicker = UIPickerView()
     var eyePicker = UIPickerView()
     var hairColorPicker = UIPickerView()
+    var hairStylePicker = UIPickerView()
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -198,6 +208,9 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         else if (pickerView == hairColorPicker){
             return hairColors.count
         }
+        else if (pickerView == hairStylePicker){
+            return hairStyle.count
+        }
         return 0
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -209,6 +222,9 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         }
         else if (pickerView == hairColorPicker){
             return hairColors[row]
+        }
+        else if (pickerView == hairStylePicker){
+            return hairStyle[row]
         }
         return ""
     }
@@ -225,6 +241,10 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         else if (pickerView == hairColorPicker){
             hairColorField.text = hairColors[row]
             hairColorField.resignFirstResponder()
+        }
+        else if (pickerView == hairStylePicker){
+            hairStyleField.text = hairStyle[row]
+            hairStyleField.resignFirstResponder()
         }
     }
     

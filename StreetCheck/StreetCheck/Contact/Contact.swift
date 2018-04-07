@@ -33,10 +33,11 @@ class Contact: NSObject, NSCoding{
     var build: String?
     var terrorism: String?
     var complexion: String?
+    var notes: String?
     
     
     //MARK: Initializer
-    init?(first_name: String, middle_name: String?, last_name: String, alias: String?, birthday: String, MO: String?, height: String?, weight: String?, hair_color: String?, eye_color: String?, sex: String?, ethnicity: String?, dis_marks: String?, address: String?, photo: UIImage?, crime: String?, hairStyle: String?, build: String?, terrorism: String?, complexion: String?) {
+    init?(first_name: String, middle_name: String?, last_name: String, alias: String?, birthday: String, MO: String?, height: String?, weight: String?, hair_color: String?, eye_color: String?, sex: String?, ethnicity: String?, dis_marks: String?, address: String?, photo: UIImage?, crime: String?, hairStyle: String?, build: String?, terrorism: String?, complexion: String?, notes: String?) {
         self.first_name = first_name
         self.middle_name = middle_name
         self.last_name = last_name
@@ -57,6 +58,7 @@ class Contact: NSObject, NSCoding{
         self.build = build
         self.terrorism = terrorism
         self.complexion = complexion
+        self.notes = notes
     }
     
     func encode(with aCoder: NSCoder) {
@@ -80,6 +82,7 @@ class Contact: NSObject, NSCoding{
         aCoder.encode(build, forKey: PropertyKey.build)
         aCoder.encode(terrorism, forKey: PropertyKey.terrorism)
         aCoder.encode(complexion, forKey: PropertyKey.complexion)
+        aCoder.encode(notes, forKey: PropertyKey.notes)
         
     }
     
@@ -104,8 +107,9 @@ class Contact: NSObject, NSCoding{
         let build = aDecoder.decodeObject(forKey: PropertyKey.build) as? String
         let terrorism = aDecoder.decodeObject(forKey: PropertyKey.terrorism) as? String
         let complexion = aDecoder.decodeObject(forKey: PropertyKey.complexion) as? String
+        let notes = aDecoder.decodeObject(forKey: PropertyKey.notes) as? String
         
-        self.init(first_name: first_name!, middle_name: middle_name, last_name: last_name!, alias: alias, birthday: birthday!, MO: MO, height: height, weight: weight, hair_color: hair_color, eye_color: eye_color,  sex: sex, ethnicity: ethnicity, dis_marks: dis_marks, address: address, photo: photo, crime: crime, hairStyle: hairStyle, build: build, terrorism: terrorism, complexion: complexion)
+        self.init(first_name: first_name!, middle_name: middle_name, last_name: last_name!, alias: alias, birthday: birthday!, MO: MO, height: height, weight: weight, hair_color: hair_color, eye_color: eye_color,  sex: sex, ethnicity: ethnicity, dis_marks: dis_marks, address: address, photo: photo, crime: crime, hairStyle: hairStyle, build: build, terrorism: terrorism, complexion: complexion, notes: notes)
         
     }
     
@@ -131,6 +135,7 @@ class Contact: NSObject, NSCoding{
         static let build = "build"
         static let complexion = "complexion"
         static let terrorism = "terrorism"
+        static let notes = "notes"
     }
     
     //MARK: Archiving Paths

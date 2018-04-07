@@ -36,6 +36,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     @IBOutlet weak var moField: UITextView!
     @IBOutlet weak var crimeField: UITextField!
     @IBOutlet weak var terrorismField: UITextField!
+    @IBOutlet weak var notesField: UITextView!
     
     
     //MARK: Picker Declarations
@@ -103,8 +104,9 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         ethnicityField.inputView = racePicker
         
         photoWindow.contentMode = .scaleAspectFit
-        dist_marksField.placeholder = "Distinguishing Marks:"
-        moField.placeholder = "MO:"
+        dist_marksField.placeholder = "Distinguishing Marks"
+        moField.placeholder = "MO"
+        notesField.placeholder = "Notes"
 
         //Draws the remaining feilds
         fNameField.delegate = self
@@ -171,9 +173,10 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         let terrorism = terrorismField?.text
         let build = buildField?.text
         let complexion = complexionField?.text
+        let notes = notesField?.text
         
 
-        contact = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address, photo: photo!, crime: crime, hairStyle: hairStyle, build: build, terrorism: terrorism, complexion: complexion)
+        contact = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address, photo: photo!, crime: crime, hairStyle: hairStyle, build: build, terrorism: terrorism, complexion: complexion, notes: notes)
         
     }
     
@@ -186,7 +189,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         heightField.resignFirstResponder()
         weightField.resignFirstResponder()
         addressField.resignFirstResponder()
-        crimeField.resignFirstResponder()
+        notesField.resignFirstResponder()
         return true
     }
     

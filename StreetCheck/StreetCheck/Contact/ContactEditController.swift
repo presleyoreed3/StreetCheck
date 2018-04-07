@@ -36,6 +36,7 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var complexionField: UITextField!
     @IBOutlet weak var buildField: UITextField!
     @IBOutlet weak var hairStyleField: UITextField!
+    @IBOutlet weak var notesField: UITextView!
     
     //MARK: Picker Declarations
     var sexPicker = UIPickerView()
@@ -131,8 +132,9 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
         buildField.text = contactToEdit?.build
         
         photoWindow.contentMode = .scaleAspectFit
-        dist_marksField.placeholder = "Distinguishing Marks:"
-        moField.placeholder = "MO:"
+        dist_marksField.placeholder = "Distinguishing Marks"
+        moField.placeholder = "MO"
+        notesField.placeholder = "Notes"
         
         
     }
@@ -171,9 +173,10 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let build = buildField?.text
         let terrorism = terrorismField?.text
         let complexion = complexionField?.text
+        let notes = notesField?.text
         
         
-        contactToEdit = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address!, photo: photo, crime: crime, hairStyle: hairStyle, build: build, terrorism: terrorism, complexion: complexion)
+        contactToEdit = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address!, photo: photo, crime: crime, hairStyle: hairStyle, build: build, terrorism: terrorism, complexion: complexion, notes: notes)
         
     }
     
@@ -186,6 +189,7 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
         heightField.resignFirstResponder()
         weightField.resignFirstResponder()
         addressField.resignFirstResponder()
+        notesField.resignFirstResponder()
         return true
     }
    

@@ -29,10 +29,11 @@ class Contact: NSObject, NSCoding{
     var address: String?
     var time_left: Int?
     var crime: String?
+    var hairStyle: String?
     
     
     //MARK: Initializer
-    init?(first_name: String, middle_name: String?, last_name: String, alias: String?, birthday: String, MO: String?, height: String?, weight: String?, hair_color: String?, eye_color: String?, sex: String?, ethnicity: String?, dis_marks: String?, address: String?, photo: UIImage?, crime: String?) {
+    init?(first_name: String, middle_name: String?, last_name: String, alias: String?, birthday: String, MO: String?, height: String?, weight: String?, hair_color: String?, eye_color: String?, sex: String?, ethnicity: String?, dis_marks: String?, address: String?, photo: UIImage?, crime: String?, hairStyle: String?) {
         self.first_name = first_name
         self.middle_name = middle_name
         self.last_name = last_name
@@ -49,6 +50,7 @@ class Contact: NSObject, NSCoding{
         self.address = address
         self.photo = photo
         self.crime = crime
+        self.hairStyle = hairStyle
     }
     
     func encode(with aCoder: NSCoder) {
@@ -68,6 +70,7 @@ class Contact: NSObject, NSCoding{
         aCoder.encode(MO, forKey: PropertyKey.MO)
         aCoder.encode(address, forKey: PropertyKey.address)
         aCoder.encode(crime, forKey: PropertyKey.crime)
+        aCoder.encode(hairStyle, forKey: PropertyKey.hairStyle)
         
     }
     
@@ -88,8 +91,9 @@ class Contact: NSObject, NSCoding{
         let MO = aDecoder.decodeObject(forKey: PropertyKey.MO) as? String
         let address = aDecoder.decodeObject(forKey: PropertyKey.address) as? String
         let crime = aDecoder.decodeObject(forKey: PropertyKey.crime) as? String
+        let hairStyle = aDecoder.decodeObject(forKey: PropertyKey.hairStyle) as? String
         
-        self.init(first_name: first_name!, middle_name: middle_name, last_name: last_name!, alias: alias, birthday: birthday!, MO: MO, height: height, weight: weight, hair_color: hair_color, eye_color: eye_color,  sex: sex, ethnicity: ethnicity, dis_marks: dis_marks, address: address, photo: photo, crime: crime)
+        self.init(first_name: first_name!, middle_name: middle_name, last_name: last_name!, alias: alias, birthday: birthday!, MO: MO, height: height, weight: weight, hair_color: hair_color, eye_color: eye_color,  sex: sex, ethnicity: ethnicity, dis_marks: dis_marks, address: address, photo: photo, crime: crime, hairStyle: hairStyle)
         
     }
     
@@ -111,6 +115,7 @@ class Contact: NSObject, NSCoding{
         static let MO = "MO"
         static let address = "address"
         static let crime = "crime"
+        static let hairStyle = "hairStyle"
     }
     
     //MARK: Archiving Paths

@@ -38,40 +38,80 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     @IBOutlet weak var terrorismField: UITextField!
     
     
+    //MARK: Picker Declarations
+    var sexPicker = UIPickerView()
+    var eyePicker = UIPickerView()
+    var hairColorPicker = UIPickerView()
+    var hairStylePicker = UIPickerView()
+    var complexionPicker = UIPickerView()
+    var crimesPicker = UIPickerView()
+    var terrorismPicker = UIPickerView()
+    var buildPicker = UIPickerView()
+    var racePicker = UIPickerView()
+    
+    //MARK: Picker Fields
+    let sexes = ["Male", "Female", "Other"]
+    let eyeColors = ["Black", "Blue", "Brown", "Gray", "Green", "Hazel", "Maroon", "Multicolored", "Pink", "Unkown"]
+    let hairColors = ["Black", "Blonde", "Blue", "Brown", "Gray", "Green", "Orange", "Pink", "Purple", "Red", "Sandy", "Unkown", "Bald", "White"]
+    let hairStyle = ["Afro", "Balding", "Bangs", "Bob", "Bowl", "Braided", "Bun", "Buzz Cut", "Corn Rows", "Curly/Perm", "Dreadlocks", "Dyed", "Fade", "Feathered", "Flat Top", "Jerry Curl", "Long", "Messy", "Mohawk", "Mullet", "Pony Tail", "Punk", "Shaved Bald", "Shaved in Design", "Short", "Shoulder Length", "Short", "Spiked", "Straight"]
+    let complexions = ["Albino", "Black", "Dark", "Dark Down", "Fair", "Light", "Light Brown", "Medium", "Medium Brown", "Normal", "Olive", "Red", "Ruddy", "Sallow", "Yellow"]
+    let crimes = ["Homicide", "Rape", "Robbery", "Assault", "Burglary", "Theft", "Arson", "Kidnapping", "Forgary/Fraud", "Vandalism", "Weapons", "Prostitution", "Gambling", "DUI", "Harassment"]
+    let terrorisms = ["Domestic Terrorism", "International Terrorism", "Hate Crimes", "Race Supremacy", "Environmental Extremists", "Animal Rights Extremists", "Anarchist Extremists", "Anti-abortion Extremists", "Lone Wolf Extremist", "Religious Extremists", "Sovereign Citizen Extremists", "Militia Extremists"]
+    let builds = ["Fit", "Heavy", "Medium", "Muscular", "Obese", "Pregnant", "Slight", "Slim", "Stocky", "Short", "Tall"]
+    let races = ["Black", "Indian", "Asian", "White", "Unkown"]
+    
+    
     //MARK: Load
     override func viewDidLoad() {
         super.viewDidLoad()
         createDatePicker()
-        // Draws the sex field
+        // Draws the eye field
         eyePicker.delegate = self
         eyePicker.dataSource = self
         eyeColorField.inputView = eyePicker
+        // Draws the sex field
         sexPicker.delegate = self
         sexPicker.dataSource = self
         sexField.inputView = sexPicker
+        // Draws the hair color field
         hairColorPicker.delegate = self
         hairColorPicker.dataSource = self
         hairColorField.inputView = hairColorPicker
+        // Draws the hair style field
         hairStylePicker.delegate = self
         hairStylePicker.dataSource = self
         hairStyleField.inputView = hairStylePicker
-        
+        // Draws the complexion field
+        complexionPicker.delegate = self
+        complexionPicker.dataSource = self
+        complexionField.inputView = complexionPicker
+        // Draws the crimes field
+        crimesPicker.delegate = self
+        crimesPicker.dataSource = self
+        crimeField.inputView = crimesPicker
+        // Draws the terrorism field
+        terrorismPicker.delegate = self
+        terrorismPicker.dataSource = self
+        terrorismField.inputView = terrorismPicker
+        // Draws the build field
+        buildPicker.delegate = self
+        buildPicker.dataSource = self
+        buildField.inputView = buildPicker
+        // Draws the race field
+        racePicker.delegate = self
+        racePicker.dataSource = self
+        ethnicityField.inputView = racePicker
         
         photoWindow.contentMode = .scaleAspectFit
         dist_marksField.placeholder = "Distinguishing Marks:"
         moField.placeholder = "MO:"
-        
-        //Draws the birthday field
+
+        //Draws the remaining feilds
         fNameField.delegate = self
         mNameField.delegate = self
         lNameField.delegate = self
         aliasField.delegate = self
-//        eyeColorField.delegate = self
-        hairColorField.delegate = self
-        heightField.delegate = self
-        weightField.delegate = self
         addressField.delegate = self
-        crimeField.delegate = self
         
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
@@ -127,10 +167,11 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         let address = addressField?.text
         let mo = moField?.text
         let crime = crimeField?.text
+        let hairStyle = hairStyleField?.text
         
         
 
-        contact = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address, photo: photo!, crime: crime)
+        contact = Contact(first_name: f_name!,middle_name: m_name, last_name: l_name!, alias: alias, birthday: birthday!, MO: mo, height: height!, weight: weight!, hair_color: hair!, eye_color: eye!, sex: sex!, ethnicity: ethnicity!, dis_marks: dist_marks!, address: address, photo: photo!, crime: crime, hairStyle: hairStyle)
         
     }
     
@@ -140,11 +181,8 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         mNameField.resignFirstResponder()
         lNameField.resignFirstResponder()
         aliasField.resignFirstResponder()
-//        eyeColorField.resignFirstResponder()
-        hairColorField.resignFirstResponder()
         heightField.resignFirstResponder()
         weightField.resignFirstResponder()
-        ethnicityField.resignFirstResponder()
         addressField.resignFirstResponder()
         crimeField.resignFirstResponder()
         return true
@@ -182,17 +220,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         self.view.endEditing(true)
     }
     
-    //MARK: Sex
-    
-    // Sex Array
-    let sexes = ["Male", "Female", "Other"]
-    let eyeColors = ["Black", "Blue", "Brown", "Gray", "Green", "Hazel", "Maroon", "Multicolored", "Pink", "Unkown"]
-    let hairColors = ["Black", "Blonde", "Blue", "Brown", "Gray", "Green", "Orange", "Pink", "Purple", "Red", "Sandy", "Unkown", "Bald", "White"]
-    let hairStyle = ["Afro", "Balding", "Bangs", "Bob", "Bowl", "Braided", "Bun", "Buzz Cut", "Corn Rows", "Curly/Perm", "Dreadlocks", "Dyed", "Fade", "Feathered", "Flat Top", "Jerry Curl", "Long", "Messy", "Mohawk", "Mullet", "Pony Tail", "Punk", "Shaved Bald", "Shaved in Design", "Short", "Shoulder Length", "Short", "Spiked", "Straight"]
-    var sexPicker = UIPickerView()
-    var eyePicker = UIPickerView()
-    var hairColorPicker = UIPickerView()
-    var hairStylePicker = UIPickerView()
+    //MARK: Picker Controls
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -211,6 +239,18 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         else if (pickerView == hairStylePicker){
             return hairStyle.count
         }
+        else if (pickerView == complexionPicker){
+            return complexions.count
+        }
+        else if (pickerView == terrorismPicker){
+            return terrorisms.count
+        }
+        else if (pickerView == buildPicker){
+            return builds.count
+        }
+        else if (pickerView == racePicker){
+            return races.count
+        }
         return 0
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -225,6 +265,18 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         }
         else if (pickerView == hairStylePicker){
             return hairStyle[row]
+        }
+        else if (pickerView == complexionPicker){
+            return complexions[row]
+        }
+        else if (pickerView == terrorismPicker){
+            return terrorisms[row]
+        }
+        else if (pickerView == buildPicker){
+            return builds[row]
+        }
+        else if (pickerView == racePicker){
+            return races[row]
         }
         return ""
     }
@@ -245,6 +297,22 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         else if (pickerView == hairStylePicker){
             hairStyleField.text = hairStyle[row]
             hairStyleField.resignFirstResponder()
+        }
+        else if (pickerView == complexionPicker){
+            complexionField.text = complexions[row]
+            complexionField.resignFirstResponder()
+        }
+        else if (pickerView == terrorismPicker){
+            terrorismField.text = terrorisms[row]
+            terrorismField.resignFirstResponder()
+        }
+        else if (pickerView == buildPicker){
+            buildField.text = builds[row]
+            buildField.resignFirstResponder()
+        }
+        else if (pickerView == racePicker){
+            ethnicityField.text = races[row]
+            ethnicityField.resignFirstResponder()
         }
     }
     

@@ -32,9 +32,6 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     
 
     override func viewDidLoad() {
-        
-        
-        
         super.viewDidLoad()
         self.setUpSearchBar()
         if (cellIdentifier == "NarrowContactTableViewCell"){
@@ -109,11 +106,9 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
         cell.firstNameLabel.text = contact.first_name
         cell.lastNameLabel.text = contact.last_name
         cell.photoCell.image = contact.photo
-        if (cellIdentifier == "NarrowContactTableViewCell"){
-            cell.ageLabel.text = contact.birthday
-            cell.heightLabel.text = contact.height
-            cell.weightLabel.text = contact.weight
-        }
+        cell.ageLabel.text = contact.birthday
+        cell.heightLabel.text = contact.height
+        cell.weightLabel.text = contact.weight
         
         cell.photoCell.contentMode = .scaleAspectFill
         cell.photoCell.clipsToBounds = true
@@ -130,10 +125,6 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
         let destination = segue.destination as? ContactViewController
         destination?.contactOnDisplay = contacts[(tableView.indexPathForSelectedRow?.row)!]
         
-    }
-    
-    private func refresh(){
-        self.tableView.reloadData()
     }
     
     //MARK: Search Bar
@@ -190,11 +181,9 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
         if let sourceViewController = sender.source as? ViewController, let contact = sourceViewController.contact {
             //Adds a new contact
             let newIndexPath = IndexPath(row: currentContactArray.count, section: 0)
-            
             contacts.append(contact)
             constantContacts.append(contact)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
-            currentContactArray = contacts
             saveContact()
             tableView.reloadData()
         }
@@ -203,8 +192,6 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     @IBAction func unwindToTableView(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? ContactViewController, let contact = sourceViewController.contactOnDisplay {
             contacts[(tableView.indexPathForSelectedRow?.row)!] = contact
-            refresh()
-            currentContactArray = contacts
             constantContacts = contacts
             saveContact()
             tableView.reloadData()

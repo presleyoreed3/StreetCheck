@@ -32,6 +32,8 @@ class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         groupOffenses.placeholder = "Offenses commited by Group:"
         groupMO.placeholder = "Group MO:"
     }
+    
+    
 
     var group: Group?
     

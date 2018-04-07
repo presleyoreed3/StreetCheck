@@ -30,10 +30,17 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var dis_marksLabel: UITextView!
     @IBOutlet weak var mo_label: UITextView!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var crimeLabel: UITextView!
     @IBOutlet weak var addressLabel: UITextView!
+    @IBOutlet weak var raceLabel: UILabel!
+    @IBOutlet weak var styleLabel: UILabel!
+    @IBOutlet weak var complexionLabel: UILabel!
+    @IBOutlet weak var buildLabel: UILabel!
+    @IBOutlet weak var crimeLabel: UILabel!
+    @IBOutlet weak var terrorismLabel: UILabel!
+    @IBOutlet weak var hairStyleLabel: UILabel!
     
-
+    
+    
     var contactOnDisplay: Contact?
     
     let locationManager = CLLocationManager()
@@ -65,13 +72,18 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
         ht_label.text = contactOnDisplay?.height
         eye_label.text = contactOnDisplay?.eye_color
         hair_label.text = contactOnDisplay?.hair_color
-        ethnicity_label.text = contactOnDisplay?.ethnicity
+        crimeLabel.text = contactOnDisplay?.ethnicity
         dis_marksLabel.text = contactOnDisplay?.dis_marks
         dis_marksLabel.isUserInteractionEnabled = false
         mo_label.text = contactOnDisplay?.MO
         mo_label.isUserInteractionEnabled = false
         crimeLabel.text = contactOnDisplay?.crime
         addressLabel.text = contactOnDisplay?.address
+        complexionLabel.text = contactOnDisplay?.complexion
+        hairStyleLabel.text = contactOnDisplay?.hairStyle
+        terrorismLabel.text = contactOnDisplay?.terrorism
+        buildLabel.text = contactOnDisplay?.build
+        
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()

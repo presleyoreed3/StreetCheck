@@ -49,6 +49,8 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     var terrorismPicker = UIPickerView()
     var buildPicker = UIPickerView()
     var racePicker = UIPickerView()
+    var heightPicker = UIPickerView()
+    var weightPicker = UIPickerView()
     
     //MARK: Picker Fields
     let sexes = ["Male", "Female", "Other"]
@@ -60,6 +62,11 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     let terrorisms = ["Domestic Terrorism", "International Terrorism", "Hate Crimes", "Race Supremacy", "Environmental Extremists", "Animal Rights Extremists", "Anarchist Extremists", "Anti-abortion Extremists", "Lone Wolf Extremist", "Religious Extremists", "Sovereign Citizen Extremists", "Militia Extremists", "N/A"]
     let builds = ["Fit", "Heavy", "Medium", "Muscular", "Obese", "Pregnant", "Slight", "Slim", "Stocky", "Short", "Tall"]
     let races = ["Black", "Indian", "Asian", "White", "Unkown"]
+    let textField = UITextField()
+    let feetList = Array(3...9)
+    let inchList = Array(0...11)
+    let weights = Array (60...400)
+    let numberOfComponents = 4
     
     
     //MARK: Load
@@ -102,6 +109,14 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         racePicker.delegate = self
         racePicker.dataSource = self
         ethnicityField.inputView = racePicker
+        
+        weightPicker.delegate = self
+        weightPicker.dataSource = self
+        weightField.inputView = weightPicker
+        
+        heightPicker.delegate = self
+        heightPicker.dataSource = self
+        heightField.inputView = heightPicker
         
         photoWindow.contentMode = .scaleAspectFit
         dist_marksField.placeholder = "Distinguishing Marks"
@@ -231,6 +246,9 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     
     //MARK: Picker Controls
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        if (pickerView == heightPicker){
+            return 4
+        }
         return 1
     }
     
@@ -262,6 +280,18 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         else if (pickerView == crimesPicker){
             return crimes.count
         }
+        else if (pickerView == weightPicker){
+            return weights.count
+        }
+        else if (pickerView == heightPicker){
+            if (component == 0){
+                return feetList.count
+            }else if (component == 2){
+                return inchList.count
+            }else {
+                return 1
+            }
+        }
         return 0
     }
     
@@ -292,6 +322,20 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         }
         else if (pickerView == crimesPicker){
             return crimes[row]
+        }
+        else if (pickerView == weightPicker){
+            return "\(weights[row])"
+        }
+        else if (pickerView == heightPicker){
+            if component == 0 {
+                return "\(feetList[row])"
+            }else if component == 1 {
+                return "ft"
+            }else if component == 2 {
+                return "\(inchList[row])"
+            }else {
+                return "in"
+            }
         }
         return ""
     }
@@ -332,6 +376,15 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         else if (pickerView == crimesPicker){
             crimeField.text = crimes[row]
             crimeField.resignFirstResponder()
+        }
+        else if (pickerView == weightPicker){
+            weightField.text = "\(weights[row]) lbs"
+            weightField.resignFirstResponder()
+        }
+        else if (pickerView == heightPicker){
+            let feetIndex = pickerView.selectedRow(inComponent: 0)
+            let inchIndex = pickerView.selectedRow(inComponent: 2)
+            heightField.text = "\(feetList[feetIndex])'\(inchList[inchIndex])''"
         }
     }
     

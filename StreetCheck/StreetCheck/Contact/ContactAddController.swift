@@ -10,7 +10,7 @@ import UIKit
 import os.log
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
-UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
+UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate{
    
     
     //MARK: Declarations
@@ -114,6 +114,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         lNameField.delegate = self
         aliasField.delegate = self
         addressField.delegate = self
+        notesField.delegate = self
 //        notesField.delegate = self
         
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -224,7 +225,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         formatter.timeStyle = .none
         let dateString = formatter.string(from: birthdayPicker.date)
         
-        birthdayField.text = "\(dateString)"
+        birthdayField.text = dateString
         self.view.endEditing(true)
     }
     

@@ -11,15 +11,13 @@ import UIKit
 class OnboardingViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var tellUsMoreLabel: UILabel!
+    @IBOutlet weak var idField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nameField.delegate = self
-        emailField.delegate = self
-        phoneField.delegate = self
+        idField.delegate = self
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
@@ -32,10 +30,9 @@ class OnboardingViewController: UIViewController, UITextFieldDelegate {
 //    }
 
     @IBAction func startWasPressed(_ sender: UIButton) {
-        if (nameField.text != "" || emailField.text != "" || phoneField.text != ""){
+        if (nameField.text != "" || idField.text != ""){
             UserDefaults.standard.set(nameField.text, forKey: "name")
-            UserDefaults.standard.set(emailField.text, forKey: "email")
-            UserDefaults.standard.set(phoneField.text, forKey: "phone")
+            UserDefaults.standard.set(idField.text, forKey: "id")
             performSegue(withIdentifier: "toPassword", sender: self)
         }else{
             tellUsMoreLabel.text = "Please fill out all of the fields"
@@ -43,7 +40,8 @@ class OnboardingViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        emailField.resignFirstResponder()
+        nameField.resignFirstResponder()
+        idField.resignFirstResponder()
         performSegue(withIdentifier: "toPassword", sender: self)
         return true
     }

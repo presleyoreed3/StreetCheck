@@ -34,10 +34,11 @@ class Contact: NSObject, NSCoding{
     var terrorism: String?
     var complexion: String?
     var notes: String?
+    var dateAndTime: Date?
     
     
     //MARK: Initializer
-    init?(first_name: String, middle_name: String?, last_name: String, alias: String?, birthday: String, MO: String?, height: String?, weight: String?, hair_color: String?, eye_color: String?, sex: String?, ethnicity: String?, dis_marks: String?, address: String?, photo: UIImage?, crime: String?, hairStyle: String?, build: String?, terrorism: String?, complexion: String?, notes: String?) {
+    init?(first_name: String, middle_name: String?, last_name: String, alias: String?, birthday: String, MO: String?, height: String?, weight: String?, hair_color: String?, eye_color: String?, sex: String?, ethnicity: String?, dis_marks: String?, address: String?, photo: UIImage?, crime: String?, hairStyle: String?, build: String?, terrorism: String?, complexion: String?, notes: String?, dateAndTime: Date?) {
         self.first_name = first_name
         self.middle_name = middle_name
         self.last_name = last_name
@@ -59,6 +60,7 @@ class Contact: NSObject, NSCoding{
         self.terrorism = terrorism
         self.complexion = complexion
         self.notes = notes
+        self.dateAndTime = dateAndTime
     }
     
     func encode(with aCoder: NSCoder) {
@@ -83,6 +85,7 @@ class Contact: NSObject, NSCoding{
         aCoder.encode(terrorism, forKey: PropertyKey.terrorism)
         aCoder.encode(complexion, forKey: PropertyKey.complexion)
         aCoder.encode(notes, forKey: PropertyKey.notes)
+        aCoder.encode(dateAndTime, forKey: PropertyKey.dateAndTime)
         
     }
     
@@ -108,8 +111,9 @@ class Contact: NSObject, NSCoding{
         let terrorism = aDecoder.decodeObject(forKey: PropertyKey.terrorism) as? String
         let complexion = aDecoder.decodeObject(forKey: PropertyKey.complexion) as? String
         let notes = aDecoder.decodeObject(forKey: PropertyKey.notes) as? String
+        let dateAndTime = aDecoder.decodeObject(forKey: PropertyKey.dateAndTime) as? Date
         
-        self.init(first_name: first_name!, middle_name: middle_name, last_name: last_name!, alias: alias, birthday: birthday!, MO: MO, height: height, weight: weight, hair_color: hair_color, eye_color: eye_color,  sex: sex, ethnicity: ethnicity, dis_marks: dis_marks, address: address, photo: photo, crime: crime, hairStyle: hairStyle, build: build, terrorism: terrorism, complexion: complexion, notes: notes)
+        self.init(first_name: first_name!, middle_name: middle_name, last_name: last_name!, alias: alias, birthday: birthday!, MO: MO, height: height, weight: weight, hair_color: hair_color, eye_color: eye_color,  sex: sex, ethnicity: ethnicity, dis_marks: dis_marks, address: address, photo: photo, crime: crime, hairStyle: hairStyle, build: build, terrorism: terrorism, complexion: complexion, notes: notes, dateAndTime: dateAndTime)
         
     }
     
@@ -136,6 +140,7 @@ class Contact: NSObject, NSCoding{
         static let complexion = "complexion"
         static let terrorism = "terrorism"
         static let notes = "notes"
+        static let dateAndTime = "dateAndTime"
     }
     
     //MARK: Archiving Paths

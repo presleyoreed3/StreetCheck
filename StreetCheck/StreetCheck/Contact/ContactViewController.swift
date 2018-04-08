@@ -37,6 +37,7 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var crimeLabel: UILabel!
     @IBOutlet weak var terrorismLabel: UILabel!
     @IBOutlet weak var hairStyleLabel: UILabel!
+    @IBOutlet weak var lastUpdatedLabel: UILabel!
     
     
     
@@ -83,6 +84,11 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
         terrorismLabel.text = contactOnDisplay?.terrorism
         buildLabel.text = contactOnDisplay?.build
         ethnicity_label.text = contactOnDisplay?.ethnicity
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy HH:mm"
+        let stringDate = formatter.string(from: (contactOnDisplay?.dateAndTime)!)
+        lastUpdatedLabel.text = stringDate
         
         
         locationManager.delegate = self

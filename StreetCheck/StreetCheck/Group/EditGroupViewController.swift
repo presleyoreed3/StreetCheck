@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate, UIPickerViewDelegate,  UINavigationControllerDelegate {
+class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate, UIPickerViewDelegate,  UINavigationControllerDelegate, UIPickerViewDataSource {
     
     var groupToEdit: Group?
     
@@ -21,8 +21,16 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var groupLocationLabel: UITextField!
     @IBOutlet weak var groupMOLabel: UITextView!
     @IBOutlet weak var groupCrimesLabel: UITextView!
+    @IBOutlet weak var crimeField: UITextField!
+    @IBOutlet weak var terrorismField: UITextField!
     
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    var crimePicker = UIPickerView()
+    var terrorismPicker = UIPickerView()
+    
+    let crimes = ["Homicide", "Rape", "Robbery", "Assault", "Burglary", "Theft", "Arson", "Kidnapping", "Forgary/Fraud", "Vandalism", "Weapons", "Prostitution", "Gambling", "DUI", "Harassment"]
+    let terrorisms = ["Domestic Terrorism", "International Terrorism", "Hate Crimes", "Race Supremacy", "Environmental Extremists", "Animal Rights Extremists", "Anarchist Extremists", "Anti-abortion Extremists", "Lone Wolf Extremist", "Religious Extremists", "Sovereign Citizen Extremists", "Militia Extremists", "N/A"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +44,17 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
         groupLocationLabel.text = groupToEdit?.location
         groupMemberLabel.text = groupToEdit?.members
         
-        groupMemberLabel.placeholder = "Members of the Group:"
-        groupCrimesLabel.placeholder = "Offenses commited by Group:"
-        groupMOLabel.placeholder = "Group MO:"
+        crimePicker.delegate = self
+        crimePicker.dataSource = self
+        crimeField.inputView = crimePicker
+        
+        terrorismPicker.delegate = self
+        terrorismPicker.dataSource = self
+        terrorismField.inputView = terrorismPicker
+        
+        groupMemberLabel.placeholder = "Members of the Group"
+        groupCrimesLabel.placeholder = "Crimes commited by Group"
+        groupMOLabel.placeholder = "Group MO"
         
         photoView.contentMode = .scaleAspectFit
 
@@ -67,10 +83,44 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
         let mo = groupMOLabel?.text
         let crimes = groupCrimesLabel?.text
         let photo = photoView?.image
+        let crime = crimeField?.text
+        let terrorism = terrorismField?.text
         
         
-        groupToEdit = Group(name: name, members: members, MO: mo, crimes: crimes, leader: leader, location: address, image: photo)
+        groupToEdit = Group(name: name, members: members, MO: mo, crimes: crimes, leader: leader, location: address, image: photo, crime: crime, terrorism: terrorism)
         
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if (pickerView == crimePicker){
+            return crimes.count
+        }else if (pickerView == terrorismPicker){
+            return terrorisms.count
+        }
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if (pickerView == crimePicker){
+            return crimes[row]
+        }else if (pickerView == terrorismPicker){
+            return terrorisms[row]
+        }
+        return ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if (pickerView == crimePicker){
+            crimeField.text = crimes[row]
+            crimeField.resignFirstResponder()
+        }else if (pickerView == terrorismPicker){
+            terrorismField.text = terrorisms[row]
+            terrorismField.resignFirstResponder()
+        }
     }
     
     //MARK: Image

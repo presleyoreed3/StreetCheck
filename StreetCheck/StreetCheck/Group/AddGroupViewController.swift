@@ -10,7 +10,7 @@ import UIKit
 import os.log
 
 
-class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var addPhoto: UIButton!
@@ -22,11 +22,27 @@ class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var groupMembers: UITextView!
     @IBOutlet weak var groupOffenses: UITextView!
     @IBOutlet weak var groupMO: UITextView!
+    @IBOutlet weak var crimeField: UITextField!
+    @IBOutlet weak var terrorismField: UITextField!
+    
+    var crimePicker = UIPickerView()
+    var terrorismPicker = UIPickerView()
+    
+    let crimes = ["Homicide", "Rape", "Robbery", "Assault", "Burglary", "Theft", "Arson", "Kidnapping", "Forgary/Fraud", "Vandalism", "Weapons", "Prostitution", "Gambling", "DUI", "Harassment"]
+    let terrorisms = ["Domestic Terrorism", "International Terrorism", "Hate Crimes", "Race Supremacy", "Environmental Extremists", "Animal Rights Extremists", "Anarchist Extremists", "Anti-abortion Extremists", "Lone Wolf Extremist", "Religious Extremists", "Sovereign Citizen Extremists", "Militia Extremists", "N/A"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.contentSize.height = 1550
         // Do any additional setup after loading the view.
+        
+        crimePicker.delegate = self
+        crimePicker.dataSource = self
+        crimeField.inputView = crimePicker
+        
+        terrorismPicker.delegate = self
+        terrorismPicker.dataSource = self
+        terrorismField.inputView = terrorismField   
         
         groupMembers.placeholder = "Members of the Group"
         groupOffenses.placeholder = "Crimes commited by Group"
@@ -57,9 +73,43 @@ class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         let crimes = groupOffenses?.text
         let mo = groupMO?.text
         let groupImage = photo?.image
+        let crime = crimeField?.text
+        let terrorism = terrorismField?.text
         
-        group = Group(name: name, members: members, MO: mo, crimes: crimes, leader: leader, location: location, image: groupImage)
+        group = Group(name: name, members: members, MO: mo, crimes: crimes, leader: leader, location: location, image: groupImage, crime: crime, terrorism: terrorism)
         
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if (pickerView == crimePicker){
+            return crimes.count
+        }else if (pickerView == terrorismPicker){
+            return terrorisms.count
+        }
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if (pickerView == crimePicker){
+            return crimes[row]
+        }else if (pickerView == terrorismPicker){
+            return terrorisms[row]
+        }
+        return ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if (pickerView == crimePicker){
+            crimeField.text = crimes[row]
+            crimeField.resignFirstResponder()
+        }else if (pickerView == terrorismPicker){
+            terrorismField.text = terrorisms[row]
+            terrorismField.resignFirstResponder()   
+        }
     }
     
     //MARK: Add Photo

@@ -17,8 +17,10 @@ class Group: NSObject, NSCoding {
     var leader: String?
     var location: String?
     var image: UIImage?
+    var crime: String?
+    var terrorism: String?
     
-    init?(name: String?, members: String?, MO: String?, crimes: String?, leader: String?, location: String?, image: UIImage?){
+    init?(name: String?, members: String?, MO: String?, crimes: String?, leader: String?, location: String?, image: UIImage?, crime: String?, terrorism: String?){
         self.name = name
         self.members = members
         self.MO = MO
@@ -26,6 +28,8 @@ class Group: NSObject, NSCoding {
         self.leader = leader
         self.location = location
         self.image = image
+        self.crime = crime
+        self.terrorism = terrorism
         
     }
     
@@ -37,6 +41,8 @@ class Group: NSObject, NSCoding {
         aCoder.encode(leader, forKey: PropertyKey.leader)
         aCoder.encode(location, forKey: PropertyKey.location)
         aCoder.encode(image, forKey: PropertyKey.image)
+        aCoder.encode(crime, forKey: PropertyKey.crime)
+        aCoder.encode(terrorism, forKey: PropertyKey.terrorism)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -47,8 +53,10 @@ class Group: NSObject, NSCoding {
         let leader = aDecoder.decodeObject(forKey: PropertyKey.leader) as? String
         let location = aDecoder.decodeObject(forKey: PropertyKey.location) as? String
         let image = aDecoder.decodeObject(forKey: PropertyKey.image) as? UIImage
+        let crime = aDecoder.decodeObject(forKey: PropertyKey.crime) as? String
+        let terrorism = aDecoder.decodeObject(forKey: PropertyKey.terrorism) as? String
         
-        self.init(name: name, members: members, MO: MO, crimes: crimes, leader: leader, location: location, image: image)
+        self.init(name: name, members: members, MO: MO, crimes: crimes, leader: leader, location: location, image: image, crime: crime, terrorism: terrorism)
         
     }
     
@@ -60,6 +68,8 @@ class Group: NSObject, NSCoding {
         static let leader = "leader"
         static let location = "location"
         static let image = "image"
+        static let crime = "crime"
+        static let terrorism = "terrorism"
     }
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!

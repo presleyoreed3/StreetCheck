@@ -20,8 +20,9 @@ class Group: NSObject, NSCoding {
     var crime: String?
     var terrorism: String?
     var classification: String?
+    var dateAndTime: Date?
     
-    init?(name: String?, members: String?, MO: String?, crimes: String?, leader: String?, location: String?, image: UIImage?, crime: String?, terrorism: String?, classification: String?){
+    init?(name: String?, members: String?, MO: String?, crimes: String?, leader: String?, location: String?, image: UIImage?, crime: String?, terrorism: String?, classification: String?, dateAndTime: Date?){
         self.name = name
         self.members = members
         self.MO = MO
@@ -32,6 +33,7 @@ class Group: NSObject, NSCoding {
         self.crime = crime
         self.terrorism = terrorism
         self.classification = classification
+        self.dateAndTime = dateAndTime
         
     }
     
@@ -46,6 +48,8 @@ class Group: NSObject, NSCoding {
         aCoder.encode(crime, forKey: PropertyKey.crime)
         aCoder.encode(terrorism, forKey: PropertyKey.terrorism)
         aCoder.encode(classification, forKey: PropertyKey.classification)
+        aCoder.encode(dateAndTime, forKey:PropertyKey.dateAndTime)
+        
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -59,8 +63,9 @@ class Group: NSObject, NSCoding {
         let crime = aDecoder.decodeObject(forKey: PropertyKey.crime) as? String
         let terrorism = aDecoder.decodeObject(forKey: PropertyKey.terrorism) as? String
         let classification = aDecoder.decodeObject(forKey: PropertyKey.classification) as? String
+        let dateAndTime = aDecoder.decodeObject(forKey: PropertyKey.dateAndTime) as? Date
         
-        self.init(name: name, members: members, MO: MO, crimes: crimes, leader: leader, location: location, image: image, crime: crime, terrorism: terrorism, classification: classification)
+        self.init(name: name, members: members, MO: MO, crimes: crimes, leader: leader, location: location, image: image, crime: crime, terrorism: terrorism, classification: classification, dateAndTime: dateAndTime)
         
     }
     
@@ -75,6 +80,7 @@ class Group: NSObject, NSCoding {
         static let crime = "crime"
         static let terrorism = "terrorism"
         static let classification = "classification"
+        static let dateAndTime = "dateAndTime"
     }
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!

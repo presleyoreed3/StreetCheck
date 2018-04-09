@@ -50,6 +50,7 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
         terrorismField.text = groupToEdit?.terrorism
         classField.text = groupToEdit?.classification
         
+        
         crimePicker.delegate = self
         crimePicker.dataSource = self
         crimeField.inputView = crimePicker
@@ -97,8 +98,10 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
         let terrorism = terrorismField?.text
         let classification = classField?.text
         
+        let currentDate = Date()
         
-        groupToEdit = Group(name: name, members: members, MO: mo, crimes: crimes, leader: leader, location: address, image: photo, crime: crime, terrorism: terrorism, classification: classification)
+        
+        groupToEdit = Group(name: name, members: members, MO: mo, crimes: crimes, leader: leader, location: address, image: photo, crime: crime, terrorism: terrorism, classification: classification, dateAndTime: currentDate)
         
     }
     

@@ -54,6 +54,8 @@ class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         groupMembers.placeholder = "Members of the Group"
         groupOffenses.placeholder = "Crimes commited by Group"
         groupMO.placeholder = "Group MO"
+        
+        
     }
     
     
@@ -84,7 +86,9 @@ class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         let terrorism = terrorismField?.text
         let classification = classField?.text
         
-        group = Group(name: name, members: members, MO: mo, crimes: crimes, leader: leader, location: location, image: groupImage, crime: crime, terrorism: terrorism, classification: classification)
+        let currentDateTime = Date()
+        
+        group = Group(name: name, members: members, MO: mo, crimes: crimes, leader: leader, location: location, image: groupImage, crime: crime, terrorism: terrorism, classification: classification, dateAndTime: currentDateTime)
         
     }
     

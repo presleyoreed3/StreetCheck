@@ -23,6 +23,7 @@ class GroupViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var crimeLabel: UILabel!
     @IBOutlet weak var terrorismLabel: UILabel!
+    @IBOutlet weak var dateAndTimeLabel: UILabel!
     
     
     @IBOutlet weak var mapView: MKMapView!
@@ -53,6 +54,11 @@ class GroupViewController: UIViewController, CLLocationManagerDelegate {
         crimeLabel.text = groupOnDisplay?.crimes
         terrorismLabel.text = groupOnDisplay?.terrorism
         classLabel.text = groupOnDisplay?.classification
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy HH:mm"
+        let stringDate = formatter.string(from: (groupOnDisplay?.dateAndTime)!)
+        dateAndTimeLabel.text = stringDate
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()

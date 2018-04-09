@@ -86,7 +86,7 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
         ethnicity_label.text = contactOnDisplay?.ethnicity
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy HH:mm"
+        formatter.dateFormat = "MM-dd-yyyy HH:mm"
         let stringDate = formatter.string(from: (contactOnDisplay?.dateAndTime)!)
         lastUpdatedLabel.text = stringDate
         

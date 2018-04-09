@@ -20,7 +20,10 @@ class GroupViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var moLabel: UITextView!
     @IBOutlet weak var addressLabel: UITextView!
     @IBOutlet weak var photoLabel: UIImageView!
-    @IBOutlet weak var crimeLabel: UITextView!
+    @IBOutlet weak var classLabel: UILabel!
+    @IBOutlet weak var crimeLabel: UILabel!
+    @IBOutlet weak var terrorismLabel: UILabel!
+    
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -48,6 +51,8 @@ class GroupViewController: UIViewController, CLLocationManagerDelegate {
         addressLabel.text = groupOnDisplay?.location
         addressLabel.isUserInteractionEnabled = false
         crimeLabel.text = groupOnDisplay?.crimes
+        terrorismLabel.text = groupOnDisplay?.terrorism
+        classLabel.text = groupOnDisplay?.classification
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()

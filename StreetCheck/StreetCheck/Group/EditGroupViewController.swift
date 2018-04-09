@@ -23,14 +23,17 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var groupCrimesLabel: UITextView!
     @IBOutlet weak var crimeField: UITextField!
     @IBOutlet weak var terrorismField: UITextField!
+    @IBOutlet weak var classField: UITextField!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
     var crimePicker = UIPickerView()
     var terrorismPicker = UIPickerView()
+    var classPicker = UIPickerView()
     
     let crimes = ["Homicide", "Rape", "Robbery", "Assault", "Burglary", "Theft", "Arson", "Kidnapping", "Forgary/Fraud", "Vandalism", "Weapons", "Prostitution", "Gambling", "DUI", "Harassment"]
     let terrorisms = ["Domestic Terrorism", "International Terrorism", "Hate Crimes", "Race Supremacy", "Environmental Extremists", "Animal Rights Extremists", "Anarchist Extremists", "Anti-abortion Extremists", "Lone Wolf Extremist", "Religious Extremists", "Sovereign Citizen Extremists", "Militia Extremists", "N/A"]
+    let classifications = ["criminal enterprise", "street gang", "outlaw motorcycle gang", "terrorist group"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +46,9 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
         groupMOLabel.text = groupToEdit?.MO
         groupLocationLabel.text = groupToEdit?.location
         groupMemberLabel.text = groupToEdit?.members
+        crimeField.text = groupToEdit?.crime
+        terrorismField.text = groupToEdit?.terrorism
+        classField.text = groupToEdit?.classification
         
         crimePicker.delegate = self
         crimePicker.dataSource = self
@@ -51,6 +57,10 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
         terrorismPicker.delegate = self
         terrorismPicker.dataSource = self
         terrorismField.inputView = terrorismPicker
+        
+        classPicker.delegate = self
+        classPicker.dataSource = self
+        classField.inputView = classPicker
         
         groupMemberLabel.placeholder = "Members of the Group"
         groupCrimesLabel.placeholder = "Crimes commited by Group"
@@ -85,9 +95,10 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
         let photo = photoView?.image
         let crime = crimeField?.text
         let terrorism = terrorismField?.text
+        let classification = classField?.text
         
         
-        groupToEdit = Group(name: name, members: members, MO: mo, crimes: crimes, leader: leader, location: address, image: photo, crime: crime, terrorism: terrorism)
+        groupToEdit = Group(name: name, members: members, MO: mo, crimes: crimes, leader: leader, location: address, image: photo, crime: crime, terrorism: terrorism, classification: classification)
         
     }
     
@@ -98,8 +109,12 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if (pickerView == crimePicker){
             return crimes.count
-        }else if (pickerView == terrorismPicker){
+        }
+        else if (pickerView == terrorismPicker){
             return terrorisms.count
+        }
+        else if (pickerView == classPicker){
+            return classifications.count
         }
         return 0
     }
@@ -107,8 +122,12 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if (pickerView == crimePicker){
             return crimes[row]
-        }else if (pickerView == terrorismPicker){
+        }
+        else if (pickerView == terrorismPicker){
             return terrorisms[row]
+        }
+        else if (pickerView == classPicker){
+            return classifications[row]
         }
         return ""
     }
@@ -117,9 +136,14 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
         if (pickerView == crimePicker){
             crimeField.text = crimes[row]
             crimeField.resignFirstResponder()
-        }else if (pickerView == terrorismPicker){
+        }
+        else if (pickerView == terrorismPicker){
             terrorismField.text = terrorisms[row]
             terrorismField.resignFirstResponder()
+        }
+        else if (pickerView == classPicker){
+            classField.text = classifications[row]
+            classField.resignFirstResponder()
         }
     }
     

@@ -24,12 +24,15 @@ class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var groupMO: UITextView!
     @IBOutlet weak var crimeField: UITextField!
     @IBOutlet weak var terrorismField: UITextField!
+    @IBOutlet weak var classField: UITextField!
     
     var crimePicker = UIPickerView()
+    var classPicker = UIPickerView()
     var terrorismPicker = UIPickerView()
     
     let crimes = ["Homicide", "Rape", "Robbery", "Assault", "Burglary", "Theft", "Arson", "Kidnapping", "Forgary/Fraud", "Vandalism", "Weapons", "Prostitution", "Gambling", "DUI", "Harassment"]
     let terrorisms = ["Domestic Terrorism", "International Terrorism", "Hate Crimes", "Race Supremacy", "Environmental Extremists", "Animal Rights Extremists", "Anarchist Extremists", "Anti-abortion Extremists", "Lone Wolf Extremist", "Religious Extremists", "Sovereign Citizen Extremists", "Militia Extremists", "N/A"]
+    let classifications = ["Criminal Enterprise", "Street Gang", "Outlaw Motorcycle Gang", "Terrorist Group"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +43,13 @@ class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         crimePicker.dataSource = self
         crimeField.inputView = crimePicker
         
+        classPicker.delegate = self
+        classPicker.dataSource = self
+        classField.inputView = classPicker
+        
         terrorismPicker.delegate = self
         terrorismPicker.dataSource = self
-        terrorismField.inputView = terrorismField   
+        terrorismField.inputView = terrorismPicker
         
         groupMembers.placeholder = "Members of the Group"
         groupOffenses.placeholder = "Crimes commited by Group"
@@ -75,8 +82,9 @@ class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         let groupImage = photo?.image
         let crime = crimeField?.text
         let terrorism = terrorismField?.text
+        let classification = classField?.text
         
-        group = Group(name: name, members: members, MO: mo, crimes: crimes, leader: leader, location: location, image: groupImage, crime: crime, terrorism: terrorism)
+        group = Group(name: name, members: members, MO: mo, crimes: crimes, leader: leader, location: location, image: groupImage, crime: crime, terrorism: terrorism, classification: classification)
         
     }
     
@@ -87,7 +95,11 @@ class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate,
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if (pickerView == crimePicker){
             return crimes.count
-        }else if (pickerView == terrorismPicker){
+        }
+        else if (pickerView == classPicker){
+            return classifications.count
+        }
+        else if (pickerView == terrorismPicker){
             return terrorisms.count
         }
         return 0
@@ -96,7 +108,11 @@ class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate,
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if (pickerView == crimePicker){
             return crimes[row]
-        }else if (pickerView == terrorismPicker){
+        }
+        else if (pickerView == classPicker){
+            return classifications[row]
+        }
+        else if (pickerView == terrorismPicker){
             return terrorisms[row]
         }
         return ""
@@ -106,9 +122,14 @@ class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         if (pickerView == crimePicker){
             crimeField.text = crimes[row]
             crimeField.resignFirstResponder()
-        }else if (pickerView == terrorismPicker){
+        }
+        else if (pickerView == classPicker){
+            classField.text = classifications[row]
+            classField.resignFirstResponder()
+        }
+        else if (pickerView == terrorismPicker){
             terrorismField.text = terrorisms[row]
-            terrorismField.resignFirstResponder()   
+            terrorismField.resignFirstResponder()
         }
     }
     

@@ -19,8 +19,9 @@ class Group: NSObject, NSCoding {
     var image: UIImage?
     var crime: String?
     var terrorism: String?
+    var classification: String?
     
-    init?(name: String?, members: String?, MO: String?, crimes: String?, leader: String?, location: String?, image: UIImage?, crime: String?, terrorism: String?){
+    init?(name: String?, members: String?, MO: String?, crimes: String?, leader: String?, location: String?, image: UIImage?, crime: String?, terrorism: String?, classification: String?){
         self.name = name
         self.members = members
         self.MO = MO
@@ -30,6 +31,7 @@ class Group: NSObject, NSCoding {
         self.image = image
         self.crime = crime
         self.terrorism = terrorism
+        self.classification = classification
         
     }
     
@@ -43,6 +45,7 @@ class Group: NSObject, NSCoding {
         aCoder.encode(image, forKey: PropertyKey.image)
         aCoder.encode(crime, forKey: PropertyKey.crime)
         aCoder.encode(terrorism, forKey: PropertyKey.terrorism)
+        aCoder.encode(classification, forKey: PropertyKey.classification)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -55,8 +58,9 @@ class Group: NSObject, NSCoding {
         let image = aDecoder.decodeObject(forKey: PropertyKey.image) as? UIImage
         let crime = aDecoder.decodeObject(forKey: PropertyKey.crime) as? String
         let terrorism = aDecoder.decodeObject(forKey: PropertyKey.terrorism) as? String
+        let classification = aDecoder.decodeObject(forKey: PropertyKey.classification) as? String
         
-        self.init(name: name, members: members, MO: MO, crimes: crimes, leader: leader, location: location, image: image, crime: crime, terrorism: terrorism)
+        self.init(name: name, members: members, MO: MO, crimes: crimes, leader: leader, location: location, image: image, crime: crime, terrorism: terrorism, classification: classification)
         
     }
     
@@ -70,6 +74,7 @@ class Group: NSObject, NSCoding {
         static let image = "image"
         static let crime = "crime"
         static let terrorism = "terrorism"
+        static let classification = "classification"
     }
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!

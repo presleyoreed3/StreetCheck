@@ -38,6 +38,9 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     @IBOutlet weak var terrorismField: UITextField!
     @IBOutlet weak var notesField: UITextView!
     
+    var activeTextField: UITextField!
+    var activeTextView: UITextView!
+    
     
     //MARK: Picker Declarations
     var sexPicker = UIPickerView()
@@ -130,11 +133,12 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         aliasField.delegate = self
         addressField.delegate = self
         notesField.delegate = self
-//        notesField.delegate = self
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+//        let center: NotificationCenter = NotificationCenter.default;
+//        center.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+//        center.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+
+
     }
     
 //    deinit {
@@ -142,10 +146,38 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
 //        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardDidHide, object: nil)
 //        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
 //    }
-
+//
 //    @objc func keyboardWillChange(notification: Notification){
 //        print("Keyboard will show: \(notification.name.rawValue)")
 //        view.frame.origin.y = -250
+//    }
+//
+    
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        activeTextField = textField
+//    }
+//    func textViewDidBeginEditing(_ textView: UITextView) {
+//        activeTextView = textView
+//    }
+//
+//    @objc func keyboardDidShow(notification: Notification){
+//        let info:NSDictionary = notification.userInfo! as NSDictionary
+//        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+//        let keyboardY = self.view.frame.size.height - keyboardSize.height
+//
+//        let editingTextFieldY:CGFloat! = self.activeTextField?.frame.origin.y
+//
+//        if editingTextFieldY > keyboardY - 60 {
+//            UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+//                self.view.frame = CGRect(x:0, y: self.view.frame.origin.y - (editingTextFieldY! - (keyboardY - 60)), width: self.view.bounds.width, height: self.view.bounds.height)
+//            }, completion: nil)
+//        }
+//     }
+//
+//    @objc func keyboardWillHide(notification: Notification){
+//        UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+//            self.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+//        }, completion: nil)
 //    }
     
     //MARK: Navigation

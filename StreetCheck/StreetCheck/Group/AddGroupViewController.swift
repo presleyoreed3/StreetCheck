@@ -10,7 +10,7 @@ import UIKit
 import os.log
 
 
-class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var addPhoto: UIButton!
@@ -38,6 +38,10 @@ class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
         scrollView.contentSize.height = 1550
         // Do any additional setup after loading the view.
+        groupName.delegate = self
+        groupLeader.delegate = self
+        groupLocation.delegate = self
+        
         
         crimePicker.delegate = self
         crimePicker.dataSource = self
@@ -58,7 +62,13 @@ class AddGroupViewController: UIViewController, UIImagePickerControllerDelegate,
         
     }
     
-    
+    //MARK: Keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        groupName.resignFirstResponder()
+        groupLocation.resignFirstResponder()
+        groupLeader.resignFirstResponder()
+        return true
+    }
 
     var group: Group?
     

@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate, UIPickerViewDelegate,  UINavigationControllerDelegate, UIPickerViewDataSource {
+class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate, UIPickerViewDelegate,  UINavigationControllerDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     var groupToEdit: Group?
     
@@ -38,6 +38,9 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        groupNameLabel.delegate = self
+        groupLeaderLabel.delegate = self
+        groupLocationLabel.delegate = self
         
         photoView.image = groupToEdit?.image
         groupNameLabel.text = groupToEdit?.name
@@ -71,6 +74,13 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
 
         scrollView.contentSize.height = 1200
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        groupNameLabel.resignFirstResponder()
+        groupLocationLabel.resignFirstResponder()
+        groupLeaderLabel.resignFirstResponder()
+        return true
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {

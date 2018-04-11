@@ -40,6 +40,8 @@ class OnboardingViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        UserDefaults.standard.set(nameField.text, forKey: "name")
+        UserDefaults.standard.set(idField.text, forKey: "id")
         nameField.resignFirstResponder()
         idField.resignFirstResponder()
         performSegue(withIdentifier: "toPassword", sender: self)

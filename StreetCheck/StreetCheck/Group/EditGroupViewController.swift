@@ -31,9 +31,9 @@ class EditGroupViewController: UIViewController, UIImagePickerControllerDelegate
     var terrorismPicker = UIPickerView()
     var classPicker = UIPickerView()
     
-    let crimes = ["Homicide", "Rape", "Robbery", "Assault", "Burglary", "Theft", "Arson", "Kidnapping", "Forgary/Fraud", "Vandalism", "Weapons", "Prostitution", "Gambling", "DUI", "Harassment"]
-    let terrorisms = ["Domestic Terrorism", "International Terrorism", "Hate Crimes", "Race Supremacy", "Environmental Extremists", "Animal Rights Extremists", "Anarchist Extremists", "Anti-abortion Extremists", "Lone Wolf Extremist", "Religious Extremists", "Sovereign Citizen Extremists", "Militia Extremists", "N/A"]
-    let classifications = ["criminal enterprise", "street gang", "outlaw motorcycle gang", "terrorist group"]
+    let crimes = ["","Homicide", "Rape", "Robbery", "Assault", "Burglary", "Theft", "Arson", "Kidnapping", "Forgary/Fraud", "Vandalism", "Weapons", "Prostitution", "Gambling", "DUI", "Harassment"]
+    let terrorisms = ["","Domestic Terrorism", "International Terrorism", "Hate Crimes", "Race Supremacy", "Environmental Extremists", "Animal Rights Extremists", "Anarchist Extremists", "Anti-abortion Extremists", "Lone Wolf Extremist", "Religious Extremists", "Sovereign Citizen Extremists", "Militia Extremists", "N/A"]
+    let classifications = ["","criminal enterprise", "street gang", "outlaw motorcycle gang", "terrorist group"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

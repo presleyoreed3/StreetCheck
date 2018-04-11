@@ -59,15 +59,15 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     var weightPicker = UIPickerView()
     
     //MARK: Picker Fields
-    let sexes = ["Male", "Female", "Other"]
-    let eyeColors = ["Black", "Blue", "Brown", "Gray", "Green", "Hazel", "Maroon", "Multicolored", "Pink", "Unkown"]
-    let hairColors = ["Black", "Blonde", "Blue", "Brown", "Gray", "Green", "Orange", "Pink", "Purple", "Red", "Sandy", "Unkown", "Bald", "White"]
-    let hairStyle = ["Afro", "Balding", "Bangs", "Bob", "Bowl", "Braided", "Bun", "Buzz Cut", "Corn Rows", "Curly/Perm", "Dreadlocks", "Dyed", "Fade", "Feathered", "Flat Top", "Jerry Curl", "Long", "Messy", "Mohawk", "Mullet", "Pony Tail", "Punk", "Shaved Bald", "Shaved in Design", "Short", "Shoulder Length", "Spiked", "Straight"]
-    let complexions = ["Albino", "Black", "Dark", "Dark Brown", "Fair", "Light", "Light Brown", "Medium", "Medium Brown", "Normal", "Olive", "Red", "Ruddy", "Sallow", "Yellow"]
-    let crimes = ["Homicide", "Rape", "Robbery", "Assault", "Burglary", "Theft", "Arson", "Kidnapping", "Forgary/Fraud", "Vandalism", "Weapons", "Prostitution", "Gambling", "DUI", "Harassment"]
-    let terrorisms = ["Domestic Terrorism", "International Terrorism", "Hate Crimes", "Race Supremacy", "Environmental Extremists", "Animal Rights Extremists", "Anarchist Extremists", "Anti-abortion Extremists", "Lone Wolf Extremist", "Religious Extremists", "Sovereign Citizen Extremists", "Militia Extremists", "N/A"]
-    let builds = ["Fit", "Heavy", "Medium", "Muscular", "Obese", "Pregnant", "Slight", "Slim", "Stocky", "Short", "Tall"]
-    let races = ["Black", "Indian", "Asian", "White", "Unkown"]
+    let sexes = ["","Male", "Female", "Other"]
+    let eyeColors = ["","Black", "Blue", "Brown", "Gray", "Green", "Hazel", "Maroon", "Multicolored", "Pink", "Unkown"]
+    let hairColors = ["","Black", "Blonde", "Blue", "Brown", "Gray", "Green", "Orange", "Pink", "Purple", "Red", "Sandy", "Unkown", "Bald", "White"]
+    let hairStyle = ["","Afro", "Balding", "Bangs", "Bob", "Bowl", "Braided", "Bun", "Buzz Cut", "Corn Rows", "Curly/Perm", "Dreadlocks", "Dyed", "Fade", "Feathered", "Flat Top", "Jerry Curl", "Long", "Messy", "Mohawk", "Mullet", "Pony Tail", "Punk", "Shaved Bald", "Shaved in Design", "Short", "Shoulder Length", "Spiked", "Straight"]
+    let complexions = ["","Albino", "Black", "Dark", "Dark Brown", "Fair", "Light", "Light Brown", "Medium", "Medium Brown", "Normal", "Olive", "Red", "Ruddy", "Sallow", "Yellow"]
+    let crimes = ["","Homicide", "Rape", "Robbery", "Assault", "Burglary", "Theft", "Arson", "Kidnapping", "Forgary/Fraud", "Vandalism", "Weapons", "Prostitution", "Gambling", "DUI", "Harassment"]
+    let terrorisms = ["","Domestic Terrorism", "International Terrorism", "Hate Crimes", "Race Supremacy", "Environmental Extremists", "Animal Rights Extremists", "Anarchist Extremists", "Anti-abortion Extremists", "Lone Wolf Extremist", "Religious Extremists", "Sovereign Citizen Extremists", "Militia Extremists", "N/A"]
+    let builds = ["","Fit", "Heavy", "Medium", "Muscular", "Obese", "Pregnant", "Slight", "Slim", "Stocky", "Short", "Tall"]
+    let races = ["","Black", "Indian", "Asian", "White", "Unkown"]
     let textField = UITextField()
     let feetList = Array(3...9)
     let inchList = Array(0...11)

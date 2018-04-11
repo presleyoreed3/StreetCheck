@@ -25,10 +25,17 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate  {
     var groups = [Group]()
     var constantGroups = [Group]()
     var currentGroup: Group?
+    
+    var celleIdentifier = "groupCellNarrow"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpSearchBar()
+        if (celleIdentifier == "groupCellNarrow"){
+            
+        }else {
+            self.tableView.rowHeight = 375
+        }
         self.tableView.rowHeight = 120
         navigationItem.leftBarButtonItem = editButtonItem
         if let savedGroups = loadGroups() {
@@ -56,6 +63,26 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate  {
         }
     }
     
+    //MARK: Cell Layout
+    @IBAction func swapLayouts(_ sender: UIBarButtonItem){
+        if (celleIdentifier == "groupCellNarrow"){
+            celleIdentifier = "groupCellWide"
+        }else {
+            celleIdentifier = "groupCellNarrow"
+        }
+        tableView.reloadData()
+    }
+    
+    func loadCellView() -> String{
+        if (celleIdentifier == "groupCellNarrow"){
+            self.tableView.rowHeight = 120.0
+            return "groupCellNarrow"
+        }else {
+            self.tableView.rowHeight = 375
+            return "groupCellWide"
+        }
+    }
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
@@ -63,8 +90,9 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate  {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        celleIdentifier = loadCellView()
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as? GroupsTableViewCell else{
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: celleIdentifier, for: indexPath) as? GroupsTableViewCell else{
             fatalError("The dequeued cell is not an instance of ContactTableViewCell.")
         }
         
@@ -79,6 +107,12 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate  {
         
         print(group)
         return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showGroupDetails", sender: self)
+        currentGroup = groups[(tableView.indexPathForSelectedRow?.row)!]
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

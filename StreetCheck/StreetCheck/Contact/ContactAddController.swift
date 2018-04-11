@@ -37,9 +37,12 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
     @IBOutlet weak var crimeField: UITextField!
     @IBOutlet weak var terrorismField: UITextField!
     @IBOutlet weak var notesField: UITextView!
+    @IBOutlet weak var constraintContentHeight: NSLayoutConstraint!
     
-    var activeTextField: UITextField!
-    var activeTextView: UITextView!
+    var activeField: UITextField?
+    var lastOffset: CGPoint!
+    var keyboardHeight: CGFloat!
+    
     
     
     //MARK: Picker Declarations
@@ -133,52 +136,50 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         aliasField.delegate = self
         addressField.delegate = self
         notesField.delegate = self
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
-//        let center: NotificationCenter = NotificationCenter.default;
-//        center.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
-//        center.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-
-
     }
     
-//    deinit {
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardDidHide, object: nil)
-//        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-//    }
-//
-//    @objc func keyboardWillChange(notification: Notification){
-//        print("Keyboard will show: \(notification.name.rawValue)")
-//        view.frame.origin.y = -250
-//    }
-//
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        activeField = textField
+        lastOffset = self.scrollView.contentOffset
+        return true
+    }
     
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        activeTextField = textField
-//    }
-//    func textViewDidBeginEditing(_ textView: UITextView) {
-//        activeTextView = textView
-//    }
-//
-//    @objc func keyboardDidShow(notification: Notification){
-//        let info:NSDictionary = notification.userInfo! as NSDictionary
-//        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-//        let keyboardY = self.view.frame.size.height - keyboardSize.height
-//
-//        let editingTextFieldY:CGFloat! = self.activeTextField?.frame.origin.y
-//
-//        if editingTextFieldY > keyboardY - 60 {
-//            UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
-//                self.view.frame = CGRect(x:0, y: self.view.frame.origin.y - (editingTextFieldY! - (keyboardY - 60)), width: self.view.bounds.width, height: self.view.bounds.height)
-//            }, completion: nil)
-//        }
-//     }
-//
-//    @objc func keyboardWillHide(notification: Notification){
-//        UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
-//            self.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
-//        }, completion: nil)
-//    }
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if keyboardHeight != nil {
+            return
+        }
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            keyboardHeight = keyboardSize.height
+            // so increase contentView's height by keyboard height
+            UIView.animate(withDuration: 0.3, animations: {
+                self.constraintContentHeight.constant += self.keyboardHeight
+            })
+            // move if keyboard hide input field
+            let distanceToBottom = self.scrollView.frame.size.height - (activeField?.frame.origin.y)! - (activeField?.frame.size.height)!
+            let collapseSpace = keyboardHeight - distanceToBottom
+            if collapseSpace < 0 {
+                // no collapse
+                return
+            }
+            // set new offset for scroll view
+            UIView.animate(withDuration: 0.3, animations: {
+                // scroll to the position above keyboard 10 points
+                self.scrollView.contentOffset = CGPoint(x: self.lastOffset.x, y: collapseSpace + 10)
+            })
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        UIView.animate(withDuration: 0.3) {
+            self.constraintContentHeight.constant -= self.keyboardHeight
+            self.scrollView.contentOffset = self.lastOffset
+        }
+        keyboardHeight = nil
+    }
     
     //MARK: Navigation
     @IBAction func cancel(_ sender: UIBarButtonItem) {

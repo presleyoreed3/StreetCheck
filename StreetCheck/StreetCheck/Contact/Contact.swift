@@ -35,6 +35,7 @@ class Contact: NSObject, NSCoding{
     var complexion: String?
     var notes: String?
     var dateAndTime: Date?
+    var yearOfSeconds: Int = 31536000
     
     
     //MARK: Initializer

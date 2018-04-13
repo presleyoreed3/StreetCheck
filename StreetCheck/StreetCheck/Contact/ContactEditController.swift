@@ -339,43 +339,33 @@ class ContactEditController: UIViewController, UIPickerViewDelegate, UIPickerVie
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if (pickerView == sexPicker){
             sexField.text = sexes[row]
-            sexField.resignFirstResponder()
         }
         else if (pickerView == eyePicker){
             eyeColorField.text = eyeColors[row]
-            eyeColorField.resignFirstResponder()
         }
         else if (pickerView == hairColorPicker){
             hairColorField.text = hairColors[row]
-            hairColorField.resignFirstResponder()
         }
         else if (pickerView == hairStylePicker){
             hairStyleField.text = hairStyle[row]
-            hairStyleField.resignFirstResponder()
         }
         else if (pickerView == complexionPicker){
             complexionField.text = complexions[row]
-            complexionField.resignFirstResponder()
         }
         else if (pickerView == terrorismPicker){
             terrorismField.text = terrorisms[row]
-            terrorismField.resignFirstResponder()
         }
         else if (pickerView == buildPicker){
             buildField.text = builds[row]
-            buildField.resignFirstResponder()
         }
         else if (pickerView == racePicker){
             ethnicityField.text = races[row]
-            ethnicityField.resignFirstResponder()
         }
         else if (pickerView == crimesPicker){
             crimeField.text = crimes[row]
-            crimeField.resignFirstResponder() 
         }
         else if (pickerView == weightPicker){
             weightField.text = "\(weights[row]) lbs"
-            weightField.resignFirstResponder()
         }
         else if (pickerView == heightPicker){
             let feetIndex = pickerView.selectedRow(inComponent: 0)

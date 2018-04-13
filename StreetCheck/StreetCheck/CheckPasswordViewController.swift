@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class CheckPasswordViewController: UIViewController, UITextFieldDelegate {
 
@@ -28,6 +29,28 @@ class CheckPasswordViewController: UIViewController, UITextFieldDelegate {
             performSegue(withIdentifier: "passwordConfirmed", sender: self)
         }
     }
+    
+    //MARK: Biometrics
+//    func authenticateBio(){
+//        let authContext = LAContext()
+//        let authReason = "Please use Touch ID to sign into Street Check"
+//        var authError: NSError?
+//
+//        if authContext.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &authContext){
+//            authContext.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: authReason) { (success, error) -> Void in
+//                if success {
+//                    print("Success )
+//                }
+//            }
+//        }
+//        else{
+//            //Error
+//            print(authError?.localizedDescription)
+//
+//            //
+//        }
+        
+//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (checkPassword()){

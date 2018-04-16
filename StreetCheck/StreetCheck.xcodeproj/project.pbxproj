@@ -29,6 +29,7 @@
 		2B12CD132024E030005C5ACD /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CD122024E030005C5ACD /* Contact.swift */; };
 		2B167E9F206D652E000F004B /* EditGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B167E9E206D652E000F004B /* EditGroupViewController.swift */; };
 		2B2CED78206C3BE000DB1265 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CED77206C3BE000DB1265 /* GroupViewController.swift */; };
+		2B3251A92085667200EA633F /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3251A82085667200EA633F /* LocalAuthentication.framework */; };
 		2B490AAE203101910045DE05 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B490AAD203101910045DE05 /* ContactTableViewCell.swift */; };
 		2B490AB0203103D40045DE05 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B490AAF203103D40045DE05 /* ContactTableViewController.swift */; };
 		2B510682204F2157006BE0EB /* CrimeLocationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B510681204F2157006BE0EB /* CrimeLocationPin.swift */; };
@@ -82,6 +83,7 @@
 		2B12CD122024E030005C5ACD /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		2B167E9E206D652E000F004B /* EditGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGroupViewController.swift; sourceTree = "<group>"; };
 		2B2CED77206C3BE000DB1265 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		2B3251A82085667200EA633F /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		2B490AAD203101910045DE05 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		2B490AAF203103D40045DE05 /* ContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
 		2B510681204F2157006BE0EB /* CrimeLocationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrimeLocationPin.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B3251A92085667200EA633F /* LocalAuthentication.framework in Frameworks */,
 				2B6109E820449F36003953B2 /* MapKit.framework in Frameworks */,
 				E09852C22C6CC265F81A043F /* Pods_StreetCheck.framework in Frameworks */,
 			);
@@ -217,6 +220,7 @@
 		2B6109E620449F36003953B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B3251A82085667200EA633F /* LocalAuthentication.framework */,
 				2B6109E720449F36003953B2 /* MapKit.framework */,
 				A097A93E1061C46ADBA42A60 /* Pods_StreetCheck.framework */,
 			);

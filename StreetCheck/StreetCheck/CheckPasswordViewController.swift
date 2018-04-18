@@ -19,7 +19,9 @@ class CheckPasswordViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         nameLabel.text = UserDefaults.standard.value(forKey: "name") as? String
         mismatchLabel.text = ""
-        authenticationWithTouchID()
+        if (UserDefaults.standard.value(forKey: "biometrics") as? Bool == true){
+            authenticationWithTouchID()
+        }
         passwordField.isSecureTextEntry = true
         // Do any additional setup after loading the view.
         passwordField.delegate = self

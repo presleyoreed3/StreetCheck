@@ -192,8 +192,10 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     @IBAction func unwindToTableView(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? ContactViewController, let contact = sourceViewController.contactOnDisplay {
             contacts[(tableView.indexPathForSelectedRow?.row)!] = contact
-            constantContacts = contacts
-            saveContact()
+            if (CONTACT_EDIT_WAS_PRESSED == true){
+                constantContacts = contacts
+                saveContact()
+            }
             tableView.reloadData()
         }
     }

@@ -6,6 +6,8 @@
 //  Copyright © 2018 Presley Reed III. All rights reserved.
 //
 
+var CONTACT_EDIT_WAS_PRESSED: Bool = false
+
 import UIKit
 import os.log
 import MapKit
@@ -43,19 +45,16 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
     
     var contactOnDisplay: Contact?
     
+    
     let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        //print(contactOnDisplay)
-        // Do any additional setup after loading the view.
+        CONTACT_EDIT_WAS_PRESSED = false
+       
         updateData()
         photoView.contentMode = .scaleAspectFit
         photoView.clipsToBounds = true
-        
-        
         
     }
     
@@ -152,13 +151,13 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
 //    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        CONTACT_EDIT_WAS_PRESSED = true
         let destination = segue.destination as? ContactEditController
         destination?.contactToEdit = contactOnDisplay
     }
     
     @IBAction func unwindToContactView(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? ContactEditController, let contact = sourceViewController.contactToEdit {
-            print(contact.first_name)
             contactOnDisplay = contact
             updateData()
             

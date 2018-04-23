@@ -203,7 +203,18 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate  {
     }
     
     private func loadGroups() -> [Group]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Group.ArchiveURL.path) as? [Group]
+        var checkingGroups = NSKeyedUnarchiver.unarchiveObject(withFile: Group.ArchiveURL.path) as? [Group]
+        for group in checkingGroups!{
+            let index = checkingGroups?.index(of: group)
+            let timeLastModified = group.dateAndTime
+            let fiveYearsInSeconds = TimeInterval(31536000 * 5)
+            let timeToExpire = timeLastModified! + fiveYearsInSeconds
+            let currentDateandTime = Date()
+            if (timeToExpire<currentDateandTime){
+                checkingGroups?.remove(at: index!)
+            }
+        }
+        return checkingGroups
     }
 
 

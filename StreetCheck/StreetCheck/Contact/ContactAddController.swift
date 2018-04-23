@@ -137,49 +137,8 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDele
         addressField.delegate = self
         notesField.delegate = self
 
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-//        
     }
     
-//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-//        activeField = textField
-//        lastOffset = self.scrollView.contentOffset
-//        return true
-//    }
-    
-//    @objc func keyboardWillShow(notification: NSNotification) {
-//        if keyboardHeight != nil {
-//            return
-//        }
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            keyboardHeight = keyboardSize.height
-//            // so increase contentView's height by keyboard height
-//            UIView.animate(withDuration: 0.3, animations: {
-//                self.constraintContentHeight.constant += self.keyboardHeight
-//            })
-//            // move if keyboard hide input field
-//            let distanceToBottom = self.scrollView.frame.size.height - (activeField?.frame.origin.y)! - (activeField?.frame.size.height)!
-//            let collapseSpace = keyboardHeight - distanceToBottom
-//            if collapseSpace < 0 {
-//                // no collapse
-//                return
-//            }
-//            // set new offset for scroll view
-//            UIView.animate(withDuration: 0.3, animations: {
-//                // scroll to the position above keyboard 10 points
-//                self.scrollView.contentOffset = CGPoint(x: self.lastOffset.x, y: collapseSpace + 10)
-//            })
-//        }
-//    }
-//
-//    @objc func keyboardWillHide(notification: NSNotification) {
-//        UIView.animate(withDuration: 0.3) {
-//            self.constraintContentHeight.constant -= self.keyboardHeight
-//            self.scrollView.contentOffset = self.lastOffset
-//        }
-//        keyboardHeight = nil
-//    }
     
     //MARK: Navigation
     @IBAction func cancel(_ sender: UIBarButtonItem) {

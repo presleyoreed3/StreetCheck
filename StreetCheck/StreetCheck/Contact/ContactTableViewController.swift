@@ -212,7 +212,20 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     private func loadContacts() -> [Contact]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Contact.ArchiveURL.path) as? [Contact]
+        print("Loading contacts")
+        var checkingContacts = NSKeyedUnarchiver.unarchiveObject(withFile: Contact.ArchiveURL.path) as? [Contact]
+        for contact in checkingContacts!{
+            let index = checkingContacts?.index(of: contact)
+            let timeLastModified = contact.dateAndTime
+            let fiveYearsInSeconds = TimeInterval(31536000 * 5)
+            let timeToExpire = timeLastModified! + fiveYearsInSeconds
+            let currentDateandTime = Date()
+            if (timeToExpire<currentDateandTime){
+                checkingContacts?.remove(at: index!)
+                print("KILLING CONTACT NOW")
+            }
+        }
+        return checkingContacts
     }
     
 }

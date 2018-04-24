@@ -40,7 +40,7 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var terrorismLabel: UILabel!
     @IBOutlet weak var hairStyleLabel: UILabel!
     @IBOutlet weak var lastUpdatedLabel: UILabel!
-    
+    @IBOutlet weak var notesField: UITextView!
     
     
     var contactOnDisplay: Contact?
@@ -83,6 +83,7 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
         terrorismLabel.text = contactOnDisplay?.terrorism
         buildLabel.text = contactOnDisplay?.build
         ethnicity_label.text = contactOnDisplay?.ethnicity
+        notesField.text = contactOnDisplay?.notes
         
         let formatter = DateFormatter()
         formatter.dateFormat = "MM-dd-yyyy HH:mm"
@@ -111,7 +112,6 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
                 let long = coordinates.longitude
                 let location = CLLocationCoordinate2DMake(lat, long)
                 self.mapView.setRegion(MKCoordinateRegionMakeWithDistance(location, 1500, 1500), animated: true)
-                
                 
                 let pin = CrimeLocationPin(crime: self.crimeLabel.text!, location: address!, coordinate: location)
                 

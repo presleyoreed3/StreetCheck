@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1539028608052A5936CFC2031881AC6C'
+               BlueprintIdentifier = '6FFD9A689AB2F3B52F9DC56170EEBBD9'
                BlueprintName = 'Pods-StreetCheck'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods-StreetCheck.framework'>

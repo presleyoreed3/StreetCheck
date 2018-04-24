@@ -30,7 +30,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>7</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MKDirectionsApplicationSupportedModes</key>
@@ -40,6 +40,8 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Allows you to take a photo using your camera</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Allows you to securely use Face ID to access the app</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Allows you to display your current location relative to the address associated with an individual</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
@@ -67,7 +69,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSFaceIDUsageDescription</key>
-	<string>Allows you to securely use Face ID to access the app</string>
 </dict>
 </plist>

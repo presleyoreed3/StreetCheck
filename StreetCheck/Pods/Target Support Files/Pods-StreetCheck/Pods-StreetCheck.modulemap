@@ -1,0 +1,6 @@
+framework module Pods_StreetCheck {
+  umbrella header "Pods-StreetCheck-umbrella.h"
+
+  export *
+  module * { export * }
+}

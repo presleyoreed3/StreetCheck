@@ -7,14 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F86FA32207178F7005564B6 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F86FA31207178F7005564B6 /* LegalViewController.swift */; };
+		0F86FA3420717B68005564B6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F86FA3320717B68005564B6 /* SettingsViewController.swift */; };
+		0F8CAFC62066E5B1006AEAB9 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CAFC52066E5B1006AEAB9 /* Placeholder.swift */; };
+		0F8CAFC820682166006AEAB9 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CAFC720682166006AEAB9 /* Group.swift */; };
+		0F8CAFCC20682DC0006AEAB9 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CAFCB20682DC0006AEAB9 /* GroupTableViewCell.swift */; };
+		0F8CAFCE20684E0C006AEAB9 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CAFCD20684E0C006AEAB9 /* GroupsTableViewController.swift */; };
+		0F8CAFD020684ED8006AEAB9 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CAFCF20684ED8006AEAB9 /* AddGroupViewController.swift */; };
+		0FA3CF0E2076F02C008B912F /* EditYourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3CF0D2076F02C008B912F /* EditYourInfoViewController.swift */; };
+		0FA3CF102076F328008B912F /* UpdatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA3CF0F2076F328008B912F /* UpdatePasswordViewController.swift */; };
+		0FDBA6002075D13C001DCBA2 /* SetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDBA5FF2075D13B001DCBA2 /* SetPasswordViewController.swift */; };
+		2B02766E20472DFC0062292C /* ContactEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B02766D20472DFC0062292C /* ContactEditController.swift */; };
 		2B12CCE52024DF93005C5ACD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CCE42024DF93005C5ACD /* AppDelegate.swift */; };
-		2B12CCE72024DF93005C5ACD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CCE62024DF93005C5ACD /* ViewController.swift */; };
+		2B12CCE72024DF93005C5ACD /* ContactAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CCE62024DF93005C5ACD /* ContactAddController.swift */; };
 		2B12CCEA2024DF93005C5ACD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B12CCE82024DF93005C5ACD /* Main.storyboard */; };
 		2B12CCEC2024DF93005C5ACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B12CCEB2024DF93005C5ACD /* Assets.xcassets */; };
 		2B12CCEF2024DF93005C5ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B12CCED2024DF93005C5ACD /* LaunchScreen.storyboard */; };
 		2B12CCFA2024DF94005C5ACD /* StreetCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CCF92024DF94005C5ACD /* StreetCheckTests.swift */; };
 		2B12CD052024DF94005C5ACD /* StreetCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CD042024DF94005C5ACD /* StreetCheckUITests.swift */; };
 		2B12CD132024E030005C5ACD /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12CD122024E030005C5ACD /* Contact.swift */; };
+		2B167E9F206D652E000F004B /* EditGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B167E9E206D652E000F004B /* EditGroupViewController.swift */; };
+		2B2CED78206C3BE000DB1265 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CED77206C3BE000DB1265 /* GroupViewController.swift */; };
+		2B3251A92085667200EA633F /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3251A82085667200EA633F /* LocalAuthentication.framework */; };
+		2B490AAE203101910045DE05 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B490AAD203101910045DE05 /* ContactTableViewCell.swift */; };
+		2B490AB0203103D40045DE05 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B490AAF203103D40045DE05 /* ContactTableViewController.swift */; };
+		2B510682204F2157006BE0EB /* CrimeLocationPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B510681204F2157006BE0EB /* CrimeLocationPin.swift */; };
+		2B6109E820449F36003953B2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B6109E720449F36003953B2 /* MapKit.framework */; };
+		2B8912952075807500CDC39F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8912942075807500CDC39F /* OnboardingViewController.swift */; };
+		2B9F887C203759D700FFA03A /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9F887B203759D700FFA03A /* ContactViewController.swift */; };
+		2BFC9E4120769C6B003217FF /* CheckPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFC9E4020769C6B003217FF /* CheckPasswordViewController.swift */; };
+		E09852C22C6CC265F81A043F /* Pods_StreetCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A097A93E1061C46ADBA42A60 /* Pods_StreetCheck.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,20 +57,44 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B12CCE12024DF93005C5ACD /* StreetCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F86FA31207178F7005564B6 /* LegalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
+		0F86FA3320717B68005564B6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0F8CAFC52066E5B1006AEAB9 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
+		0F8CAFC720682166006AEAB9 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		0F8CAFCB20682DC0006AEAB9 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		0F8CAFCD20684E0C006AEAB9 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
+		0F8CAFCF20684ED8006AEAB9 /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
+		0FA3CF0D2076F02C008B912F /* EditYourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditYourInfoViewController.swift; sourceTree = "<group>"; };
+		0FA3CF0F2076F328008B912F /* UpdatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordViewController.swift; sourceTree = "<group>"; };
+		0FDBA5FF2075D13B001DCBA2 /* SetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPasswordViewController.swift; sourceTree = "<group>"; };
+		2B02766D20472DFC0062292C /* ContactEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditController.swift; sourceTree = "<group>"; };
 		2B12CCE42024DF93005C5ACD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2B12CCE62024DF93005C5ACD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2B12CCE62024DF93005C5ACD /* ContactAddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactAddController.swift; sourceTree = "<group>"; };
 		2B12CCE92024DF93005C5ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B12CCEB2024DF93005C5ACD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B12CCEE2024DF93005C5ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B12CCF02024DF93005C5ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B12CCF52024DF94005C5ACD /* StreetCheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreetCheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B12CCF92024DF94005C5ACD /* StreetCheckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetCheckTests.swift; sourceTree = "<group>"; };
 		2B12CCFB2024DF94005C5ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B12CD002024DF94005C5ACD /* StreetCheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreetCheckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B12CD042024DF94005C5ACD /* StreetCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetCheckUITests.swift; sourceTree = "<group>"; };
 		2B12CD062024DF94005C5ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B12CD122024E030005C5ACD /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		2B167E9E206D652E000F004B /* EditGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGroupViewController.swift; sourceTree = "<group>"; };
+		2B2CED77206C3BE000DB1265 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		2B3251A82085667200EA633F /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		2B490AAD203101910045DE05 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		2B490AAF203103D40045DE05 /* ContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
+		2B510681204F2157006BE0EB /* CrimeLocationPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrimeLocationPin.swift; sourceTree = "<group>"; };
+		2B6109E720449F36003953B2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2B8912942075807500CDC39F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		2B9F887B203759D700FFA03A /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		2BFC9E3D2076981A003217FF /* StreetCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BFC9E3E2076981A003217FF /* StreetCheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreetCheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BFC9E3F2076981A003217FF /* StreetCheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreetCheckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BFC9E4020769C6B003217FF /* CheckPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPasswordViewController.swift; sourceTree = "<group>"; };
+		A097A93E1061C46ADBA42A60 /* Pods_StreetCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StreetCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C68888B7CF540C21AF738EAB /* Pods-StreetCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreetCheck.release.xcconfig"; path = "Pods/Target Support Files/Pods-StreetCheck/Pods-StreetCheck.release.xcconfig"; sourceTree = "<group>"; };
+		E8396B67DAA1E251FB62A942 /* Pods-StreetCheck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StreetCheck.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StreetCheck/Pods-StreetCheck.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +102,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B3251A92085667200EA633F /* LocalAuthentication.framework in Frameworks */,
+				2B6109E820449F36003953B2 /* MapKit.framework in Frameworks */,
+				E09852C22C6CC265F81A043F /* Pods_StreetCheck.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,32 +125,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F86FA3520717E64005564B6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0F86FA3320717B68005564B6 /* SettingsViewController.swift */,
+				0F86FA31207178F7005564B6 /* LegalViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0F8CAFD120684EE2006AEAB9 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				2B12CD122024E030005C5ACD /* Contact.swift */,
+				2B12CCE62024DF93005C5ACD /* ContactAddController.swift */,
+				2B02766D20472DFC0062292C /* ContactEditController.swift */,
+				2B9F887B203759D700FFA03A /* ContactViewController.swift */,
+				2B490AAD203101910045DE05 /* ContactTableViewCell.swift */,
+				2B490AAF203103D40045DE05 /* ContactTableViewController.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		0F8CAFD220684EFF006AEAB9 /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				0F8CAFC720682166006AEAB9 /* Group.swift */,
+				0F8CAFCF20684ED8006AEAB9 /* AddGroupViewController.swift */,
+				2B167E9E206D652E000F004B /* EditGroupViewController.swift */,
+				2B2CED77206C3BE000DB1265 /* GroupViewController.swift */,
+				0F8CAFCB20682DC0006AEAB9 /* GroupTableViewCell.swift */,
+				0F8CAFCD20684E0C006AEAB9 /* GroupsTableViewController.swift */,
+			);
+			path = Group;
+			sourceTree = "<group>";
+		};
 		2B12CCD82024DF93005C5ACD = {
 			isa = PBXGroup;
 			children = (
 				2B12CCE32024DF93005C5ACD /* StreetCheck */,
 				2B12CCF82024DF94005C5ACD /* StreetCheckTests */,
 				2B12CD032024DF94005C5ACD /* StreetCheckUITests */,
-				2B12CCE22024DF93005C5ACD /* Products */,
+				2B6109E620449F36003953B2 /* Frameworks */,
+				2BFC9E3D2076981A003217FF /* StreetCheck.app */,
+				2BFC9E3E2076981A003217FF /* StreetCheckTests.xctest */,
+				2BFC9E3F2076981A003217FF /* StreetCheckUITests.xctest */,
+				83612935C2EC6BACE50657B0 /* Pods */,
 			);
-			sourceTree = "<group>";
-		};
-		2B12CCE22024DF93005C5ACD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2B12CCE12024DF93005C5ACD /* StreetCheck.app */,
-				2B12CCF52024DF94005C5ACD /* StreetCheckTests.xctest */,
-				2B12CD002024DF94005C5ACD /* StreetCheckUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		2B12CCE32024DF93005C5ACD /* StreetCheck */ = {
 			isa = PBXGroup;
 			children = (
+				0F86FA3520717E64005564B6 /* Settings */,
+				0F8CAFD120684EE2006AEAB9 /* Contact */,
+				0F8CAFD220684EFF006AEAB9 /* Group */,
 				2B12CCE42024DF93005C5ACD /* AppDelegate.swift */,
-				2B12CCE62024DF93005C5ACD /* ViewController.swift */,
-				2B12CD122024E030005C5ACD /* Contact.swift */,
+				2B8912942075807500CDC39F /* OnboardingViewController.swift */,
+				2BFC9E4020769C6B003217FF /* CheckPasswordViewController.swift */,
+				0FDBA5FF2075D13B001DCBA2 /* SetPasswordViewController.swift */,
+				0FA3CF0D2076F02C008B912F /* EditYourInfoViewController.swift */,
+				0FA3CF0F2076F328008B912F /* UpdatePasswordViewController.swift */,
+				2B510681204F2157006BE0EB /* CrimeLocationPin.swift */,
+				0F8CAFC52066E5B1006AEAB9 /* Placeholder.swift */,
 				2B12CCE82024DF93005C5ACD /* Main.storyboard */,
 				2B12CCEB2024DF93005C5ACD /* Assets.xcassets */,
 				2B12CCED2024DF93005C5ACD /* LaunchScreen.storyboard */,
@@ -128,6 +214,25 @@
 			path = StreetCheckUITests;
 			sourceTree = "<group>";
 		};
+		2B6109E620449F36003953B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B3251A82085667200EA633F /* LocalAuthentication.framework */,
+				2B6109E720449F36003953B2 /* MapKit.framework */,
+				A097A93E1061C46ADBA42A60 /* Pods_StreetCheck.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		83612935C2EC6BACE50657B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8396B67DAA1E251FB62A942 /* Pods-StreetCheck.debug.xcconfig */,
+				C68888B7CF540C21AF738EAB /* Pods-StreetCheck.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +240,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B12CD092024DF94005C5ACD /* Build configuration list for PBXNativeTarget "StreetCheck" */;
 			buildPhases = (
+				23FE1419E35CC7FCB5D9EC30 /* [CP] Check Pods Manifest.lock */,
 				2B12CCDD2024DF93005C5ACD /* Sources */,
 				2B12CCDE2024DF93005C5ACD /* Frameworks */,
 				2B12CCDF2024DF93005C5ACD /* Resources */,
+				8F2AA4BFA44C993EF3E6E8F9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -145,7 +252,7 @@
 			);
 			name = StreetCheck;
 			productName = StreetCheck;
-			productReference = 2B12CCE12024DF93005C5ACD /* StreetCheck.app */;
+			productReference = 2BFC9E3D2076981A003217FF /* StreetCheck.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2B12CCF42024DF94005C5ACD /* StreetCheckTests */ = {
@@ -163,7 +270,7 @@
 			);
 			name = StreetCheckTests;
 			productName = StreetCheckTests;
-			productReference = 2B12CCF52024DF94005C5ACD /* StreetCheckTests.xctest */;
+			productReference = 2BFC9E3E2076981A003217FF /* StreetCheckTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		2B12CCFF2024DF94005C5ACD /* StreetCheckUITests */ = {
@@ -181,7 +288,7 @@
 			);
 			name = StreetCheckUITests;
 			productName = StreetCheckUITests;
-			productReference = 2B12CD002024DF94005C5ACD /* StreetCheckUITests.xctest */;
+			productReference = 2BFC9E3F2076981A003217FF /* StreetCheckUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -191,12 +298,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Presley Reed III";
 				TargetAttributes = {
 					2B12CCE02024DF93005C5ACD = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					2B12CCF42024DF94005C5ACD = {
 						CreatedOnToolsVersion = 9.2;
@@ -219,7 +331,7 @@
 				Base,
 			);
 			mainGroup = 2B12CCD82024DF93005C5ACD;
-			productRefGroup = 2B12CCE22024DF93005C5ACD /* Products */;
+			productRefGroup = 2B12CCD82024DF93005C5ACD;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -257,14 +369,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		23FE1419E35CC7FCB5D9EC30 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StreetCheck-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F2AA4BFA44C993EF3E6E8F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-StreetCheck/Pods-StreetCheck-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StreetCheck/Pods-StreetCheck-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2B12CCDD2024DF93005C5ACD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FA3CF102076F328008B912F /* UpdatePasswordViewController.swift in Sources */,
+				0FA3CF0E2076F02C008B912F /* EditYourInfoViewController.swift in Sources */,
+				2B490AAE203101910045DE05 /* ContactTableViewCell.swift in Sources */,
+				2B510682204F2157006BE0EB /* CrimeLocationPin.swift in Sources */,
 				2B12CD132024E030005C5ACD /* Contact.swift in Sources */,
-				2B12CCE72024DF93005C5ACD /* ViewController.swift in Sources */,
+				0FDBA6002075D13C001DCBA2 /* SetPasswordViewController.swift in Sources */,
+				2B8912952075807500CDC39F /* OnboardingViewController.swift in Sources */,
+				0F8CAFC820682166006AEAB9 /* Group.swift in Sources */,
+				2B490AB0203103D40045DE05 /* ContactTableViewController.swift in Sources */,
+				0F8CAFCE20684E0C006AEAB9 /* GroupsTableViewController.swift in Sources */,
+				2B2CED78206C3BE000DB1265 /* GroupViewController.swift in Sources */,
+				2B167E9F206D652E000F004B /* EditGroupViewController.swift in Sources */,
+				0F86FA32207178F7005564B6 /* LegalViewController.swift in Sources */,
+				0F8CAFD020684ED8006AEAB9 /* AddGroupViewController.swift in Sources */,
+				2B12CCE72024DF93005C5ACD /* ContactAddController.swift in Sources */,
 				2B12CCE52024DF93005C5ACD /* AppDelegate.swift in Sources */,
+				0F86FA3420717B68005564B6 /* SettingsViewController.swift in Sources */,
+				0F8CAFCC20682DC0006AEAB9 /* GroupTableViewCell.swift in Sources */,
+				2BFC9E4120769C6B003217FF /* CheckPasswordViewController.swift in Sources */,
+				2B02766E20472DFC0062292C /* ContactEditController.swift in Sources */,
+				2B9F887C203759D700FFA03A /* ContactViewController.swift in Sources */,
+				0F8CAFC62066E5B1006AEAB9 /* Placeholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +503,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -340,6 +511,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -367,7 +539,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -390,6 +562,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -397,6 +570,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -418,7 +592,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -428,31 +602,37 @@
 		};
 		2B12CD0A2024DF94005C5ACD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8396B67DAA1E251FB62A942 /* Pods-StreetCheck.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T88V6XEX9Z;
 				INFOPLIST_FILE = StreetCheck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Presley-Reed-III.StreetCheck";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		2B12CD0B2024DF94005C5ACD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C68888B7CF540C21AF738EAB /* Pods-StreetCheck.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T88V6XEX9Z;
 				INFOPLIST_FILE = StreetCheck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Presley-Reed-III.StreetCheck";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -32,3 +32,9 @@ An app used by law enforcement to supplement their street check log books
 ## Logo Mock Up
 ![Shield Logo](readmeImages/shieldUIMockUp.png)
 
+## App Screenshots
+![Welcome Screen](readmeImages/app_screenshot_welcomeView.png)
+![Contact List](readmeImages/app_screenshot_listView.png)
+![Contact Add](readmeImages/app_screenshot_addContact.png)
+![Contact View](readmeImages/app_screenshot_contactView.png)
+![Settings](readmeImages/app_screenshot_settings.png)

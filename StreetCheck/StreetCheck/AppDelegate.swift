@@ -69,18 +69,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//
-//        if (UserDefaults.standard.value(forKey: "password") as? String) == nil {
-//            vc = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
-//        }
-//        else {
-//            vc = storyboard.instantiateViewController(withIdentifier: "CheckPasswordViewController")
-//        }
-//
-//        self.window?.rootViewController = vc
-//        self.window?.makeKeyAndVisible()
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        if (UserDefaults.standard.value(forKey: "password") as? String) == nil {
+            vc = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
+        }
+        else {
+            vc = storyboard.instantiateViewController(withIdentifier: "CheckPasswordViewController")
+        }
+
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

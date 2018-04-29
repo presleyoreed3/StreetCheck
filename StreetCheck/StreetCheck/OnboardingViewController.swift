@@ -13,6 +13,7 @@ class OnboardingViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var tellUsMoreLabel: UILabel!
     @IBOutlet weak var idField: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

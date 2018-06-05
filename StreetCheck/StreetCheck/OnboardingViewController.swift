@@ -14,11 +14,13 @@ class OnboardingViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tellUsMoreLabel: UILabel!
     @IBOutlet weak var idField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var disLabe: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         nameField.delegate = self
         idField.delegate = self
+        disLabe.text = "Disclaimer:\n We do not look at or keep any of your information. It is all stored locally and is not visible to outsiders or the developer."
     }
 
     @IBAction func startWasPressed(_ sender: UIButton) {

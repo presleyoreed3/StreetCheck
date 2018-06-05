@@ -97,10 +97,7 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
         let address = addressLabel.text
-        
-        
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address!, completionHandler: {(placemarks, error) -> Void in
             if((error) != nil){
@@ -112,14 +109,10 @@ class ContactViewController: UIViewController, CLLocationManagerDelegate {
                 let long = coordinates.longitude
                 let location = CLLocationCoordinate2DMake(lat, long)
                 self.mapView.setRegion(MKCoordinateRegionMakeWithDistance(location, 1500, 1500), animated: true)
-                
                 let pin = CrimeLocationPin(crime: self.crimeLabel.text!, location: address!, coordinate: location)
-                
                 self.mapView.addAnnotation(pin)
             }
         })
-        
-        
     }
     
     //MARK: Action

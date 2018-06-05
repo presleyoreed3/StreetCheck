@@ -132,7 +132,7 @@ class ContactTableViewController: UITableViewController, UISearchBarDelegate {
     private func setUpSearchBar(){
         let searchBar = UISearchBar(frame: CGRect(x:0, y:0,width:(UIScreen.main.bounds.width),height: 70))
         searchBar.showsScopeBar = true
-        searchBar.scopeButtonTitles = ["Name", "Ethnicity", "Sex", "Crime", "Address"]
+        searchBar.scopeButtonTitles = ["Name", "Race", "Sex", "Crime", "Address"]
         searchBar.selectedScopeButtonIndex = 0
         self.tableView.tableHeaderView = searchBar
         searchBar.delegate = self

@@ -2,26 +2,29 @@
 Street Check is an app designed for the use of law enforcement officers. The app supports many features that help streamline the process of keeping records and noting crimes. 
 
 Features:
-* Store contacts with specific markers and fields used in the process of law enforcement.
-* Ability to modify the layout to best conform to either a larger image or minimizing to show more people at once.
-* Area for both individuals and groups that are kept distinct and separate.
-* Search on a filter functionality to enable quick lookup in regards to specific unique traits.
-* Ability to edit and modify entries to keep records up to date.
-* Information that displays the last updated time that, if a contact goes un-updated will be deleted after five years to comply with federal and state law.
+
+1. Store contacts with specific markers and fields used in the process of law enforcement.
+1. Ability to modify the layout to best conform to either a larger image or minimizing to show more people at once.
+1. Area for both individuals and groups that are kept distinct and separate.
+1. Search on a filter functionality to enable quick lookup in regards to specific unique traits.
+1. Ability to edit and modify entries to keep records up to date.
+1. Information that displays the last updated time that, if a contact goes un-updated will be deleted after five years to comply with federal and state law.
 
 Security:
-* All information is stored locally on the device and is never transmitted or kept by the developer.
-* A secure interface requiring a password for re-entry.
-* Ability to enable biometric security for further security using either Touch ID or Face ID.
+
+1. All information is stored locally on the device and is never transmitted or kept by the developer.
+1. A secure interface requiring a password for re-entry.
+1. Ability to enable biometric security for further security using either Touch ID or Face ID.
 
 Future Updates:
 Many new features are coming to the app very soon!
-* Ability to add car make and model information for when an individual is pulled over
-* Updated to groups that integrate individuals into them so you can pass from a group to an individual in that group
-* Improvements to the UI and speed of the app
-* Dark mode for nighttime patrols
-* Better branding and color improvements to the app
-* Custom fields for more extra information
+
+1. Ability to add car make and model information for when an individual is pulled over
+1. Updated to groups that integrate individuals into them so you can pass from a group to an individual in that group
+1. Improvements to the UI and speed of the app
+1. Dark mode for nighttime patrols
+1. Better branding and color improvements to the app
+1. Custom fields for more extra information
 
 Thank you so much for using the application. If you have suggestions for the app leave a rating and review with your feedback.
 

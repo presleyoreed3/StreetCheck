@@ -4,5 +4,5 @@ platform :ios, '10.0'
 target 'StreetCheck' do
   use_frameworks!
 pod 'IQKeyboardManager'
-
+pod 'paper-onboarding'
 end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F2C966620C87343003104F7 /* SlideshowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C966520C87343003104F7 /* SlideshowView.swift */; };
+		0F2C966A20C87397003104F7 /* SlideshowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C966920C87397003104F7 /* SlideshowViewController.swift */; };
 		0F86FA32207178F7005564B6 /* LegalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F86FA31207178F7005564B6 /* LegalViewController.swift */; };
 		0F86FA3420717B68005564B6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F86FA3320717B68005564B6 /* SettingsViewController.swift */; };
 		0F8CAFC62066E5B1006AEAB9 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CAFC52066E5B1006AEAB9 /* Placeholder.swift */; };
@@ -57,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F2C966520C87343003104F7 /* SlideshowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideshowView.swift; sourceTree = "<group>"; };
+		0F2C966920C87397003104F7 /* SlideshowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SlideshowViewController.swift; path = /Users/Preed/Desktop/Desktop/StreetCheck/StreetCheck/StreetCheck/SlideshowViewController.swift; sourceTree = "<absolute>"; };
 		0F86FA31207178F7005564B6 /* LegalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalViewController.swift; sourceTree = "<group>"; };
 		0F86FA3320717B68005564B6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0F8CAFC52066E5B1006AEAB9 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				0FA3CF0F2076F328008B912F /* UpdatePasswordViewController.swift */,
 				2B510681204F2157006BE0EB /* CrimeLocationPin.swift */,
 				0F8CAFC52066E5B1006AEAB9 /* Placeholder.swift */,
+				0F2C966920C87397003104F7 /* SlideshowViewController.swift */,
+				0F2C966520C87343003104F7 /* SlideshowView.swift */,
 				2B12CCE82024DF93005C5ACD /* Main.storyboard */,
 				2B12CCEB2024DF93005C5ACD /* Assets.xcassets */,
 				2B12CCED2024DF93005C5ACD /* LaunchScreen.storyboard */,
@@ -396,10 +402,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-StreetCheck/Pods-StreetCheck-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/paper_onboarding.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -414,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FA3CF102076F328008B912F /* UpdatePasswordViewController.swift in Sources */,
+				0F2C966A20C87397003104F7 /* SlideshowViewController.swift in Sources */,
 				0FA3CF0E2076F02C008B912F /* EditYourInfoViewController.swift in Sources */,
 				2B490AAE203101910045DE05 /* ContactTableViewCell.swift in Sources */,
 				2B510682204F2157006BE0EB /* CrimeLocationPin.swift in Sources */,
@@ -431,6 +440,7 @@
 				2B12CCE52024DF93005C5ACD /* AppDelegate.swift in Sources */,
 				0F86FA3420717B68005564B6 /* SettingsViewController.swift in Sources */,
 				0F8CAFCC20682DC0006AEAB9 /* GroupTableViewCell.swift in Sources */,
+				0F2C966620C87343003104F7 /* SlideshowView.swift in Sources */,
 				2BFC9E4120769C6B003217FF /* CheckPasswordViewController.swift in Sources */,
 				2B02766E20472DFC0062292C /* ContactEditController.swift in Sources */,
 				2B9F887C203759D700FFA03A /* ContactViewController.swift in Sources */,

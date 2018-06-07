@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/Preed/Desktop/Desktop/StreetCheck/StreetCheck/StreetCheck/SlideshowViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:StreetCheck.xcodeproj">
    </FileRef>
    <FileRef

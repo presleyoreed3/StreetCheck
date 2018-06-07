@@ -20,16 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().isEnabled = true
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
+
         if (UserDefaults.standard.value(forKey: "name") as? String) == nil {
-            vc = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
+            vc = storyboard.instantiateViewController(withIdentifier: "SlideshowViewController")
         } else {
             vc = storyboard.instantiateInitialViewController()!
         }
-        
+
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
-        return true 
+        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         if (UserDefaults.standard.value(forKey: "password") as? String) == nil {
-            vc = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+            vc = storyboard.instantiateViewController(withIdentifier: "SlideshowViewController")
         }
         else {
             vc = storyboard.instantiateViewController(withIdentifier: "CheckPasswordViewController")
@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         if (UserDefaults.standard.value(forKey: "password") as? String) == nil {
-            vc = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
+            vc = storyboard.instantiateViewController(withIdentifier: "SlideshowViewController")
         }
         else {
             vc = storyboard.instantiateViewController(withIdentifier: "CheckPasswordViewController")

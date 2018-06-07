@@ -1,16 +1,20 @@
 PODS:
   - IQKeyboardManager (6.0.0)
+  - paper-onboarding (4.0.2)
 
 DEPENDENCIES:
   - IQKeyboardManager
+  - paper-onboarding
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - IQKeyboardManager
+    - paper-onboarding
 
 SPEC CHECKSUMS:
   IQKeyboardManager: fdba62488e23c48a3fa8591635aff166ed946632
+  paper-onboarding: e6e2778c4e8de8db1d798bb7e3b4922e91fb7f99
 
-PODFILE CHECKSUM: d7e327938e55ba40bf9051b7ac24a6637dcd9c97
+PODFILE CHECKSUM: bafbb77ec2b10b760465b46286fb276bb96d1b94
 
 COCOAPODS: 1.5.0
